@@ -1,9 +1,23 @@
 # check-mk-web-api
 
+##Installation
+- From source code
+```
+git clone https://github.com/brennerm/check-mk-web-api
+cd check-mk-web-api
+sudo python3 setup.py install
+```
+
+- With pip
+```
+pip install check_mk_web_api
+```
+
 ##Quickstart
 ####Initialization
 ```
-api = WebApi('http://checkmk.company.com/check_mk/webapi.py', username='automation', secret='123456')
+import check_mk_web_api
+api = check_mk_web_api.WebApi('http://checkmk.company.com/check_mk/webapi.py', username='automation', secret='123456')
 ```
 
 ####Add Host
