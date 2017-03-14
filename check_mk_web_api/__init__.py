@@ -5,7 +5,7 @@ import re
 import urllib.parse
 import urllib.request
 
-from check_mk_web_api.exception import CheckMkWebApiResponseException, CheckMkWebApiException
+from check_mk_web_api.exception import CheckMkWebApiResponseException, CheckMkWebApiException, CheckMkWebApiAuthenticationException
 
 
 class NoNoneValueDict(dict):
@@ -119,10 +119,15 @@ class WebApi:
         if response.status != 200:
             raise CheckMkWebApiResponseException(response)
 
-        body = json.loads(response.read().decode())
-        result = body['result']
+        body = response.read().decode()
 
-        if body['result_code'] == 0:
+        if body.startswith('Authentication error:'):
+            raise CheckMkWebApiAuthenticationException(body)
+
+        body_json = json.loads(body)
+        result = body_json['result']
+
+        if body_json['result_code'] == 0:
             return result
 
         raise CheckMkWebApiException(result)
