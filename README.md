@@ -1,6 +1,6 @@
 # check-mk-web-api
 
-##Installation
+## Installation
 - From source code
 ```
 git clone https://github.com/brennerm/check-mk-web-api
@@ -13,29 +13,29 @@ sudo python3 setup.py install
 pip install check_mk_web_api
 ```
 
-##Quickstart
-####Initialization
+## Quickstart
+#### Initialization
 ```
 import check_mk_web_api
 api = check_mk_web_api.WebApi('http://checkmk.company.com/check_mk/webapi.py', username='automation', secret='123456')
 ```
 
-####Add Host
+#### Add Host
 ```
 >>> api.add_host('webserver00.com')
 ```
 
-####Edit Host
+#### Edit Host
 ```
 >>> api.edit_host('webserver00.com', ipaddress='192.168.0.100')
 ```
 
-####Delete Host
+#### Delete Host
 ```
 >>> api.delete_host('webserver00.com')
 ```
 
-####Get Host
+#### Get Host
 ```
 >>> api.get_host('webserver00.com')
 {
@@ -47,7 +47,7 @@ api = check_mk_web_api.WebApi('http://checkmk.company.com/check_mk/webapi.py', u
 }
 ```
 
-####Get All Hosts
+#### Get All Hosts
 ```
 >>> api.get_all_hosts()
 {
@@ -68,18 +68,18 @@ api = check_mk_web_api.WebApi('http://checkmk.company.com/check_mk/webapi.py', u
 }
 ```
 
-####Discover Services
+#### Discover Services
 ```
 >>> api.discover_services('webserver00.com')
 {'removed': '0', 'new_count': '16', 'added': '16', 'kept': '0'}
 ```
 
-####Bake Agents
+#### Bake Agents
 ```
 >>> api.bake_agents()
 ```
 
-####Activate Changes
+#### Activate Changes
 ```
 >>> api.activate_changes()
 ```
