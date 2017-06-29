@@ -1,0 +1,19 @@
+language: python
+python:
+  - 3.6
+branches:
+  only:
+    - master
+install:
+  - pip install -r requirements-doc.txt
+script:
+  - cd doc
+  - pydocmd build
+  - cd ..
+deploy:
+ provider: pages
+ skip_cleanup: true
+ github_token: $GITHUB_TOKEN
+ local_dir: doc/_build/site
+ on:
+   branch: master

@@ -7,7 +7,9 @@ class CheckMkWebApiException(Exception):
 class CheckMkWebApiResponseException(Exception):
     """
     This exception is being thrown when the Check_Mk Web API responds with a HTTP status code != 200
-    :param response: http.client.HTTPResponse object that we received from Check_Mk Web API
+
+    # Arguments
+    response (http.client.HTTPResponse): response that we received from Check_Mk Web API
     """
     def __init__(self, response):
         self.response = response
