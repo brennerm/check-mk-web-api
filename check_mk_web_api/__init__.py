@@ -29,6 +29,17 @@ class WebApi:
     check_mk_url (str): URL to Check_Mk web application, multiple formats are supported
     username (str): Name of user to connect as. Make sure this is an automation user.
     secret (str): Secret for automation user. This is different from the password!
+
+    # Examples
+    ```python
+    WebApi('http://checkmk.company.com/monitor/check_mk/webapi.py', 'automation', 'secret')
+    ```
+    ```python
+    WebApi('http://checkmk.company.com/monitor/check_mk', 'automation', 'secret')
+    ```
+    ```python
+    WebApi('http://checkmk.company.com/monitor', 'automation', 'secret')
+    ```
     """
 
     __DISCOVERY_REGEX = {
