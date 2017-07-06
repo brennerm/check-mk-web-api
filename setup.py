@@ -9,5 +9,6 @@ setup(
     author_email='xamrennerb@gmail.com',
     url='https://github.com/brennerm/check-mk-web-api',
     download_url='https://github.com/brennerm/check-mk-web-api/archive/1.1.tar.gz',
+    install_requires=['six'],
     keywords=['check_mk', 'api', 'monitoring']
 )

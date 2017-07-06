@@ -2,8 +2,7 @@ import enum
 import json
 import os.path
 import re
-import urllib.parse
-import urllib.request
+from six.moves import urllib
 
 from check_mk_web_api.exception import CheckMkWebApiResponseException, CheckMkWebApiException, CheckMkWebApiAuthenticationException
 
@@ -73,7 +72,7 @@ class WebApi:
         ALL = 'all'
         SPECIFIC = 'specific'
 
-    def __init__(self, check_mk_url: str, username: str, secret: str):
+    def __init__(self, check_mk_url, username, secret):
         check_mk_url = check_mk_url.rstrip('/')
 
         if check_mk_url.endswith('.py'):  # ends with /webapi.py
@@ -87,12 +86,12 @@ class WebApi:
         self.secret = secret
 
     @staticmethod
-    def __build_request_data(data: dict):
+    def __build_request_data(data):
         if not data:
             return None
         return ('request=' + json.dumps(data)).encode()
 
-    def __build_request_path(self, query_params: dict=None):
+    def __build_request_path(self, query_params=None):
         path = self.web_api_base + '?'
 
         if not query_params:
@@ -108,7 +107,7 @@ class WebApi:
         path += query_string
         return path
 
-    def make_request(self, action: str, query_params: dict=None, data: dict=None):
+    def make_request(self, action, query_params=None, data=None):
         """
         Makes arbitrary request to Check_Mk Web API
 
@@ -133,7 +132,7 @@ class WebApi:
             WebApi.__build_request_data(data)
         )
 
-        if response.status != 200:
+        if response.code != 200:
             raise CheckMkWebApiResponseException(response)
 
         body = response.read().decode()
@@ -149,8 +148,8 @@ class WebApi:
 
         raise CheckMkWebApiException(result)
 
-    def add_host(self, hostname: str, folder: str='/', ipaddress: str=None,
-                 alias: str=None, tags: dict=None, **custom_attrs):
+    def add_host(self, hostname, folder='/', ipaddress=None,
+                 alias=None, tags=None, **custom_attrs):
         """
         Adds a nonexistent host to the Check_MK inventory
 
@@ -185,7 +184,7 @@ class WebApi:
 
         return self.make_request('add_host', data=data)
 
-    def edit_host(self, hostname: str, unset_attributes: list=None, **custom_attrs):
+    def edit_host(self, hostname, unset_attributes=None, **custom_attrs):
         """
         Edits the properties of an existing host
 
@@ -204,7 +203,7 @@ class WebApi:
 
         return self.make_request('edit_host', data=data)
 
-    def delete_host(self, hostname: str):
+    def delete_host(self, hostname):
         """
         Deletes a host from the Check_MK inventory
 
@@ -217,7 +216,7 @@ class WebApi:
 
         return self.make_request('delete_host', data=data)
 
-    def get_host(self, hostname: str, effective_attributes: bool=False):
+    def get_host(self, hostname, effective_attributes=False):
         """
         Gets information about one host
 
@@ -235,7 +234,7 @@ class WebApi:
 
         return self.make_request('get_host', query_params=query_params, data=data)
 
-    def get_all_hosts(self, effective_attributes: bool=False):
+    def get_all_hosts(self, effective_attributes=False):
         """
         Gets information about all hosts
 
@@ -248,7 +247,7 @@ class WebApi:
 
         return self.make_request('get_all_hosts', query_params=query_params)
 
-    def discover_services(self, hostname: str, mode: DiscoverMode=DiscoverMode.NEW):
+    def discover_services(self, hostname, mode=DiscoverMode.NEW):
         """
         Discovers the services of a specific host
 
@@ -280,8 +279,8 @@ class WebApi:
         """
         return self.make_request('bake_agents')
 
-    def activate_changes(self, mode: ActivateMode=ActivateMode.DIRTY,
-                         sites: list=None, allow_foreign_changes: bool=False):
+    def activate_changes(self, mode=ActivateMode.DIRTY,
+                         sites=None, allow_foreign_changes=False):
         """
         Activates all changes previously done
 
