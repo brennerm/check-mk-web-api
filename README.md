@@ -1,4 +1,4 @@
-# check-mk-web-api
+# check-mk-web-api [![Build Status](https://travis-ci.org/brennerm/check-mk-web-api.svg?branch=master)](https://travis-ci.org/brennerm/check-mk-web-api)
 
 ## Installation
 - From source code
