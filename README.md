@@ -5,7 +5,7 @@
 ```
 git clone https://github.com/brennerm/check-mk-web-api
 cd check-mk-web-api
-sudo python3 setup.py install
+sudo python setup.py install
 ```
 
 - With pip
