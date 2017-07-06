@@ -6,7 +6,7 @@ sudo: required
 install:
   - pip install -r requirements-doc.txt
 script:
-  - sudo pip install .
+  - pip install .
   - python -c "import check_mk_web_api"
   - cd doc
   - pydocmd build
