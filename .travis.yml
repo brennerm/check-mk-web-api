@@ -1,12 +1,13 @@
 language: python
 python:
+  - 2.7
   - 3.6
-branches:
-  only:
-    - master
+sudo: required
 install:
   - pip install -r requirements-doc.txt
 script:
+  - sudo pip install .
+  - python -c "import check_mk_web_api"
   - cd doc
   - pydocmd build
   - cd ..
