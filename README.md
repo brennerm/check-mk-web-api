@@ -12,6 +12,9 @@ sudo python setup.py install
 ```
 pip install check_mk_web_api
 ```
+
+## [API Documentation](https://brennerm.github.io/check-mk-web-api/check_mk_web_api/)
+
 ## Quickstart
 #### Initialization
 ```
@@ -82,4 +85,3 @@ api = check_mk_web_api.WebApi('http://checkmk.company.com/check_mk/webapi.py', u
 ```
 >>> api.activate_changes()
 ```
-## [API Documentation](https://brennerm.github.io/check-mk-web-api/check_mk_web_api/)
