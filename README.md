@@ -27,6 +27,12 @@ api = check_mk_web_api.WebApi('http://checkmk.company.com/check_mk/webapi.py', u
 >>> api.add_host('webserver00.com')
 ```
 
+#### Add Host in an existing WATO folder
+```
+>>> api.add_host('webserver00.com', folder='webservers')
+```
+Note there is no leading '/' on the folder name.
+
 #### Edit Host
 ```
 >>> api.edit_host('webserver00.com', ipaddress='192.168.0.100')
