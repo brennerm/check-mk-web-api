@@ -7,9 +7,9 @@ sudo: required
 install:
   - pip install -r requirements-doc.txt
 script:
-  - docker run -d -p 127.0.0.1:8080:5000 --name monitoring checkmk/check-mk-raw:1.5.0p6
+  - docker run -d -p 127.0.0.1:8080:5000 --name check-mk checkmk/check-mk-raw:1.5.0p6
   - sleep 60
-  - docker exec -u cmk monitoring bash -c "echo automation-secret > /omd/sites/cmk/var/check_mk/web/automation/automation.secret"
+  - docker exec -u cmk check-mk bash -c "echo automation-secret > /omd/sites/cmk/var/check_mk/web/automation/automation.secret"
   - CHECK_MK_URL=http://localhost:8080/cmk/check_mk CHECK_MK_USER=automation CHECK_MK_SECRET=automation-secret python setup.py test
   - cd doc
   - pydocmd build
