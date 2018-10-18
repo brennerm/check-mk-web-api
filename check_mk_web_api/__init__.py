@@ -221,6 +221,12 @@ class WebApi:
 
         return self.make_request('delete_host', data=data)
 
+    def delete_all_hosts(self):
+        all_hosts = self.get_all_hosts()
+
+        for hostname in all_hosts:
+            self.delete_host(hostname)
+
     def get_host(self, hostname, effective_attributes=False):
         """
         Gets information about one host
