@@ -10,5 +10,6 @@ setup(
     url='https://github.com/brennerm/check-mk-web-api',
     download_url='https://github.com/brennerm/check-mk-web-api/archive/1.3.tar.gz',
     install_requires=['enum34;python_version<"3.4"', 'six'],
+    tests_require=['pytest'],
     keywords=['check_mk', 'api', 'monitoring']
 )
