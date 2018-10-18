@@ -2,6 +2,8 @@ import enum
 import json
 import os.path
 import re
+import ast
+
 from six.moves import urllib
 
 from check_mk_web_api.exception import CheckMkWebApiResponseException, CheckMkWebApiException, CheckMkWebApiAuthenticationException
@@ -140,10 +142,13 @@ class WebApi:
         if body.startswith('Authentication error:'):
             raise CheckMkWebApiAuthenticationException(body)
 
-        body_json = json.loads(body)
-        result = body_json['result']
+        if 'output_format' in query_params and query_params['output_format'] == 'python':
+            body_dict = ast.literal_eval(body)
+        else:
+            body_dict = json.loads(body)
 
-        if body_json['result_code'] == 0:
+        result = body_dict['result']
+        if body_dict['result_code'] == 0:
             return result
 
         raise CheckMkWebApiException(result)
