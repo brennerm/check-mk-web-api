@@ -88,10 +88,16 @@ class WebApi:
         self.secret = secret
 
     @staticmethod
-    def __build_request_data(data):
+    def __build_request_data(data, request_format):
         if not data:
             return None
-        return ('request=' + json.dumps(data)).encode()
+
+        if request_format == 'json':
+            request_string = 'request=' + json.dumps(data)
+        elif request_format == 'python':
+            request_string = 'request=' + str(data)
+
+        return request_string.encode()
 
     def __build_request_path(self, query_params=None):
         path = self.web_api_base + '?'
@@ -129,9 +135,11 @@ class WebApi:
 
         query_params.update({'action': action})
 
+        request_format = query_params.get('request_format', 'json')
+
         response = urllib.request.urlopen(
             self.__build_request_path(query_params),
-            WebApi.__build_request_data(data)
+            WebApi.__build_request_data(data, request_format)
         )
 
         if response.code != 200:
