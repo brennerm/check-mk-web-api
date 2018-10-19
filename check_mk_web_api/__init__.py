@@ -440,6 +440,186 @@ class WebApi:
 
         return self.make_request('delete_folder', data=data)
 
+    def get_contactgroup(self, group):
+        return self.get_all_contactgroups()[group]
+
+    def get_all_contactgroups(self):
+        """
+        Gets all contact groups
+        """
+        return self.make_request('get_all_contactgroups')
+
+    def add_contactgroup(self, group, alias):
+        data = NoNoneValueDict({
+            'groupname': group,
+            'alias': alias,
+        })
+
+        return self.make_request('add_contactgroup', data=data)
+
+    def edit_contactgroup(self, group, alias):
+        data = NoNoneValueDict({
+            'groupname': group,
+            'alias': alias,
+        })
+
+        return self.make_request('edit_contactgroup', data=data)
+
+    def delete_contactgroup(self, group):
+        data = NoNoneValueDict({
+            'groupname': group,
+        })
+
+        return self.make_request('delete_contactgroup', data=data)
+
+    def delete_all_contactgroups(self):
+        for group in self.get_all_contactgroups():
+            self.delete_contactgroup(group)
+
+    def get_hostgroup(self, group):
+        return self.get_all_hostgroups()[group]
+
+    def get_all_hostgroups(self):
+        """
+        Gets all host groups
+        """
+        return self.make_request('get_all_hostgroups')
+
+    def add_hostgroup(self, group, alias):
+        data = NoNoneValueDict({
+            'groupname': group,
+            'alias': alias,
+        })
+
+        return self.make_request('add_hostgroup', data=data)
+
+    def edit_hostgroup(self, group, alias):
+        data = NoNoneValueDict({
+            'groupname': group,
+            'alias': alias,
+        })
+
+        return self.make_request('edit_hostgroup', data=data)
+
+    def delete_hostgroup(self, group):
+        data = NoNoneValueDict({
+            'groupname': group,
+        })
+
+        return self.make_request('delete_hostgroup', data=data)
+
+    def delete_all_hostgroups(self):
+        for group in self.get_all_hostgroups():
+            self.delete_hostgroup(group)
+
+    def get_servicegroup(self, group):
+        return self.get_all_servicegroups()[group]
+
+    def get_all_servicegroups(self):
+        """
+        Gets all service groups
+        """
+        return self.make_request('get_all_servicegroups')
+
+    def add_servicegroup(self, group, alias):
+        data = NoNoneValueDict({
+            'groupname': group,
+            'alias': alias,
+        })
+
+        return self.make_request('add_servicegroup', data=data)
+
+    def edit_servicegroup(self, group, alias):
+        data = NoNoneValueDict({
+            'groupname': group,
+            'alias': alias,
+        })
+
+        return self.make_request('edit_servicegroup', data=data)
+
+    def delete_servicegroup(self, group):
+        data = NoNoneValueDict({
+            'groupname': group,
+        })
+
+        return self.make_request('delete_servicegroup', data=data)
+
+    def delete_all_servicegroups(self):
+        for group in self.get_all_servicegroups():
+            self.delete_servicegroup(group)
+
+    def get_ruleset(self, ruleset):
+        data = NoNoneValueDict({
+            'ruleset_name': ruleset,
+        })
+
+        return self.make_request('get_ruleset', data=data, query_params={'output_format': 'python'})
+
+    def get_rulesets(self):
+        return self.make_request('get_rulesets_info', query_params={'output_format': 'python'})
+
+    def set_ruleset(self, ruleset, ruleset_config):
+        data = NoNoneValueDict({
+            'ruleset_name': ruleset,
+            'ruleset': ruleset_config if ruleset_config else {}
+        })
+
+        return self.make_request('set_ruleset', data=data, query_params={'request_format': 'python'})
+
+    def get_hosttags(self):
+        """
+        Gets all hosttags
+        """
+        return self.make_request('get_hosttags')
+
+    def set_hosttags(self, hosttags):
+        """
+        Sets hosttags
+        """
+        data = NoNoneValueDict({
+            hosttags
+        })
+
+        return self.make_request('set_hosttags', data=data)
+
+    def get_site(self, site_id):
+        data = NoNoneValueDict({
+            'site_id': site_id
+        })
+
+        return self.make_request('get_site', data=data, query_params={'output_format': 'python'})
+
+    def set_site(self, site_id, site_config):
+        data = NoNoneValueDict({
+            'site_id': site_id,
+            'site_config': site_config if site_config else {}
+        })
+
+        return self.make_request('set_site', data=data, query_params={'request_format': 'python'})
+
+    def delete_site(self, site_id):
+        data = NoNoneValueDict({
+            'site_id': site_id
+        })
+
+        return self.make_request('delete_site', data=data)
+
+    def login_site(self, site_id, user, password):
+        data = NoNoneValueDict({
+            'site_id': site_id,
+            'username': user,
+            'password': password
+        })
+
+        return self.make_request('login_site', data=data)
+
+    def logout_site(self, site_id):
+        data = NoNoneValueDict({
+            'site_id': site_id
+        })
+
+        return self.make_request('logout_site', data=data)
+
     def bake_agents(self):
         """
         Bakes all agents
