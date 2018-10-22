@@ -117,7 +117,7 @@ class WebApi:
 
     def make_request(self, action, query_params=None, data=None):
         """
-        Makes arbitrary request to Check_Mk Web API
+        Make arbitrary request to Check_Mk Web API
 
         # Arguments
         action (str): Action request, e.g. add_host
@@ -237,7 +237,7 @@ class WebApi:
 
     def get_host(self, hostname, effective_attributes=False):
         """
-        Gets information about one host
+        Gets one host
 
         # Arguments
         hostname (str): Name of host to get
@@ -255,7 +255,7 @@ class WebApi:
 
     def get_all_hosts(self, effective_attributes=False):
         """
-        Gets information about all hosts
+        Gets all hosts
 
         # Arguments
         effective_attributes (bool): If True attributes with default values will be returned
@@ -265,6 +265,22 @@ class WebApi:
         }
 
         return self.make_request('get_all_hosts', query_params=query_params)
+
+    def get_hosts_by_folder(self, folder, effective_attributes=False):
+        """
+        Gets hosts in folder
+
+        # Arguments
+        folder (str): folder to get hosts for
+        effective_attributes (bool): If True attributes with default values will be returned
+        """
+        hosts = {}
+
+        for host, attr in self.get_all_hosts(effective_attributes).items():
+            if attr['path'] == folder:
+                hosts[host] = attr
+
+        return hosts
 
     def discover_services(self, hostname, mode=DiscoverMode.NEW):
         """
@@ -384,7 +400,7 @@ class WebApi:
 
     def get_folder(self, folder, effective_attributes=False):
         """
-        Gets information about one folder
+        Gets one folder
 
         # Arguments
         folder (str): name of folder to get
@@ -402,7 +418,7 @@ class WebApi:
 
     def get_all_folders(self):
         """
-        Gets information about all folders
+        Gets all folders
         """
         return self.make_request('get_all_folders')
 

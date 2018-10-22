@@ -82,6 +82,17 @@ def test_get_all_hosts():
     assert 'host01' in all_hosts
 
 
+def test_get_hosts_by_folder():
+    api.add_folder('test')
+    api.add_host('host00', 'test')
+    api.add_host('host01', 'test')
+
+    hosts = api.get_hosts_by_folder('test')
+    assert len(hosts) == 2
+    assert 'host00' in hosts
+    assert 'host01' in hosts
+
+
 def test_delete_host():
     api.add_host('host00')
     assert len(api.get_all_hosts()) == 1
