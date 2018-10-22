@@ -230,6 +230,9 @@ class WebApi:
         return self.make_request('delete_host', data=data)
 
     def delete_all_hosts(self):
+        """
+        Deletes all hosts from the Check_MK inventory
+        """
         all_hosts = self.get_all_hosts()
 
         for hostname in all_hosts:
@@ -466,6 +469,12 @@ class WebApi:
         return self.make_request('delete_folder', data=data)
 
     def get_contactgroup(self, group):
+        """
+        Gets one contact group
+
+        # Arguments
+        group (str): name of contact group to get
+        """
         return self.get_all_contactgroups()[group]
 
     def get_all_contactgroups(self):
@@ -475,6 +484,13 @@ class WebApi:
         return self.make_request('get_all_contactgroups')
 
     def add_contactgroup(self, group, alias):
+        """
+        Adds a contact group
+
+        # Arguments
+        group (str): name of group to add
+        alias (str): alias for group
+        """
         data = NoNoneValueDict({
             'groupname': group,
             'alias': alias,
@@ -483,6 +499,13 @@ class WebApi:
         return self.make_request('add_contactgroup', data=data)
 
     def edit_contactgroup(self, group, alias):
+        """
+        Edits a contact group
+
+        # Arguments
+        group (str): name of group to edit
+        alias (str): new alias for group
+        """
         data = NoNoneValueDict({
             'groupname': group,
             'alias': alias,
@@ -491,6 +514,12 @@ class WebApi:
         return self.make_request('edit_contactgroup', data=data)
 
     def delete_contactgroup(self, group):
+        """
+        Deletes a contact group
+
+        # Arguments
+        group (str): name of group to delete
+        """
         data = NoNoneValueDict({
             'groupname': group,
         })
@@ -498,10 +527,19 @@ class WebApi:
         return self.make_request('delete_contactgroup', data=data)
 
     def delete_all_contactgroups(self):
+        """
+        Deletes all contact groups
+        """
         for group in self.get_all_contactgroups():
             self.delete_contactgroup(group)
 
     def get_hostgroup(self, group):
+        """
+        Gets one host group
+
+        # Arguments
+        group (str): name of host group to get
+        """
         return self.get_all_hostgroups()[group]
 
     def get_all_hostgroups(self):
@@ -511,6 +549,13 @@ class WebApi:
         return self.make_request('get_all_hostgroups')
 
     def add_hostgroup(self, group, alias):
+        """
+        Adds a host group
+
+        # Arguments
+        group (str): name of group to add
+        alias (str): alias for group
+        """
         data = NoNoneValueDict({
             'groupname': group,
             'alias': alias,
@@ -519,6 +564,13 @@ class WebApi:
         return self.make_request('add_hostgroup', data=data)
 
     def edit_hostgroup(self, group, alias):
+        """
+        Edits a host group
+
+        # Arguments
+        group (str): name of group to edit
+        alias (str): new alias for group
+        """
         data = NoNoneValueDict({
             'groupname': group,
             'alias': alias,
@@ -527,6 +579,12 @@ class WebApi:
         return self.make_request('edit_hostgroup', data=data)
 
     def delete_hostgroup(self, group):
+        """
+        Deletes a host group
+
+        # Arguments
+        group (str): name of group to delete
+        """
         data = NoNoneValueDict({
             'groupname': group,
         })
@@ -534,6 +592,9 @@ class WebApi:
         return self.make_request('delete_hostgroup', data=data)
 
     def delete_all_hostgroups(self):
+        """
+        Deletes all host groups
+        """
         for group in self.get_all_hostgroups():
             self.delete_hostgroup(group)
 
@@ -547,6 +608,13 @@ class WebApi:
         return self.make_request('get_all_servicegroups')
 
     def add_servicegroup(self, group, alias):
+        """
+        Adds a service group
+
+        # Arguments
+        group (str): name of group to add
+        alias (str): alias for group
+        """
         data = NoNoneValueDict({
             'groupname': group,
             'alias': alias,
@@ -555,6 +623,13 @@ class WebApi:
         return self.make_request('add_servicegroup', data=data)
 
     def edit_servicegroup(self, group, alias):
+        """
+        Edits a service group
+
+        # Arguments
+        group (str): name of group to edit
+        alias (str): new alias for group
+        """
         data = NoNoneValueDict({
             'groupname': group,
             'alias': alias,
@@ -563,6 +638,12 @@ class WebApi:
         return self.make_request('edit_servicegroup', data=data)
 
     def delete_servicegroup(self, group):
+        """
+        Deletes a service group
+
+        # Arguments
+        group (str): name of group to delete
+        """
         data = NoNoneValueDict({
             'groupname': group,
         })
@@ -570,10 +651,19 @@ class WebApi:
         return self.make_request('delete_servicegroup', data=data)
 
     def delete_all_servicegroups(self):
+        """
+        Deletes all service groups
+        """
         for group in self.get_all_servicegroups():
             self.delete_servicegroup(group)
 
     def get_ruleset(self, ruleset):
+        """
+        Gets one rule set
+
+        # Arguments
+        ruleset (str): name of rule set to get
+        """
         data = NoNoneValueDict({
             'ruleset_name': ruleset,
         })
@@ -581,9 +671,19 @@ class WebApi:
         return self.make_request('get_ruleset', data=data, query_params={'output_format': 'python'})
 
     def get_rulesets(self):
+        """
+        Gets all rule sets
+        """
         return self.make_request('get_rulesets_info', query_params={'output_format': 'python'})
 
     def set_ruleset(self, ruleset, ruleset_config):
+        """
+        Edits one rule set
+
+        # Arguments
+        ruleset (str): name of rule set to edit
+        ruleset_config (dict): config that will be set, have a look at return value of #WebApi.get_ruleset
+        """
         data = NoNoneValueDict({
             'ruleset_name': ruleset,
             'ruleset': ruleset_config if ruleset_config else {}
@@ -593,13 +693,16 @@ class WebApi:
 
     def get_hosttags(self):
         """
-        Gets all hosttags
+        Gets all host tags
         """
         return self.make_request('get_hosttags')
 
     def set_hosttags(self, hosttags):
         """
-        Sets hosttags
+        Sets host tags
+
+        # Arguments
+        hosttags (dict): new host tags that will be set, have a look at return value of #WebApi.get_hosttags
         """
         data = NoNoneValueDict({
             hosttags
@@ -608,6 +711,12 @@ class WebApi:
         return self.make_request('set_hosttags', data=data)
 
     def get_site(self, site_id):
+        """
+        Gets a site
+
+        # Arguments
+        site_id (str): ID of site to get
+        """
         data = NoNoneValueDict({
             'site_id': site_id
         })
@@ -615,6 +724,13 @@ class WebApi:
         return self.make_request('get_site', data=data, query_params={'output_format': 'python'})
 
     def set_site(self, site_id, site_config):
+        """
+        Edits the connection to a site
+
+        # Arguments
+        site_id (str): ID of site to edit
+        site_config: config that will be set, have a look at return value of #WebApi.get_site
+        """
         data = NoNoneValueDict({
             'site_id': site_id,
             'site_config': site_config if site_config else {}
@@ -623,6 +739,12 @@ class WebApi:
         return self.make_request('set_site', data=data, query_params={'request_format': 'python'})
 
     def delete_site(self, site_id):
+        """
+        Deletes a connection to a site
+
+        # Arguments
+        site_id (str): ID of site to delete the connection to
+        """
         data = NoNoneValueDict({
             'site_id': site_id
         })
@@ -630,6 +752,12 @@ class WebApi:
         return self.make_request('delete_site', data=data)
 
     def login_site(self, site_id, user, password):
+        """
+        Logs in to site
+
+        # Arguments
+        site_id (str): ID of site to log in to
+        """
         data = NoNoneValueDict({
             'site_id': site_id,
             'username': user,
@@ -639,6 +767,12 @@ class WebApi:
         return self.make_request('login_site', data=data)
 
     def logout_site(self, site_id):
+        """
+        Logs out of site
+
+        # Arguments
+        site_id (str): ID of site to log out of
+        """
         data = NoNoneValueDict({
             'site_id': site_id
         })
