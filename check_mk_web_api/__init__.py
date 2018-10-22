@@ -309,6 +309,16 @@ class WebApi:
 
         return counters
 
+    def discover_services_for_all_hosts(self, mode=DiscoverMode.NEW):
+        """
+        Discovers the services of all hosts
+
+        # Arguments
+        mode (DiscoverMode): see #WebApi.DiscoverMode
+        """
+        for host in self.get_all_hosts():
+            self.discover_services(host, mode)
+
     def get_user(self, user_id):
         """
         Gets a single user
