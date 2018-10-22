@@ -116,7 +116,7 @@ def test_discover_services_for_nonexistent_host():
 
 def test_get_user():
     api.add_user('user00', 'User 00', 'p4ssw0rd')
-    assert api.get_all_users()['user00']['alias'] == 'User 00'
+    assert api.get_user('user00')['alias'] == 'User 00'
 
 
 def test_get_all_users():

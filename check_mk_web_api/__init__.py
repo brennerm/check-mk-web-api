@@ -290,6 +290,21 @@ class WebApi:
 
         return counters
 
+    def get_user(self, user_id):
+        """
+        Gets a single user
+
+        # Arguments
+        user_id (str): ID of user to get
+        """
+        return self.get_all_users()[user_id]
+
+    def get_all_users(self):
+        """
+        Gets all users and their attributes
+        """
+        return self.make_request('get_all_users')
+
     def add_user(self, user_id, username, password, **custom_attrs):
         """
         Adds a new user
@@ -353,12 +368,6 @@ class WebApi:
         })
 
         return self.make_request('edit_users', data=data)
-
-    def get_all_users(self):
-        """
-        Returns all users and their attributes
-        """
-        return self.make_request('get_all_users')
 
     def delete_user(self, user_id):
         """
