@@ -348,11 +348,12 @@ class WebApi:
             'users': {
                 user_id: {
                     'alias': username,
-                    'password': password,
-                    **custom_attrs
+                    'password': password
                 }
             }
         })
+
+        data['users'][user_id].update(custom_attrs)
 
         return self.make_request('add_users', data=data)
 
@@ -370,11 +371,12 @@ class WebApi:
             'users': {
                 user_id: {
                     'alias': username,
-                    'automation_secret': secret,
-                    **custom_attrs
+                    'automation_secret': secret
                 }
             }
         })
+
+        data['users'][user_id].update(custom_attrs)
 
         return self.make_request('add_users', data=data)
 
