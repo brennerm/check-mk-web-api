@@ -92,3 +92,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Tags from Ctags projects
+tags
+
+# Ignore .envrc files
+.envrc

@@ -3,23 +3,12 @@ import json
 import os.path
 import re
 import ast
+import datetime
 
 from six.moves import urllib
 
+from check_mk_web_api.no_none_value_dict import NoNoneValueDict
 from check_mk_web_api.exception import CheckMkWebApiResponseException, CheckMkWebApiException, CheckMkWebApiAuthenticationException
-
-
-class NoNoneValueDict(dict):
-    """Dictionary that does not allow items with None as value"""
-    def __init__(self, dictionary=None):
-        super(NoNoneValueDict, self).__init__()
-        if dictionary:
-            for k, v in dictionary.items():
-                self.__setitem__(k, v)
-
-    def __setitem__(self, key, value):
-        if value is not None:
-            super(NoNoneValueDict, self).__setitem__(key, value)
 
 
 class WebApi:
@@ -84,6 +73,9 @@ class WebApi:
         else:  # ends with /$SITE_NAME
             self.web_api_base = os.path.join(check_mk_url, 'check_mk', 'webapi.py')
 
+        self.web_view_base = self.web_api_base.replace('webapi', 'view')
+
+
         self.username = username
         self.secret = secret
 
@@ -100,10 +92,11 @@ class WebApi:
         return request_string.encode()
 
     def __build_request_path(self, query_params=None):
+
         path = self.web_api_base + '?'
 
-        if not query_params:
-            query_params = {}
+        query_params = self.__check_query_params(query_params)
+
 
         query_params.update({
             '_username': self.username,
@@ -114,6 +107,106 @@ class WebApi:
 
         path += query_string
         return path
+
+    def __build_view_request_path(self, query_params=None):
+        path = self.web_view_base + '?'
+
+        query_params = self.__check_query_params(query_params)
+
+
+        query_params.update({
+            '_username': self.username,
+            '_secret': self.secret,
+            'output_format': 'json'
+        })
+
+        query_string = urllib.parse.urlencode(query_params)
+
+        path += query_string
+        return path
+
+    def __check_query_params(self, query):
+        if not query:
+            query_params = {}
+        else:
+            query_params = dict(query)
+
+        return query_params
+
+    def __decode_response(self, response, query_params={'output_format': 'json'}):
+        if response.code != 200:
+            raise CheckMkWebApiResponseException(response)
+
+        body = response.read().decode()
+
+        if body.startswith('Authentication error:'):
+            raise CheckMkWebApiAuthenticationException(body)
+
+        if 'output_format' in query_params and query_params['output_format'] == 'python':
+            body_dict = ast.literal_eval(body)
+        else:
+            body_dict = json.loads(body)
+
+
+        # Views return json lists and not dicts of information.
+        # Validate the result is a list, return result
+        if isinstance(body_dict, list):
+            return body_dict
+
+
+        result = body_dict['result']
+        if body_dict['result_code'] == 0:
+            return result
+
+        raise CheckMkWebApiException(result)
+
+
+    def __make_call(self, query, data):
+        """
+        Wrapper for all calls to CheckMK service
+
+        # Arguments
+        query: unstructured query from internal calls
+
+        # Raises
+        CheckMkWebApiResponseException: Raised when the HTTP status code != 200
+        CheckMkWebApiException: Raised when the action's result_code != 0
+        """
+
+        query_params = self.__check_query_params(query)
+        query_params['output_format'] = 'json'
+
+        request_format = query_params.get('request_format', 'json')
+
+        response = urllib.request.urlopen(
+            self.__build_request_path(query_params),
+            WebApi.__build_request_data(data, request_format)
+        )
+
+        return self.__decode_response(response)
+
+
+    def make_view_name_request(self, viewName, query=None, data=None):
+        """
+        Make calls to get View
+        ttp://gewrnoccmk1test.taketwo.online/master_dev/check_mk/view.py?view_name=downtimes&output_format=JSON&_username=automation&_secret=abd0c8c3-134e-4620-b7ef-5bd040bc8e0c
+
+        # Arguments
+        viewName: name of view to get e.g. downtimes
+
+        # Raises
+        CheckMkWebApiResponseException: Raised when the HTTP status code != 200
+        CheckMkWebApiException: Raised when the action's result_code != 0
+        """
+
+
+        response = urllib.request.urlopen(
+            self.__build_view_request_path({'view_name': viewName}), # call to correct endpoint
+            None
+        )
+
+        return self.__decode_response(response)
+
 
     def make_request(self, action, query_params=None, data=None):
         """
@@ -128,38 +221,11 @@ class WebApi:
         CheckMkWebApiResponseException: Raised when the HTTP status code != 200
         CheckMkWebApiException: Raised when the action's result_code != 0
         """
-        if not query_params:
-            query_params = {}
-        else:
-            query_params = dict(query_params)  # work on copy
+        query_params = self.__check_query_params(query_params)
 
         query_params.update({'action': action})
 
-        request_format = query_params.get('request_format', 'json')
-
-        response = urllib.request.urlopen(
-            self.__build_request_path(query_params),
-            WebApi.__build_request_data(data, request_format)
-        )
-
-        if response.code != 200:
-            raise CheckMkWebApiResponseException(response)
-
-        body = response.read().decode()
-
-        if body.startswith('Authentication error:'):
-            raise CheckMkWebApiAuthenticationException(body)
-
-        if 'output_format' in query_params and query_params['output_format'] == 'python':
-            body_dict = ast.literal_eval(body)
-        else:
-            body_dict = json.loads(body)
-
-        result = body_dict['result']
-        if body_dict['result_code'] == 0:
-            return result
-
-        raise CheckMkWebApiException(result)
+        return self.__make_call(query_params, data)
 
     def add_host(self, hostname, folder='/', ipaddress=None,
                  alias=None, tags=None, **custom_attrs):
@@ -735,6 +801,31 @@ class WebApi:
 
         return self.make_request('get_site', data=data, query_params={'output_format': 'python'})
 
+    def get_all_downtimes(self):
+        """
+        Gets list of downtimes from CheckMk
+
+        """
+
+        return self.make_view_name_request('downtimes')
+
+    def get_svc_problems(self):
+        """
+        Get current SVC problems
+
+        """
+
+        return self.make_view_name_request('svcproblems')
+
+    def get_alerts(self):
+        """
+        Return current Alert Statists
+
+        """
+
+        return self.make_view_name_request('alertstats')
+
+
     def set_site(self, site_id, site_config):
         """
         Edits the connection to a site
@@ -777,6 +868,34 @@ class WebApi:
         })
 
         return self.make_request('login_site', data=data)
+
+    def set_downtime(self, hostname, message, serviceName, downTime=120):
+        """
+        Sets Downtime for host with message
+
+        # Arguments
+        hostname: Name of the host to set downtime on
+        message: Message to set for downtime
+        downTime: minutes of downtime
+        serviceName: Name of service to down
+        """
+
+        base = {
+                '_do_confirm': 'yes',
+                '_transid': -1,
+                '_do_actions': 'yes',
+                'service': serviceName,
+                'host': hostname,
+                'site': siteName,
+                'viewname': 'service',
+                '_down_minutes': downTime,
+                '_down_comment': message,
+
+                }
+
+        query_param = self.__check_query_params(base)
+
+        return self.make_request()
 
     def logout_site(self, site_id):
         """

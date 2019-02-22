@@ -8,6 +8,8 @@ repo_url: https://github.com/brennerm/check-mk-web-api
 generate:
 - check_mk_web_api.md:
     - check_mk_web_api.WebApi+
+- no_none_value_dict.md:
+    - check_mk_web_api.no_none_value_dict.NoNoneValueDict+
 - exceptions.md:
     - check_mk_web_api.exception+
 
@@ -19,6 +21,7 @@ pages:
 - API Documentation:
   - WebAPI: check_mk_web_api.md
   - Exceptions: exceptions.md
+  - Utility: no_none_value_dict.md
 
 # These options all show off their default values. You don't have to add
 # them to your configuration if you're fine with the default.
