@@ -98,3 +98,6 @@ tags
 
 # Ignore .envrc files
 .envrc
+
+# Local documentation generation
+doc/_build

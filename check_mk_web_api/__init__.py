@@ -189,7 +189,6 @@ class WebApi:
     def make_view_name_request(self, viewName, query=None, data=None):
         """
         Make calls to get View
-        ttp://gewrnoccmk1test.taketwo.online/master_dev/check_mk/view.py?view_name=downtimes&output_format=JSON&_username=automation&_secret=abd0c8c3-134e-4620-b7ef-5bd040bc8e0c
 
         # Arguments
         viewName: name of view to get e.g. downtimes
