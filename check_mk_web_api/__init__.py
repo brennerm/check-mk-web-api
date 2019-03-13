@@ -712,13 +712,17 @@ class WebApi:
     def set_hosttags(self, hosttags):
         """
         Sets host tags
+   
+        As implemented by Check_MK, it is only possible to write the whole Host Tag Settings within an API-Call
+        You can use the #WebApi.get_hosttags to get the current Tags, modify them and write the dict back via set_hosttags  
+        To ensure that no Tags are modified in the meantime you can use the configuration_hash key.
+
+        e.g. 'configuration_hash': u'f31ea758a59473d15f378b692110996c'
 
         # Arguments
-        hosttags (dict): new host tags that will be set, have a look at return value of #WebApi.get_hosttags
+        hosttags (dict) with 2 mandatory keys:  { 'aux_tags' : [], 'tag_groups' : [] }
         """
-        data = NoNoneValueDict({
-            hosttags
-        })
+        data = NoNoneValueDict(hosttags)
 
         return self.make_request('set_hosttags', data=data)
 
