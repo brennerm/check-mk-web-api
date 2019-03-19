@@ -62,6 +62,8 @@ class WebApiBase:
             request_string = 'request=' + json.dumps(data)
         elif request_format == 'python':
             request_string = 'request=' + str(data)
+        else:
+            return CheckMkWebApiResponseException(data)
 
         return request_string.encode()
 
@@ -97,7 +99,8 @@ class WebApiBase:
         path += query_string
         return path
 
-    def __check_query_params(self, query):
+    @staticmethod
+    def __check_query_params(query):
         if not query:
             query_params = {}
         else:
@@ -149,12 +152,12 @@ class WebApiBase:
 
         response = urllib.request.urlopen(
             self.__build_request_path(query_params),
-            WebApi.__build_request_data(data, request_format)
+            WebApiBase.__build_request_data(data, request_format)
         )
 
         return self.__decode_response(response)
 
-    def make_view_name_request(self, viewName, query=None, data=None):
+    def make_view_name_request(self, view_name, query=None, data=None):
         """
         Make calls to get View
 
@@ -167,7 +170,7 @@ class WebApiBase:
         """
 
         response = urllib.request.urlopen(
-            self.__build_view_request_path({'view_name': viewName}),  # call to correct endpoint
+            self.__build_view_request_path({'view_name': view_name}),  # call to correct endpoint
             None
         )
 
