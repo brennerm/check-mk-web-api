@@ -1,13 +1,10 @@
 import ast
-import datetime
-import enum
 import json
 import os.path
 import re
 from six.moves import urllib
 
 from check_mk_web_api.activate_mode import ActivateMode
-from check_mk_web_api.discover_mode import DiscoverMode
 from check_mk_web_api.exception import CheckMkWebApiResponseException, CheckMkWebApiException, \
     CheckMkWebApiAuthenticationException
 from check_mk_web_api.no_none_value_dict import NoNoneValueDict

@@ -1,3 +1,6 @@
+import enum
+
+
 class ActivateMode(enum.Enum):
     """
     # Members

@@ -1,3 +1,6 @@
+import enum
+
+
 class DiscoverMode(enum.Enum):
     """
     # Members
