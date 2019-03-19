@@ -5,18 +5,20 @@ import string
 import pytest
 
 from check_mk_web_api.web_api_base import WebApiBase
+from check_mk_web_api.web_api_hosts import WebApiHosts
 # from check_mk_web_api.exception import CheckMkWebApiException
 
-api = WebApiBase(
+api = WebApiHosts(
     os.environ['CHECK_MK_URL'],
     os.environ['CHECK_MK_USER'],
     os.environ['CHECK_MK_SECRET']
 )
 
+
 def setup():
     api.delete_all_hosts()
-#     api.delete_all_hostgroups()
-#     api.delete_all_servicegroups()
+    api.delete_all_hostgroups()
+    api.delete_all_servicegroups()
 #
 #     for group in api.get_all_contactgroups():
 #         if group != 'all':
@@ -31,11 +33,11 @@ def setup():
 #             api.delete_folder(folder)
 #
 
-# def test_add_host():
-#     api.add_host('host00')
-#     assert 'host00' in api.get_all_hosts()
-#
-#
+def test_add_host():
+    api.add_host('host00')
+    assert 'host00' in api.get_all_hosts()
+
+
 # def test_add_duplicate_host():
 #     with pytest.raises(CheckMkWebApiException):
 #         api.add_host('host00')
