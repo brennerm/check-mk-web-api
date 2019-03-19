@@ -5,6 +5,10 @@ verify_ssl = true
 
 [dev-packages]
 pydoc-markdown = "*"
+pytest = "*"
+ipython = "*"
+pytest-watch = "*"
+pytest-vcr = "*"
 
 [packages]
 
