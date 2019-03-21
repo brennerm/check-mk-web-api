@@ -10,7 +10,7 @@ class WebApiDowntimes(WebApiBase):
 
         return self.make_view_name_request('downtimes')
 
-    def set_downtime(self, hostname, message, serviceName, downTime=120):
+    def set_downtime(self, hostname, message, serviceName, downTime=120,):
         """
         Sets Downtime for host with message
 
@@ -27,13 +27,14 @@ class WebApiDowntimes(WebApiBase):
             '_do_actions': 'yes',
             'service': serviceName,
             'host': hostname,
-            'site': siteName,
+            # 'site': siteName,
             'viewname': 'service',
             '_down_minutes': downTime,
             '_down_comment': message,
 
         }
 
-        query_param = self.__check_query_params(base)
+        query_params = self.__check_query_params(base)
+
 
         return self.make_request()
