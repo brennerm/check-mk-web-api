@@ -100,13 +100,26 @@ class WebApiBase:
         return path
 
     @staticmethod
-    def __check_query_params(query):
-        if not query:
-            query_params = {}
-        else:
-            query_params = dict(query)
+    def __check_query_params(query_params):
+        if not query_params:
+            return {}
 
-        return query_params
+        return dict(query_params)
+
+
+    def __parse_response_body(self, body, query_params):
+        if 'output_format' in query_params:
+            if query_params['output_format'] == 'python':
+                return ast.literal_eval(body)
+
+            if query_params['output_format'] == 'json':
+                try:
+                    return json.loads(body)
+                except json.decoder.JSONDecodeError as error:
+                    return body
+
+        return body
+
 
     def __decode_response(self, response, query_params={'output_format': 'json'}):
         if response.code != 200:
@@ -117,10 +130,7 @@ class WebApiBase:
         if body.startswith('Authentication error:'):
             raise CheckMkWebApiAuthenticationException(body)
 
-        if 'output_format' in query_params and query_params['output_format'] == 'python':
-            body_dict = ast.literal_eval(body)
-        else:
-            body_dict = json.loads(body)
+        body_dict = self.__parse_response_body(body, query_params)
 
         # Views return json lists and not dicts of information.
         # Validate the result is a list, return result
@@ -154,8 +164,8 @@ class WebApiBase:
             self.__build_request_path(query_params),
             WebApiBase.__build_request_data(data, request_format)
         )
-
-        return self.__decode_response(response)
+        # TODO: investigate query parameters req for code response
+        return self.__decode_response(response, query_params)
 
     def make_view_name_request(self, view_name, query=None, data=None):
         """
@@ -173,7 +183,7 @@ class WebApiBase:
             self.__build_view_request_path({'view_name': view_name}),  # call to correct endpoint
             None
         )
-
+    #TODO: investigate query parameters req for code response
         return self.__decode_response(response)
 
     def make_request(self, action, query_params=None, data=None):
