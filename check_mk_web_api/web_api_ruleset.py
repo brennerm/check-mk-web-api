@@ -1,4 +1,5 @@
 from check_mk_web_api.web_api_base import WebApiBase
+from check_mk_web_api.no_none_value_dict import NoNoneValueDict
 
 
 class WebApiRuleset(WebApiBase):
@@ -14,13 +15,13 @@ class WebApiRuleset(WebApiBase):
             'ruleset_name': ruleset,
         })
 
-        return self.make_request('get_ruleset', data=data, query_params={'output_format': 'python'})
+        return self.make_request('get_ruleset', data=data, query_params={'output_format': 'python','request_format': 'python'})
 
     def get_rulesets(self):
         """
         Gets all rule sets
         """
-        return self.make_request('get_rulesets_info', query_params={'output_format': 'python'})
+        return self.make_request('get_rulesets_info', query_params={'request_format': 'python'})
 
     def set_ruleset(self, ruleset, ruleset_config):
         """
