@@ -1,7 +1,7 @@
 from check_mk_web_api.web_api_base import WebApiBase
+from check_mk_web_api.no_none_value_dict import NoNoneValueDict
 
-
-class WebApiContactGroup(WebApiBase):
+class WebApiContactGroups(WebApiBase):
 
     def get_contactgroup(self, group):
         """
@@ -10,12 +10,14 @@ class WebApiContactGroup(WebApiBase):
         # Arguments
         group (str): name of contact group to get
         """
+
         return self.get_all_contactgroups()[group]
 
     def get_all_contactgroups(self):
         """
         Gets all contact groups
         """
+
         return self.make_request('get_all_contactgroups')
 
     def add_contactgroup(self, group, alias):
@@ -65,5 +67,6 @@ class WebApiContactGroup(WebApiBase):
         """
         Deletes all contact groups
         """
+
         for group in self.get_all_contactgroups():
             self.delete_contactgroup(group)
