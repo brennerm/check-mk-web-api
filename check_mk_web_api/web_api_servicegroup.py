@@ -1,5 +1,5 @@
 from check_mk_web_api.web_api_base import WebApiBase
-from no_none_value_dict import NoNoneValueDict
+from check_mk_web_api.no_none_value_dict import NoNoneValueDict
 
 
 class WebApiServiceGroup(WebApiBase):
@@ -11,6 +11,7 @@ class WebApiServiceGroup(WebApiBase):
         """
         Gets all service groups
         """
+
         return self.make_request('get_all_servicegroups')
 
     def add_servicegroup(self, group, alias):
@@ -60,5 +61,6 @@ class WebApiServiceGroup(WebApiBase):
         """
         Deletes all service groups
         """
+
         for group in self.get_all_servicegroups():
             self.delete_servicegroup(group)

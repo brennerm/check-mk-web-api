@@ -4,9 +4,9 @@ import string
 
 import pytest
 
-from check_mk_web_api.web_api_site import WebApiSite
+from check_mk_web_api.web_api import WebApi
 
-api = WebApiSite(
+api = WebApi(
     os.environ['CHECK_MK_URL'],
     os.environ['CHECK_MK_USER'],
     os.environ['CHECK_MK_SECRET']

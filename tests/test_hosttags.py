@@ -7,8 +7,9 @@ import pytest
 from check_mk_web_api.web_api_base import WebApiBase
 from check_mk_web_api.web_api_hosttags import WebApiHosttags
 from check_mk_web_api.exception import CheckMkWebApiException
+from check_mk_web_api.web_api import WebApi
 
-api = WebApiHosttags(
+api = WebApi(
     os.environ['CHECK_MK_URL'],
     os.environ['CHECK_MK_USER'],
     os.environ['CHECK_MK_SECRET']

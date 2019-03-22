@@ -1,6 +1,7 @@
 from check_mk_web_api.web_api_base import WebApiBase
 from check_mk_web_api.no_none_value_dict import NoNoneValueDict
 
+
 class WebApiHosttags(WebApiBase):
 
     def get_hosttags(self):
