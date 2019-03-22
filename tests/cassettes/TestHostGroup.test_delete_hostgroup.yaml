@@ -9,7 +9,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&action=get_all_hosts&_username=cmkadmin1&effective_attributes=0
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_hostgroups
   response:
     body:
       string: '{"result": {}, "result_code": 0}'
@@ -23,7 +23,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:31:41 GMT
+      - Fri, 22 Mar 2019 15:31:39 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -32,44 +32,12 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_folders
-  response:
-    body:
-      string: '{"result": {"": {}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:31:41 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"attributes": {}, "hostname": "host00", "folder": "/"}'
+    body: 'request={"alias": "VM", "groupname": "vm"}'
     headers:
       Connection:
       - close
       Content-Length:
-      - '63'
+      - '42'
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
@@ -77,7 +45,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=add_host
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=add_hostgroup
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -91,7 +59,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:31:41 GMT
+      - Fri, 22 Mar 2019 15:31:39 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -109,22 +77,57 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&action=get_all_hosts&_username=cmkadmin1&effective_attributes=0
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_hostgroups
   response:
     body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
+      string: '{"result": {"vm": {"alias": "VM"}}, "result_code": 0}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '94'
+      - '53'
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:31:41 GMT
+      - Fri, 22 Mar 2019 15:31:39 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"groupname": "vm"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '27'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_hostgroup
+  response:
+    body:
+      string: '{"result": null, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:31:40 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -142,7 +145,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&effective_attributes=0&_username=cmkadmin1&action=get_all_hosts
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_hostgroups
   response:
     body:
       string: '{"result": {}, "result_code": 0}'
@@ -156,7 +159,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:33:44 GMT
+      - Fri, 22 Mar 2019 15:31:40 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -174,108 +177,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_folders
-  response:
-    body:
-      string: '{"result": {"": {}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:33:44 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00", "attributes": {}, "folder": "/"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=add_host
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:33:44 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&effective_attributes=0&_username=cmkadmin1&action=get_all_hosts
-  response:
-    body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '94'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:33:45 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_hosts&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&effective_attributes=0&_username=cmkadmin1
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_hostgroups
   response:
     body:
       string: '{"result": {}, "result_code": 0}'
@@ -289,7 +191,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:37:02 GMT
+      - Fri, 22 Mar 2019 15:33:42 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -298,44 +200,12 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
-  response:
-    body:
-      string: '{"result": {"": {}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:37:03 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00", "folder": "/", "attributes": {}}'
+    body: 'request={"groupname": "vm", "alias": "VM"}'
     headers:
       Connection:
       - close
       Content-Length:
-      - '63'
+      - '42'
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
@@ -343,7 +213,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=add_host&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=add_hostgroup
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -357,7 +227,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:37:03 GMT
+      - Fri, 22 Mar 2019 15:33:42 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -375,22 +245,257 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_hosts&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&effective_attributes=0&_username=cmkadmin1
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_hostgroups
   response:
     body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
+      string: '{"result": {"vm": {"alias": "VM"}}, "result_code": 0}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '94'
+      - '53'
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:37:03 GMT
+      - Fri, 22 Mar 2019 15:33:43 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"groupname": "vm"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '27'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_hostgroup
+  response:
+    body:
+      string: '{"result": null, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:33:43 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_hostgroups
+  response:
+    body:
+      string: '{"result": {}, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '32'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:33:43 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_hostgroups&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+  response:
+    body:
+      string: '{"result": {}, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '32'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:37:00 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"alias": "VM", "groupname": "vm"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '42'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=add_hostgroup&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+  response:
+    body:
+      string: '{"result": null, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:37:00 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_hostgroups&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+  response:
+    body:
+      string: '{"result": {"vm": {"alias": "VM"}}, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '53'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:37:00 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"groupname": "vm"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '27'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_hostgroup&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+  response:
+    body:
+      string: '{"result": null, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:37:01 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_hostgroups&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+  response:
+    body:
+      string: '{"result": {}, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '32'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:37:01 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:

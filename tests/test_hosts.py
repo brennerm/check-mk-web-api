@@ -1,11 +1,11 @@
 import os
 import pytest
 
-from check_mk_web_api.web_api_hosts import WebApiHosts
-
+from check_mk_web_api.web_api import WebApi
 from check_mk_web_api.exception import CheckMkWebApiException
 
-api = WebApiHosts(
+
+api = WebApi(
     os.environ['CHECK_MK_URL'],
     os.environ['CHECK_MK_USER'],
     os.environ['CHECK_MK_SECRET']
@@ -15,6 +15,11 @@ api = WebApiHosts(
 class TestHosts():
     def setup(self):
         api.delete_all_hosts()
+
+        for folder in api.get_all_folders():
+            if folder != '':
+                api.delete_folder(folder)
+
 
     def test_add_host(self):
         api.add_host('host00')
@@ -60,24 +65,24 @@ class TestHosts():
         assert 'host01' in all_hosts
 
 
-    # def test_get_hosts_by_folder(self):
-    #     api.add_folder('test')
-    #     api.add_host('host00', 'test')
-    #     api.add_host('host01', 'test')
-    #
-    #     hosts = api.get_hosts_by_folder('test')
-    #     assert len(hosts) == 2
-    #     assert 'host00' in hosts
-    #     assert 'host01' in hosts
+    def test_get_hosts_by_folder(self):
+        api.add_folder('test')
+        api.add_host('host00', 'test')
+        api.add_host('host01', 'test')
+
+        hosts = api.get_hosts_by_folder('test')
+        assert len(hosts) == 2
+        assert 'host00' in hosts
+        assert 'host01' in hosts
 
 
-    # @pytest.skip('Skipping due to issues with determinstic nature')
-    # def test_delete_host(self):
-    #     api.add_host('host00')
-    #     assert len(api.get_all_hosts()) == 1
-    #
-    #     api.delete_host('host00')
-    #     assert len(api.get_all_hosts()) == 0
+    # @pytest.mark.skip('Skipping due to issues with determinstic nature')
+    def test_delete_host(self):
+        api.add_host('host00')
+        assert len(api.get_all_hosts()) == 1
+
+        api.delete_host('host00')
+        assert len(api.get_all_hosts()) == 0
     #
     #
     def test_delete_nonexistent_host(self):

@@ -7,9 +7,9 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?effective_attributes=0&action=get_all_hosts&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&action=get_all_hosts&_username=cmkadmin1&effective_attributes=0
   response:
     body:
       string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
@@ -24,7 +24,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:48:57 GMT
+      - Fri, 22 Mar 2019 15:31:49 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -44,9 +44,9 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_host
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -60,43 +60,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:48:57 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00", "attributes": {"ipaddress": "192.168.0.101"}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '76'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.6
-    method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=edit_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
-  response:
-    body:
-      string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '64'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Tue, 19 Mar 2019 19:48:58 GMT
+      - Fri, 22 Mar 2019 15:31:49 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -112,24 +76,23 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?effective_attributes=0&action=get_all_hosts&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_folders
   response:
     body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
+      string: '{"result": {"": {}}, "result_code": 0}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '94'
+      - '38'
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:50:25 GMT
+      - Fri, 22 Mar 2019 15:31:50 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -138,43 +101,7 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: 'request={"hostname": "host00"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.6
-    method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Tue, 19 Mar 2019 19:50:25 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00", "attributes": {"ipaddress": "192.168.0.101"}}'
+    body: 'request={"attributes": {"ipaddress": "192.168.0.101"}, "hostname": "host00"}'
     headers:
       Connection:
       - close
@@ -185,9 +112,9 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=edit_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=edit_host
   response:
     body:
       string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
@@ -201,7 +128,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:50:26 GMT
+      - Fri, 22 Mar 2019 15:31:51 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -217,9 +144,9 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?effective_attributes=0&action=get_all_hosts&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&effective_attributes=0&_username=cmkadmin1&action=get_all_hosts
   response:
     body:
       string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
@@ -234,7 +161,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:52:11 GMT
+      - Fri, 22 Mar 2019 15:33:52 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -254,9 +181,9 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_host
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -270,43 +197,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:52:11 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00", "attributes": {"ipaddress": "192.168.0.101"}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '76'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.6
-    method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=edit_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
-  response:
-    body:
-      string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '64'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Tue, 19 Mar 2019 19:52:12 GMT
+      - Fri, 22 Mar 2019 15:33:53 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -322,60 +213,23 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?effective_attributes=0&action=get_all_hosts&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_folders
   response:
     body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
+      string: '{"result": {"": {}}, "result_code": 0}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '94'
+      - '38'
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:53:08 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.6
-    method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Tue, 19 Mar 2019 19:53:08 GMT
+      - Fri, 22 Mar 2019 15:33:54 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -395,9 +249,9 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=edit_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=edit_host
   response:
     body:
       string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
@@ -411,7 +265,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:53:09 GMT
+      - Fri, 22 Mar 2019 15:33:54 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -427,9 +281,9 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?effective_attributes=0&action=get_all_hosts&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_hosts&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&effective_attributes=0&_username=cmkadmin1
   response:
     body:
       string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
@@ -444,7 +298,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:53:44 GMT
+      - Fri, 22 Mar 2019 15:37:11 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -464,9 +318,9 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -480,43 +334,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:53:44 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00", "attributes": {"ipaddress": "192.168.0.101"}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '76'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.6
-    method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=edit_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
-  response:
-    body:
-      string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '64'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Tue, 19 Mar 2019 19:53:45 GMT
+      - Fri, 22 Mar 2019 15:37:11 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -532,60 +350,23 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?effective_attributes=0&action=get_all_hosts&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
   response:
     body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
+      string: '{"result": {"": {}}, "result_code": 0}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '94'
+      - '38'
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:56:12 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.6
-    method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Tue, 19 Mar 2019 19:56:12 GMT
+      - Fri, 22 Mar 2019 15:37:12 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -605,9 +386,9 @@ interactions:
       Host:
       - 35.237.210.125
       User-Agent:
-      - Python-urllib/3.6
+      - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=edit_host&output_format=json&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=edit_host&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
   response:
     body:
       string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
@@ -621,7 +402,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Tue, 19 Mar 2019 19:56:13 GMT
+      - Fri, 22 Mar 2019 15:37:13 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:

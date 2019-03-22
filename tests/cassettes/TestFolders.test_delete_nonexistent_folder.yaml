@@ -9,21 +9,58 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&action=get_all_hosts&_username=cmkadmin1&effective_attributes=0
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_folders
   response:
     body:
-      string: '{"result": {}, "result_code": 0}'
+      string: '{"result": {"": {}}, "result_code": 0}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '32'
+      - '38'
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:32:04 GMT
+      - Fri, 22 Mar 2019 15:31:26 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"folder": "productive"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '32'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_folder
+  response:
+    body:
+      string: '{"result": "Check_MK exception: Folder productive does not exist",
+        "result_code": 1}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '84'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:31:26 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -55,7 +92,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:32:04 GMT
+      - Fri, 22 Mar 2019 15:33:34 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -64,12 +101,12 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: 'request={"hostname": "host00"}'
+    body: 'request={"folder": "productive"}'
     headers:
       Connection:
       - close
       Content-Length:
-      - '30'
+      - '32'
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
@@ -77,153 +114,22 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_host
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_folder
   response:
     body:
-      string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
+      string: '{"result": "Check_MK exception: Folder productive does not exist",
+        "result_code": 1}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '64'
+      - '84'
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:32:05 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&effective_attributes=0&_username=cmkadmin1&action=get_all_hosts
-  response:
-    body:
-      string: '{"result": {}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '32'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:34:07 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_folders
-  response:
-    body:
-      string: '{"result": {"": {}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:34:08 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_host
-  response:
-    body:
-      string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '64'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:34:08 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - 35.237.210.125
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_hosts&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&effective_attributes=0&_username=cmkadmin1
-  response:
-    body:
-      string: '{"result": {}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '32'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:37:26 GMT
+      - Fri, 22 Mar 2019 15:33:34 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -255,7 +161,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:37:26 GMT
+      - Fri, 22 Mar 2019 15:36:52 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:
@@ -264,12 +170,12 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: 'request={"hostname": "host00"}'
+    body: 'request={"folder": "productive"}'
     headers:
       Connection:
       - close
       Content-Length:
-      - '30'
+      - '32'
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
@@ -277,21 +183,22 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_folder&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
   response:
     body:
-      string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
+      string: '{"result": "Check_MK exception: Folder productive does not exist",
+        "result_code": 1}'
     headers:
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '64'
+      - '84'
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:37:27 GMT
+      - Fri, 22 Mar 2019 15:36:52 GMT
       Server:
       - Apache/2.4.25 (Debian)
       Vary:

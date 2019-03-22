@@ -1,0 +1,359 @@
+interactions:
+- request:
+    body: 'request={"site_id": "checkmd2"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '31'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_site
+  response:
+    body:
+      string: '{''result'': {''site_id'': u''checkmd2'', ''site_config'': {''disabled'':
+        False, ''alias'': ''Local site checkmd2'', ''user_login'': True, ''timeout'':
+        10, ''replication'': '''', ''persist'': False, ''replicate_ec'': False, ''multisiteurl'':
+        '''', ''insecure'': False, ''disable_wato'': True}, ''configuration_hash'':
+        ''591851a16262709863d75bfd0ab9a452''}, ''result_code'': 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '336'
+      Content-Type:
+      - text/plain; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:32:14 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie,Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={''site_id'': ''checkmd2'', ''site_config'': {''user_login'': True,
+      ''timeout'': 10, ''replication'': '''', ''alias'': ''alias_N'', ''disable_wato'':
+      True, ''persist'': False, ''replicate_ec'': False, ''disabled'': False, ''multisiteurl'':
+      '''', ''insecure'': False}}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '243'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&request_format=python&action=set_site
+  response:
+    body:
+      string: '{"result": null, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:32:15 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"site_id": "checkmd2"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '31'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_site
+  response:
+    body:
+      string: '{''result'': {''site_id'': u''checkmd2'', ''site_config'': {''disabled'':
+        False, ''replication'': '''', ''multisiteurl'': '''', ''timeout'': 10, ''alias'':
+        ''alias_N'', ''replicate_ec'': False, ''user_login'': True, ''insecure'':
+        False, ''persist'': False, ''disable_wato'': True}, ''configuration_hash'':
+        ''fa61d087de03b8b983dcbf7422837620''}, ''result_code'': 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '324'
+      Content-Type:
+      - text/plain; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:32:15 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie,Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"site_id": "checkmd2"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '31'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_site
+  response:
+    body:
+      string: '{''result'': {''site_id'': u''checkmd2'', ''site_config'': {''disabled'':
+        False, ''replication'': '''', ''multisiteurl'': '''', ''timeout'': 10, ''alias'':
+        ''alias_N'', ''replicate_ec'': False, ''user_login'': True, ''insecure'':
+        False, ''persist'': False, ''disable_wato'': True}, ''configuration_hash'':
+        ''fa61d087de03b8b983dcbf7422837620''}, ''result_code'': 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '324'
+      Content-Type:
+      - text/plain; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:34:18 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie,Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={''site_config'': {''disable_wato'': True, ''replication'': '''',
+      ''replicate_ec'': False, ''user_login'': True, ''persist'': False, ''timeout'':
+      10, ''insecure'': False, ''disabled'': False, ''alias'': ''alias_Z'', ''multisiteurl'':
+      ''''}, ''site_id'': ''checkmd2''}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '243'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=set_site&request_format=python
+  response:
+    body:
+      string: '{"result": null, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:34:18 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"site_id": "checkmd2"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '31'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_site
+  response:
+    body:
+      string: '{''result'': {''site_id'': u''checkmd2'', ''site_config'': {''disabled'':
+        False, ''alias'': ''alias_Z'', ''multisiteurl'': '''', ''timeout'': 10, ''replication'':
+        '''', ''replicate_ec'': False, ''user_login'': True, ''insecure'': False,
+        ''persist'': False, ''disable_wato'': True}, ''configuration_hash'': ''cfbcee817d6fc4e2a7819e963f3221dc''},
+        ''result_code'': 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '324'
+      Content-Type:
+      - text/plain; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:34:19 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie,Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"site_id": "checkmd2"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '31'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_site&output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+  response:
+    body:
+      string: '{''result'': {''site_id'': u''checkmd2'', ''site_config'': {''disabled'':
+        False, ''alias'': ''alias_Z'', ''multisiteurl'': '''', ''timeout'': 10, ''replication'':
+        '''', ''replicate_ec'': False, ''user_login'': True, ''insecure'': False,
+        ''persist'': False, ''disable_wato'': True}, ''configuration_hash'': ''cfbcee817d6fc4e2a7819e963f3221dc''},
+        ''result_code'': 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '324'
+      Content-Type:
+      - text/plain; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:37:44 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie,Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={''site_config'': {''replication'': '''', ''alias'': ''alias_U'',
+      ''disabled'': False, ''timeout'': 10, ''persist'': False, ''user_login'': True,
+      ''disable_wato'': True, ''insecure'': False, ''multisiteurl'': '''', ''replicate_ec'':
+      False}, ''site_id'': ''checkmd2''}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '243'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=set_site&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&request_format=python&_username=cmkadmin1
+  response:
+    body:
+      string: '{"result": null, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:37:45 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"site_id": "checkmd2"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '31'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_site&output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+  response:
+    body:
+      string: '{''result'': {''site_id'': u''checkmd2'', ''site_config'': {''disabled'':
+        False, ''alias'': ''alias_U'', ''multisiteurl'': '''', ''timeout'': 10, ''replication'':
+        '''', ''replicate_ec'': False, ''user_login'': True, ''insecure'': False,
+        ''persist'': False, ''disable_wato'': True}, ''configuration_hash'': ''e92dac46485c14aaded8768b70998ad5''},
+        ''result_code'': 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '324'
+      Content-Type:
+      - text/plain; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:37:45 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie,Accept-Encoding
+    status:
+      code: 200
+      message: OK
+version: 1

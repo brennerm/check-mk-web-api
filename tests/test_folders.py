@@ -4,12 +4,13 @@ import string
 
 import pytest
 
-from check_mk_web_api.web_api_base import WebApiBase
-from check_mk_web_api.web_api_hosts import WebApiHosts
-from check_mk_web_api.web_api_folders import WebApiFolders
+from check_mk_web_api.web_api import WebApi
+# from check_mk_web_api.web_api_base import WebApiBase
+# from check_mk_web_api.web_api_hosts import WebApiHosts
+# from check_mk_web_api.web_api_folders import WebApiFolders
 from check_mk_web_api.exception import CheckMkWebApiException
 
-api = WebApiFolders(
+api = WebApi(
     os.environ['CHECK_MK_URL'],
     os.environ['CHECK_MK_USER'],
     os.environ['CHECK_MK_SECRET']
@@ -31,15 +32,15 @@ class TestFolders():
         with pytest.raises(CheckMkWebApiException):
             assert api.get_folder('productive')
 
-    # def test_get_hosts_by_folder():
-    #     api.add_folder('test')
-    #     api.add_host('host00', 'test')
-    #     api.add_host('host01', 'test')
-    #
-    #     hosts = api.get_hosts_by_folder('test')
-    #     assert len(hosts) == 2
-    #     assert 'host00' in hosts
-    #     assert 'host01' in hosts
+    def test_get_hosts_by_folder(self):
+        api.add_folder('test')
+        api.add_host('host00', 'test')
+        api.add_host('host01', 'test')
+
+        hosts = api.get_hosts_by_folder('test')
+        assert len(hosts) == 2
+        assert 'host00' in hosts
+        assert 'host01' in hosts
     #
     #
 
