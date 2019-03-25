@@ -27,7 +27,7 @@ class TestFolders():
     def test_get_folder(self):
         api.add_folder('productive')
         assert api.get_folder('productive')
-    
+
     def test_get_nonexistent_folder(self):
         with pytest.raises(CheckMkWebApiException):
             assert api.get_folder('productive')
