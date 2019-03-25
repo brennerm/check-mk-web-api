@@ -3,6 +3,7 @@ import json
 import os.path
 import re
 from six.moves import urllib
+import logging
 
 from check_mk_web_api.activate_mode import ActivateMode
 from check_mk_web_api.exception import CheckMkWebApiResponseException, CheckMkWebApiException, \
@@ -83,15 +84,15 @@ class WebApiBase:
         path += query_string
         return path
 
-    def __build_view_request_path(self, query_params=None):
+    def __build_view_request_path(self, query_params):
         path = self.web_view_base + '?'
 
         query_params = self.__check_query_params(query_params)
+        query_params['output_format'] = query_params.get('output_format', 'json')
 
         query_params.update({
             '_username': self.username,
             '_secret': self.secret,
-            'output_format': 'json'
         })
 
         query_string = urllib.parse.urlencode(query_params)
@@ -99,13 +100,11 @@ class WebApiBase:
         path += query_string
         return path
 
-    @staticmethod
-    def __check_query_params(query_params):
+    def __check_query_params(self, query_params):
         if not query_params:
             return {}
 
         return dict(query_params)
-
 
     def __parse_response_body(self, body, query_params):
         if 'output_format' in query_params:
@@ -119,7 +118,6 @@ class WebApiBase:
                     return body
 
         return body
-
 
     def __decode_response(self, response, query_params={'output_format': 'json'}):
         if response.code != 200:
@@ -160,12 +158,49 @@ class WebApiBase:
         request_format = query_params.get('request_format', 'json')
         query_params['output_format'] = query_params.get('output_format', 'json')
 
-        response = urllib.request.urlopen(
+        built_request = [
             self.__build_request_path(query_params),
             WebApiBase.__build_request_data(data, request_format)
+        ]
+
+        logging.debug('Request built url and arguments', built_request)
+
+        response = urllib.request.urlopen(
+            *built_request
         )
-        # TODO: investigate query parameters req for code response
+
         return self.__decode_response(response, query_params)
+
+    def make_view_request(self, query, data=None):
+        """
+        Make calls to services that require view.py url's
+
+        # Arguments
+        query: block of query params to append to url
+        data: data to post to form in a dict format
+
+        # Raises
+        CheckMkWebApiResponseException: Raised when the HTTP status code != 200
+        CheckMkWebApiException: Raised when the action's result_code != 0
+        """
+        query_params = self.__check_query_params(query)
+
+        query_params['output_format'] = query_params.get('output_format', 'json')
+        request_format = query_params.get('request_format', 'json')
+
+        built_request = [
+            self.__build_view_request_path(query_params),  # call to correct endpoint
+            WebApiBase.__build_request_data(data, request_format)
+        ]
+
+        print('Request built url and arguments')
+        print(built_request)
+
+        response = urllib.request.urlopen(
+            *built_request
+        )
+
+        return self.__decode_response(response)
 
     def make_view_name_request(self, view_name, query=None, data=None):
         """
@@ -179,11 +214,18 @@ class WebApiBase:
         CheckMkWebApiException: Raised when the action's result_code != 0
         """
 
-        response = urllib.request.urlopen(
+        built_request = [
             self.__build_view_request_path({'view_name': view_name}),  # call to correct endpoint
             None
+        ]
+
+        logging.debug('Request built url and arguments', built_request)
+
+        response = urllib.request.urlopen(
+            *built_request
         )
-    #TODO: investigate query parameters req for code response
+
+        # TODO: investigate query parameters req for code response
         return self.__decode_response(response)
 
     def make_request(self, action, query_params=None, data=None):
