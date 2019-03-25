@@ -1,6 +1,3 @@
-import os
-import pytest
-
 from check_mk_web_api.web_api import WebApi
 
 

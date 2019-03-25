@@ -1,11 +1,9 @@
 import os
-import random
-import string
 
 import pytest
-from check_mk_web_api.web_api_users import WebApiUsers
-from check_mk_web_api.web_api import WebApi
+
 from check_mk_web_api.exception import CheckMkWebApiException
+from check_mk_web_api.web_api import WebApi
 
 api = WebApi(
     os.environ['CHECK_MK_URL'],
