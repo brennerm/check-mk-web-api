@@ -22,10 +22,10 @@ class TestUsers():
             if user_id != 'cmkadmin' and user_id != os.environ['CHECK_MK_USER']:
                 api.delete_user(user_id)
 
-    # @pytest.skip('Skip test')
-    # def test_get_user(self):
-    #     api.add_user('user00', 'User 00', 'p4ssw0rd')
-    #     assert api.get_user('user00')['alias'] == 'User 00'
+    @pytest.mark.skip('Skip test')
+    def test_get_user(self):
+        api.add_user('user00', 'User 00', 'p4ssw0rd')
+        assert api.get_user('user00')['alias'] == 'User 00'
 
     def test_get_all_users(self):
         api.add_user('user00', 'User 00', 'p4ssw0rd')
