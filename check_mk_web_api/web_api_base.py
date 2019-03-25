@@ -1,9 +1,10 @@
 import ast
 import json
+import logging
 import os.path
 import re
+
 from six.moves import urllib
-import logging
 
 from check_mk_web_api.activate_mode import ActivateMode
 from check_mk_web_api.exception import CheckMkWebApiResponseException, CheckMkWebApiException, \
@@ -12,6 +13,7 @@ from check_mk_web_api.no_none_value_dict import NoNoneValueDict
 
 
 class WebApiBase:
+
     """
     Abstraction for Check_Mk Web API
 
@@ -82,6 +84,7 @@ class WebApiBase:
         query_string = urllib.parse.urlencode(query_params)
 
         path += query_string
+
         return path
 
     def __build_view_request_path(self, query_params):
@@ -98,6 +101,7 @@ class WebApiBase:
         query_string = urllib.parse.urlencode(query_params)
 
         path += query_string
+
         return path
 
     def __check_query_params(self, query_params):
@@ -132,10 +136,12 @@ class WebApiBase:
 
         # Views return json lists and not dicts of information.
         # Validate the result is a list, return result
+
         if isinstance(body_dict, list):
             return body_dict
 
         result = body_dict['result']
+
         if body_dict['result_code'] == 0:
             return result
 
@@ -226,6 +232,7 @@ class WebApiBase:
         )
 
         # TODO: investigate query parameters req for code response
+
         return self.__decode_response(response)
 
     def make_request(self, action, query_params=None, data=None):

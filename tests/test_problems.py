@@ -1,11 +1,9 @@
 import os
-import random
-import string
 
 import pytest
 
 from check_mk_web_api.web_api import WebApi
-from check_mk_web_api.web_api_problems import WebApiProblems
+
 # from check_mk_web_api.exception import CheckMkWebApiException
 
 api = WebApi(
