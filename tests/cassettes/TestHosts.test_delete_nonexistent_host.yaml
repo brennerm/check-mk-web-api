@@ -5,11 +5,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&action=get_all_hosts&_username=cmkadmin1&effective_attributes=0
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&effective_attributes=0
   response:
     body:
       string: '{"result": {}, "result_code": 0}'
@@ -37,11 +37,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_folders
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_folders
   response:
     body:
       string: '{"result": {"": {}}, "result_code": 0}'
@@ -73,11 +73,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_host
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_host
   response:
     body:
       string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
@@ -105,11 +105,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&effective_attributes=0&_username=cmkadmin1&action=get_all_hosts
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_hosts
   response:
     body:
       string: '{"result": {}, "result_code": 0}'
@@ -137,11 +137,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_folders
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_folders
   response:
     body:
       string: '{"result": {"": {}}, "result_code": 0}'
@@ -173,11 +173,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_host
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_host
   response:
     body:
       string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
@@ -205,11 +205,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_hosts&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&effective_attributes=0&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_hosts&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": {}, "result_code": 0}'
@@ -237,11 +237,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": {"": {}}, "result_code": 0}'
@@ -273,11 +273,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": "Check_MK exception: No such host", "result_code": 1}'
@@ -305,11 +305,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_hosts&output_format=json&effective_attributes=0&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_hosts&output_format=json&effective_attributes=0&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": {}, "result_code": 0}'
@@ -339,11 +339,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": {"": {}}, "result_code": 0}'
@@ -377,11 +377,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": "Check_MK exception: No such host", "result_code": 1}'

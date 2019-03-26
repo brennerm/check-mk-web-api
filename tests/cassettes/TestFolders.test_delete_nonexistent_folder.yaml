@@ -5,11 +5,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_folders
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_folders
   response:
     body:
       string: '{"result": {"": {}}, "result_code": 0}'
@@ -41,11 +41,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_folder
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_folder
   response:
     body:
       string: '{"result": "Check_MK exception: Folder productive does not exist",
@@ -74,11 +74,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_folders
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_folders
   response:
     body:
       string: '{"result": {"": {}}, "result_code": 0}'
@@ -110,11 +110,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_folder
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_folder
   response:
     body:
       string: '{"result": "Check_MK exception: Folder productive does not exist",
@@ -143,11 +143,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": {"": {}}, "result_code": 0}'
@@ -179,11 +179,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_folder&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_folder&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": "Check_MK exception: Folder productive does not exist",
@@ -212,11 +212,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&action=get_all_folders&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&action=get_all_folders&_username=automation&_secret=%40HEBECXCDWXXISGBAAWQ
   response:
     body:
       string: '{"result": {"": {}}, "result_code": 0}'
@@ -248,11 +248,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&action=delete_folder&_username=cmkadmin1&_secret=%40HEBECXCDWXXISGBAAWQ
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&action=delete_folder&_username=automation&_secret=%40HEBECXCDWXXISGBAAWQ
   response:
     body:
       string: '{"result": "Check_MK exception: Folder productive does not exist",
@@ -281,11 +281,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&output_format=json&action=get_all_folders
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&_secret=not_a_secret&action=get_all_folders
   response:
     body:
       string: '{"result": {"": {}}, "result_code": 0}'
@@ -319,11 +319,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&output_format=json&action=delete_folder
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&_secret=not_a_secret&action=delete_folder
   response:
     body:
       string: '{"result": "Check_MK exception: Folder productive does not exist",

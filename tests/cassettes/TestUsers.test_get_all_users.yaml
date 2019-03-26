@@ -5,11 +5,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
   response:
     body:
       string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
@@ -20,8 +20,8 @@ interactions:
         "ui_theme": null, "contactgroups": [], "disable_notifications": {}, "start_url":
         null, "enforce_pw_change": false, "num_failed_logins": 0, "serial": 1, "password":
         "$1$887020$DhNwyYb1Omnn9l7Heak/f1", "pager": "", "email": "cmorrow@taos.com",
-        "last_pw_change": 1553201998, "fallback_contact": false}, "cmkadmin1": {"force_authuser_webservice":
-        false, "locked": false, "roles": ["admin", "user"], "alias": "cmkadmin1",
+        "last_pw_change": 1553201998, "fallback_contact": false}, "automation": {"force_authuser_webservice":
+        false, "locked": false, "roles": ["admin", "user"], "alias": "automation",
         "force_authuser": false, "ui_theme": null, "contactgroups": [], "disable_notifications":
         {}, "automation_secret": "@HEBECXCDWXXISGBAAWQ", "start_url": null, "enforce_pw_change":
         false, "num_failed_logins": 0, "serial": 1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/",
@@ -60,11 +60,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -96,11 +96,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=delete_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -132,11 +132,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=add_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -168,11 +168,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=add_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -200,18 +200,18 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
   response:
     body:
       string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
         1552943043, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "cmkadmin1":
+        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "automation":
         {"force_authuser_webservice": false, "locked": false, "roles": ["admin", "user"],
-        "alias": "cmkadmin1", "force_authuser": false, "ui_theme": null, "contactgroups":
+        "alias": "automation", "force_authuser": false, "ui_theme": null, "contactgroups":
         [], "disable_notifications": {}, "automation_secret": "@HEBECXCDWXXISGBAAWQ",
         "start_url": null, "enforce_pw_change": false, "num_failed_logins": 0, "serial":
         1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/", "pager": "", "email": "",
@@ -247,18 +247,18 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
   response:
     body:
       string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
         1552943043, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "cmkadmin1":
+        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "automation":
         {"force_authuser_webservice": false, "locked": false, "roles": ["admin", "user"],
-        "alias": "cmkadmin1", "force_authuser": false, "ui_theme": null, "contactgroups":
+        "alias": "automation", "force_authuser": false, "ui_theme": null, "contactgroups":
         [], "disable_notifications": {}, "automation_secret": "@HEBECXCDWXXISGBAAWQ",
         "start_url": null, "enforce_pw_change": false, "num_failed_logins": 0, "serial":
         1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/", "pager": "", "email": "",
@@ -292,11 +292,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=add_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -328,11 +328,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=add_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -360,18 +360,18 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_all_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
   response:
     body:
       string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
         1552943043, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "cmkadmin1":
+        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "automation":
         {"force_authuser_webservice": false, "locked": false, "roles": ["admin", "user"],
-        "alias": "cmkadmin1", "force_authuser": false, "ui_theme": null, "contactgroups":
+        "alias": "automation", "force_authuser": false, "ui_theme": null, "contactgroups":
         [], "disable_notifications": {}, "automation_secret": "@HEBECXCDWXXISGBAAWQ",
         "start_url": null, "enforce_pw_change": false, "num_failed_logins": 0, "serial":
         1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/", "pager": "", "email": "",
@@ -407,16 +407,16 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_users&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
-      string: '{"result": {"cmkadmin1": {"force_authuser_webservice": false, "locked":
+      string: '{"result": {"automation": {"force_authuser_webservice": false, "locked":
         false, "roles": ["admin", "user"], "contactgroups": [], "force_authuser":
-        false, "ui_theme": null, "alias": "cmkadmin1", "disable_notifications": {},
+        false, "ui_theme": null, "alias": "automation", "disable_notifications": {},
         "automation_secret": "@HEBECXCDWXXISGBAAWQ", "start_url": null, "enforce_pw_change":
         false, "num_failed_logins": 0, "serial": 1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/",
         "pager": "", "email": "", "last_pw_change": 1553201998, "fallback_contact":
@@ -454,11 +454,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=delete_users&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_users&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -490,11 +490,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=add_users&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -526,11 +526,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=add_users&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -558,18 +558,18 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_users&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
         1552943043, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "cmkadmin1":
+        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "automation":
         {"force_authuser_webservice": false, "locked": false, "roles": ["admin", "user"],
-        "alias": "cmkadmin1", "force_authuser": false, "ui_theme": null, "contactgroups":
+        "alias": "automation", "force_authuser": false, "ui_theme": null, "contactgroups":
         [], "disable_notifications": {}, "automation_secret": "@HEBECXCDWXXISGBAAWQ",
         "start_url": null, "enforce_pw_change": false, "num_failed_logins": 0, "serial":
         1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/", "pager": "", "email": "",
@@ -605,11 +605,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&action=get_all_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
   response:
     body:
       string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
@@ -651,11 +651,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&action=add_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -689,11 +689,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&action=add_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -723,11 +723,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&action=get_all_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
   response:
     body:
       string: '{"result": {"user00": {"connector": "htpasswd", "alias": "User 00",
@@ -771,11 +771,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_users&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&output_format=json
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&_secret=not_a_secret&output_format=json
   response:
     body:
       string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
@@ -817,11 +817,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=add_users&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&output_format=json
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&_secret=not_a_secret&output_format=json
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -855,11 +855,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=add_users&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&output_format=json
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&_secret=not_a_secret&output_format=json
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -889,11 +889,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_all_users&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&output_format=json
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&_secret=not_a_secret&output_format=json
   response:
     body:
       string: '{"result": {"user00": {"connector": "htpasswd", "alias": "User 00",
