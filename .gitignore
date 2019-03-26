@@ -76,7 +76,9 @@ target/
 
 # pyenv
 .python-version
-
+#ignoring floobits file
+.floo
+.flooignore
 # celery beat schedule file
 celerybeat-schedule
 

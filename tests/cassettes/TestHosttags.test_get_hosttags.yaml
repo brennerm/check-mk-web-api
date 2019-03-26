@@ -1,0 +1,240 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_hosttags
+  response:
+    body:
+      string: '{"result": {"aux_tags": [], "builtin": {"aux_tags": [{"topic": "Address",
+        "id": "ip-v4", "title": "IPv4"}, {"topic": "Address", "id": "ip-v6", "title":
+        "IPv6"}, {"topic": "Data sources", "id": "snmp", "title": "Monitor via SNMP"},
+        {"topic": "Data sources", "id": "tcp", "title": "Monitor via Check_MK Agent"},
+        {"topic": "Data sources", "id": "ping", "title": "Only ping this device"}],
+        "tag_groups": [{"topic": "Data sources", "tags": [{"aux_tags": ["tcp"], "id":
+        "cmk-agent", "title": "Contact either Check_MK Agent or use datasource program"},
+        {"aux_tags": ["tcp"], "id": "all-agents", "title": "Contact Check_MK agent
+        and all enabled datasource programs"}, {"aux_tags": ["tcp"], "id": "special-agents",
+        "title": "Use all enabled datasource programs"}, {"aux_tags": [], "id": "no-agent",
+        "title": "No agent"}], "id": "agent", "title": "Check_MK Agent"}, {"topic":
+        "Data sources", "tags": [{"aux_tags": [], "id": "no-snmp", "title": "No SNMP"},
+        {"aux_tags": ["snmp"], "id": "snmp-v2", "title": "SNMP v2 or v3"}, {"aux_tags":
+        ["snmp"], "id": "snmp-v1", "title": "SNMP v1"}], "id": "snmp", "title": "SNMP"},
+        {"topic": "Address", "tags": [{"aux_tags": ["ip-v4"], "id": "ip-v4-only",
+        "title": "IPv4 only"}, {"aux_tags": ["ip-v6"], "id": "ip-v6-only", "title":
+        "IPv6 only"}, {"aux_tags": ["ip-v4", "ip-v6"], "id": "ip-v4v6", "title": "IPv4/IPv6
+        dual-stack"}, {"aux_tags": [], "id": "no-ip", "title": "No IP"}], "id": "address_family",
+        "title": "IP Address Family "}]}, "tag_groups": [{"tags": [{"aux_tags": [],
+        "id": "prod", "title": "Productive system"}, {"aux_tags": [], "id": "critical",
+        "title": "Business critical"}, {"aux_tags": [], "id": "test", "title": "Test
+        system"}, {"aux_tags": [], "id": "offline", "title": "Do not monitor this
+        host"}], "id": "criticality", "title": "Criticality"}, {"tags": [{"aux_tags":
+        [], "id": "lan", "title": "Local network (low latency)"}, {"aux_tags": [],
+        "id": "wan", "title": "WAN (high latency)"}, {"aux_tags": [], "id": "dmz",
+        "title": "DMZ (low latency, secure access)"}], "id": "networking", "title":
+        "Networking Segment"}], "configuration_hash": "1b06ca09b09062820b06973c7f8ce11e"},
+        "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '2142'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:32:09 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_hosttags
+  response:
+    body:
+      string: '{"result": {"aux_tags": [], "builtin": {"aux_tags": [{"topic": "Address",
+        "id": "ip-v4", "title": "IPv4"}, {"topic": "Address", "id": "ip-v6", "title":
+        "IPv6"}, {"topic": "Data sources", "id": "snmp", "title": "Monitor via SNMP"},
+        {"topic": "Data sources", "id": "tcp", "title": "Monitor via Check_MK Agent"},
+        {"topic": "Data sources", "id": "ping", "title": "Only ping this device"}],
+        "tag_groups": [{"topic": "Data sources", "tags": [{"aux_tags": ["tcp"], "id":
+        "cmk-agent", "title": "Contact either Check_MK Agent or use datasource program"},
+        {"aux_tags": ["tcp"], "id": "all-agents", "title": "Contact Check_MK agent
+        and all enabled datasource programs"}, {"aux_tags": ["tcp"], "id": "special-agents",
+        "title": "Use all enabled datasource programs"}, {"aux_tags": [], "id": "no-agent",
+        "title": "No agent"}], "id": "agent", "title": "Check_MK Agent"}, {"topic":
+        "Data sources", "tags": [{"aux_tags": [], "id": "no-snmp", "title": "No SNMP"},
+        {"aux_tags": ["snmp"], "id": "snmp-v2", "title": "SNMP v2 or v3"}, {"aux_tags":
+        ["snmp"], "id": "snmp-v1", "title": "SNMP v1"}], "id": "snmp", "title": "SNMP"},
+        {"topic": "Address", "tags": [{"aux_tags": ["ip-v4"], "id": "ip-v4-only",
+        "title": "IPv4 only"}, {"aux_tags": ["ip-v6"], "id": "ip-v6-only", "title":
+        "IPv6 only"}, {"aux_tags": ["ip-v4", "ip-v6"], "id": "ip-v4v6", "title": "IPv4/IPv6
+        dual-stack"}, {"aux_tags": [], "id": "no-ip", "title": "No IP"}], "id": "address_family",
+        "title": "IP Address Family "}]}, "tag_groups": [{"tags": [{"aux_tags": [],
+        "id": "prod", "title": "Productive system"}, {"aux_tags": [], "id": "critical",
+        "title": "Business critical"}, {"aux_tags": [], "id": "test", "title": "Test
+        system"}, {"aux_tags": [], "id": "offline", "title": "Do not monitor this
+        host"}], "id": "criticality", "title": "Criticality"}, {"tags": [{"aux_tags":
+        [], "id": "lan", "title": "Local network (low latency)"}, {"aux_tags": [],
+        "id": "wan", "title": "WAN (high latency)"}, {"aux_tags": [], "id": "dmz",
+        "title": "DMZ (low latency, secure access)"}], "id": "networking", "title":
+        "Networking Segment"}], "configuration_hash": "1b06ca09b09062820b06973c7f8ce11e"},
+        "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '2142'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:34:12 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_hosttags&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1
+  response:
+    body:
+      string: '{"result": {"aux_tags": [], "builtin": {"aux_tags": [{"topic": "Address",
+        "id": "ip-v4", "title": "IPv4"}, {"topic": "Address", "id": "ip-v6", "title":
+        "IPv6"}, {"topic": "Data sources", "id": "snmp", "title": "Monitor via SNMP"},
+        {"topic": "Data sources", "id": "tcp", "title": "Monitor via Check_MK Agent"},
+        {"topic": "Data sources", "id": "ping", "title": "Only ping this device"}],
+        "tag_groups": [{"topic": "Data sources", "tags": [{"aux_tags": ["tcp"], "id":
+        "cmk-agent", "title": "Contact either Check_MK Agent or use datasource program"},
+        {"aux_tags": ["tcp"], "id": "all-agents", "title": "Contact Check_MK agent
+        and all enabled datasource programs"}, {"aux_tags": ["tcp"], "id": "special-agents",
+        "title": "Use all enabled datasource programs"}, {"aux_tags": [], "id": "no-agent",
+        "title": "No agent"}], "id": "agent", "title": "Check_MK Agent"}, {"topic":
+        "Data sources", "tags": [{"aux_tags": [], "id": "no-snmp", "title": "No SNMP"},
+        {"aux_tags": ["snmp"], "id": "snmp-v2", "title": "SNMP v2 or v3"}, {"aux_tags":
+        ["snmp"], "id": "snmp-v1", "title": "SNMP v1"}], "id": "snmp", "title": "SNMP"},
+        {"topic": "Address", "tags": [{"aux_tags": ["ip-v4"], "id": "ip-v4-only",
+        "title": "IPv4 only"}, {"aux_tags": ["ip-v6"], "id": "ip-v6-only", "title":
+        "IPv6 only"}, {"aux_tags": ["ip-v4", "ip-v6"], "id": "ip-v4v6", "title": "IPv4/IPv6
+        dual-stack"}, {"aux_tags": [], "id": "no-ip", "title": "No IP"}], "id": "address_family",
+        "title": "IP Address Family "}]}, "tag_groups": [{"tags": [{"aux_tags": [],
+        "id": "prod", "title": "Productive system"}, {"aux_tags": [], "id": "critical",
+        "title": "Business critical"}, {"aux_tags": [], "id": "test", "title": "Test
+        system"}, {"aux_tags": [], "id": "offline", "title": "Do not monitor this
+        host"}], "id": "criticality", "title": "Criticality"}, {"tags": [{"aux_tags":
+        [], "id": "lan", "title": "Local network (low latency)"}, {"aux_tags": [],
+        "id": "wan", "title": "WAN (high latency)"}, {"aux_tags": [], "id": "dmz",
+        "title": "DMZ (low latency, secure access)"}], "id": "networking", "title":
+        "Networking Segment"}], "configuration_hash": "1b06ca09b09062820b06973c7f8ce11e"},
+        "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '2142'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 22 Mar 2019 15:37:31 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?_username=automation&output_format=json&action=get_hosttags&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+  response:
+    body:
+      string: '{"result": {"aux_tags": [], "builtin": {"aux_tags": [{"topic": "Address",
+        "id": "ip-v4", "title": "IPv4"}, {"topic": "Address", "id": "ip-v6", "title":
+        "IPv6"}, {"topic": "Data sources", "id": "snmp", "title": "Monitor via SNMP"},
+        {"topic": "Data sources", "id": "tcp", "title": "Monitor via Check_MK Agent"},
+        {"topic": "Data sources", "id": "ping", "title": "Only ping this device"}],
+        "tag_groups": [{"topic": "Data sources", "tags": [{"aux_tags": ["tcp"], "id":
+        "cmk-agent", "title": "Contact either Check_MK Agent or use datasource program"},
+        {"aux_tags": ["tcp"], "id": "all-agents", "title": "Contact Check_MK agent
+        and all enabled datasource programs"}, {"aux_tags": ["tcp"], "id": "special-agents",
+        "title": "Use all enabled datasource programs"}, {"aux_tags": [], "id": "no-agent",
+        "title": "No agent"}], "id": "agent", "title": "Check_MK Agent"}, {"topic":
+        "Data sources", "tags": [{"aux_tags": [], "id": "no-snmp", "title": "No SNMP"},
+        {"aux_tags": ["snmp"], "id": "snmp-v2", "title": "SNMP v2 or v3"}, {"aux_tags":
+        ["snmp"], "id": "snmp-v1", "title": "SNMP v1"}], "id": "snmp", "title": "SNMP"},
+        {"topic": "Address", "tags": [{"aux_tags": ["ip-v4"], "id": "ip-v4-only",
+        "title": "IPv4 only"}, {"aux_tags": ["ip-v6"], "id": "ip-v6-only", "title":
+        "IPv6 only"}, {"aux_tags": ["ip-v4", "ip-v6"], "id": "ip-v4v6", "title": "IPv4/IPv6
+        dual-stack"}, {"aux_tags": [], "id": "no-ip", "title": "No IP"}], "id": "address_family",
+        "title": "IP Address Family "}]}, "tag_groups": [{"tags": [{"aux_tags": [],
+        "id": "prod", "title": "Productive system"}, {"aux_tags": [], "id": "critical",
+        "title": "Business critical"}, {"aux_tags": [], "id": "test", "title": "Test
+        system"}, {"aux_tags": [], "id": "offline", "title": "Do not monitor this
+        host"}], "id": "criticality", "title": "Criticality"}, {"tags": [{"aux_tags":
+        [], "id": "lan", "title": "Local network (low latency)"}, {"aux_tags": [],
+        "id": "wan", "title": "WAN (high latency)"}, {"aux_tags": [], "id": "dmz",
+        "title": "DMZ (low latency, secure access)"}], "id": "networking", "title":
+        "Networking Segment"}], "configuration_hash": "1b06ca09b09062820b06973c7f8ce11e"},
+        "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '2142'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 25 Mar 2019 17:32:39 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Set-Cookie:
+      - language=en; path=/; httponly
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -91,3 +91,15 @@ Note there is no leading '/' on the folder name.
 ```
 >>> api.activate_changes()
 ```
+
+
+# Testing
+## Testing uses pytest
+
+### Running tests
+To execute all tests in a CI environment, this project uses `pytest-vcr`
+
+In order to run tests execute 
+```bash
+pytest --vcr-record=none
+``` 
