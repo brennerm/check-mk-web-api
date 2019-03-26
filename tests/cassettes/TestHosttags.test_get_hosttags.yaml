@@ -9,7 +9,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation&action=get_hosttags
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_hosttags
   response:
     body:
       string: '{"result": {"aux_tags": [], "builtin": {"aux_tags": [{"topic": "Address",
@@ -68,7 +68,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation&action=get_hosttags
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_hosttags
   response:
     body:
       string: '{"result": {"aux_tags": [], "builtin": {"aux_tags": [{"topic": "Address",
@@ -127,7 +127,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_hosttags&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_hosttags&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": {"aux_tags": [], "builtin": {"aux_tags": [{"topic": "Address",

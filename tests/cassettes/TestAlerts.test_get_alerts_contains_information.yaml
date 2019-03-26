@@ -9,7 +9,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?_secret=2396a766-8de5-4951-b2b6-8b81fc946294&output_format=json&_username=automation&view_name=alertstats
+    uri: http://localhost/checkmd2/check_mk/view.py?_secret=not_a_secret&view_name=alertstats
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"alert_stats_crit\"\

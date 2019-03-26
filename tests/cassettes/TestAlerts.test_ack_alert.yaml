@@ -9,7 +9,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&action=%7B%27host%27%3A+%27hostname%27%2C+%27alert_comment%27%3A+%27acknowledge%27%2C+%27service%27%3A+%27serviceName%27%7D&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&action=%7B%27host%27%3A+%27hostname%27%2C+%27alert_comment%27%3A+%27acknowledge%27%2C+%27service%27%3A+%27serviceName%27%7D&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": "Check_MK exception: Unknown API action {''host'': ''hostname'',

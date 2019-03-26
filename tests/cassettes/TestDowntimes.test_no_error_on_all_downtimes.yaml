@@ -46,7 +46,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?_secret=2396a766-8de5-4951-b2b6-8b81fc946294&output_format=json&_username=automation&view_name=downtimes
+    uri: http://localhost/checkmd2/check_mk/view.py?_secret=not_a_secret&view_name=downtimes
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"downtime_origin\"\
@@ -83,7 +83,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&view_name=downtimes&_username=automation
+    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"downtime_origin\"\
@@ -120,7 +120,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&output_format=json&view_name=downtimes
+    uri: http://localhost/checkmd2/check_mk/view.py?_username=automation&_secret=not_a_secret&view_name=downtimes
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"downtime_origin\"\
@@ -206,7 +206,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&view_name=downtimes&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation
+    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&view_name=downtimes&_secret=not_a_secret&_username=automation
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"downtime_origin\"\
@@ -249,7 +249,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&view_name=downtimes&_username=automation
+    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"downtime_origin\"\
@@ -292,7 +292,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?_secret=2396a766-8de5-4951-b2b6-8b81fc946294&view_name=downtimes&output_format=json&_username=automation
+    uri: http://localhost/checkmd2/check_mk/view.py?_secret=not_a_secret&_username=automation
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"downtime_origin\"\

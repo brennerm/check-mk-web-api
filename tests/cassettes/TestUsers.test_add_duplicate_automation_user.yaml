@@ -9,7 +9,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation&action=get_all_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
   response:
     body:
       string: '{"result": {"automation": {"force_authuser_webservice": false, "locked":
@@ -57,7 +57,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation&action=delete_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -94,7 +94,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation&action=add_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -131,7 +131,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation&action=add_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
   response:
     body:
       string: '{"result": "Check_MK exception: This username is already being used
@@ -164,7 +164,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": {"automation": {"force_authuser_webservice": false, "locked":
@@ -212,7 +212,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_users&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_users&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -249,7 +249,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -286,7 +286,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&output_format=json&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&output_format=json&_secret=not_a_secret&_username=automation
   response:
     body:
       string: '{"result": "Check_MK exception: This username is already being used
@@ -319,7 +319,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&action=get_all_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
   response:
     body:
       string: '{"result": {"automation": {"locked": false, "roles": ["admin"], "language":
@@ -368,7 +368,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&action=delete_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -407,7 +407,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&action=add_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -446,7 +446,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&action=add_users
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
   response:
     body:
       string: '{"result": "Check_MK exception: This username is already being used
@@ -481,7 +481,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&output_format=json
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&_secret=not_a_secret&output_format=json
   response:
     body:
       string: '{"result": {"automation": {"locked": false, "roles": ["admin"], "language":
@@ -530,7 +530,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_users&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&output_format=json
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_users&_secret=not_a_secret&output_format=json
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -569,7 +569,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&output_format=json
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&_secret=not_a_secret&output_format=json
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -608,7 +608,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&output_format=json
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&_secret=not_a_secret&output_format=json
   response:
     body:
       string: '{"result": "Check_MK exception: This username is already being used
