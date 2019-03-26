@@ -1,9 +1,17 @@
-# this is the vairalbe after we split the .py off of the file
-file_name = 'activate_mode'
+def file_name_to_title_name(file_name):
+    """
+    #Arguments
+    check_mk_url (str): URL to Check_Mk web application, check file names and print for each file in the directory in the correct format
 
-# Replace _ with 'space'
-file_without_underbars = 'activate mode'
+    #Examples
+    file_name_to_title_name('activate_mode')
+    output = 'Activate Mode: activate_mode.md'
+    """
 
-# run the titleize or whatever the method is called on it
-file_with_title = 'Activate Mode'
+    file_name_list = file_name.split('.py')
+    file_name = file_name_list[0]
+    title = file_name.replace('_', ' ').title()
+    filename2 = ': ' + file_name + '.md'
+
+    return title + filename2
 
