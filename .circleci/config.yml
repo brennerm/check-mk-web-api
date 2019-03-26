@@ -11,16 +11,16 @@ jobs:
       - image: circleci/python:3.6.1
 
     working_directory: ~/repo
+    environment:
+      PIPENV_IN_PROJECT: 1
+      PIPENV_IGNORE_VIRTUALENVS: 1
 
     steps:
       - checkout
 
       - run:
-        name: Use Pipenv In current directory
-        command: |
-          echo 'export PIPENV_IN_PROJECT=1' >> $BASH_ENV
-          echo 'export PIPENV_IGNORE_VIRTUALENVS=1' >> $BASH_ENV
-          pip install pipenv
+          name: Use Pipenv In current directory
+          command: pip install pipenv
 
       # Download and cache dependencies
       - restore_cache:
