@@ -26,11 +26,12 @@ class WebApiDowntimes(WebApiBase):
             '_transid': -1,
             '_do_actions': 'yes',
             'host': hostname,
-            'site': None,
-            'view_name': 'service',
-            '_down_2h': '2+hours',
-            '_down_comment': 'TEST',
-            '_down_minutes': down_time,
+            # 'site': None,
+            'view_name': 'hoststatus',
+            # '_down_2h': '2+hours',
+            '_down_comment': 'THISISWORKING',
+            '_down_minutes': 120,
+            'output_format': 'json'
         }
 
         return self.make_view_request(url_params)

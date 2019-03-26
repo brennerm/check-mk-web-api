@@ -5,26 +5,72 @@ repo_url: https://github.com/brennerm/check-mk-web-api
 # functions and classes. At the first level is the page name, below that
 # is a tree of Python member names (modules, classes, etc.) that should be
 # documented. Higher indentation leads to smaller header size.
+
+
 generate:
-- check_mk_web_api.md:
-    - check_mk_web_api.WebApi+
-- no_none_value_dict.md:
-    - check_mk_web_api.no_none_value_dict.NoNoneValueDict+
-- exceptions.md:
-    - check_mk_web_api.exception+
+  - activate_mode.md: check_mk_web_api.activate_mode++
+  - discover_mode.md: check_mk_web_api.discover_mode++
+  - exception.md: check_mk_web_api.exception++
+  - no_none_value_dict.md: check_mk_web_api.no_none_value_dict++
+  - web_api.md: check_mk_web_api.web_api++
+  - web_api_agents.md: check_mk_web_api.web_api_agents++
+  - web_api_alerts.md: check_mk_web_api.web_api_alerts++
+  - web_api_base.md: check_mk_web_api.web_api_base++
+  - web_api_contactgroups.md: check_mk_web_api.web_api_contactgroups++
+  - web_api_downtimes.md: check_mk_web_api.web_api_downtimes++
+  - web_api_folders.md: check_mk_web_api.web_api_folders++
+  - web_api_hostgroup.md: check_mk_web_api.web_api_hostgroup++
+  - web_api_hosts.md: check_mk_web_api.web_api_hosts++
+  - web_api_hosttags.md: check_mk_web_api.web_api_hosttags++
+  - web_api_problems.md: check_mk_web_api.web_api_problems++
+  - web_api_ruleset.md: check_mk_web_api.web_api_ruleset++
+  - web_api_servicegroup.md: check_mk_web_api.web_api_servicegroup++
+  - web_api_site.md: check_mk_web_api.web_api_site++
+  - web_api_users.md: check_mk_web_api.web_api_users++
+
+# - activate_mode.md:
+ #        - check_mk_web_api.activate_mode++
+ #        - base.md:
+ #            - check_mk_web_api.web_api_base++++
+ #        - discover_mode.md:
+ #            - check_mk_web_api.discover_mode++
+ #        - exceptions.md:
+ #            - check_mk_web_api.exception++
+ #        - no_none_value_dict.md:
+ #            - check_mk_web_api.no_none_value_dict.NoNoneValueDict++
+ #        - web_api.md:
+ #            - check_mk_web_api.web_api++++
 
 # MkDocs pages configuration. The `<<` operator is sugar added by pydocmd
-# that allows you to use an external Markdown file (eg. your project's README)
+# that allows you to use an external Markdown file (eg. your projects README)
 # in the documentation. The path must be relative to current working directory.
 pages:
-- Home: index.md << ../README.md
-- API Documentation:
-  - WebAPI: check_mk_web_api.md
-  - Exceptions: exceptions.md
-  - Utility: no_none_value_dict.md
+  - Home: index.md << ../README.md
+  - API Documentation:
+    - Web API: web_api.md
+  - Utility:
+      - Activate Mode: activate_mode.md
+      - Discover Mode: discover_mode.md
+      - Exception: exception.md
+      - No None Value Dict: no_none_value_dict.md
+      - Web Api: web_api.md
+      - Web Api Agents: web_api_agents.md
+      - Web Api Alerts: web_api_alerts.md
+      - Web Api Base: web_api_base.md
+      - Web Api Contactgroups: web_api_contactgroups.md
+      - Web Api Downtimes: web_api_downtimes.md
+      - Web Api Folders: web_api_folders.md
+      - Web Api Hostgroup: web_api_hostgroup.md
+      - Web Api Hosts: web_api_hosts.md
+      - Web Api Hosttags: web_api_hosttags.md
+      - Web Api Problems: web_api_problems.md
+      - Web Api Ruleset: web_api_ruleset.md
+      - Web Api Servicegroup: web_api_servicegroup.md
+      - Web Api Site: web_api_site.md
+      - Web Api Users: web_api_users.md
 
-# These options all show off their default values. You don't have to add
-# them to your configuration if you're fine with the default.
+# These options all show off their default values. You dont have to add
+# them to your configuration if youre fine with the default.
 
 # Additional search path for your Python module. If you use Pydocmd from a
 # subdirectory of your project (eg. docs/), you may want to add the parent

@@ -103,3 +103,8 @@ In order to run tests execute
 ```bash
 pytest --vcr-record=none
 ``` 
+### Contributors: 
+Robert Meyer: robert-r-meyer
+
+Carissa Morrow: cmorrowTaos
+
