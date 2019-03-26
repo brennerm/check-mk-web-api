@@ -103,3 +103,7 @@ tags
 
 # Local documentation generation
 doc/_build
+
+# FlooBits integrations
+.floo
+.floo*
