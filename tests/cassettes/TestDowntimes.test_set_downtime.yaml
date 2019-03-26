@@ -5,11 +5,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?_down_comment=TEST&view_name=service&host=localhost&_down_minutes=120&_username=automation&_down_2h=2%2Bhours&_transid=-1&site=None&_do_actions=yes&output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_do_confirm=yes
+    uri: http://localhost/checkmd2/check_mk/view.py?_down_comment=TEST&view_name=service&host=localhost&_down_minutes=120&_username=automation&_down_2h=2%2Bhours&_transid=-1&site=None&_do_actions=yes&output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_do_confirm=yes
   response:
     body:
       string: 'ERROR: This view can not be displayed, because the necessary context

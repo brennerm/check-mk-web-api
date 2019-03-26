@@ -9,11 +9,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&request_format=python&action=get_ruleset
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation&request_format=python&action=get_ruleset
   response:
     body:
       string: '{''result'': {''ruleset'': {}, ''configuration_hash'': ''99914b932bd37a50b983c5e7c90ae93b''},
@@ -46,11 +46,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&_username=cmkadmin1&action=get_ruleset&request_format=python
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&_username=automation&action=get_ruleset&request_format=python
   response:
     body:
       string: '{''result'': {''ruleset'': {}, ''configuration_hash'': ''99914b932bd37a50b983c5e7c90ae93b''},
@@ -83,11 +83,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?action=get_ruleset&output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&request_format=python&_username=cmkadmin1
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_ruleset&output_format=python&_secret=%40HEBECXCDWXXISGBAAWQ&request_format=python&_username=automation
   response:
     body:
       string: '{''result'': {''ruleset'': {}, ''configuration_hash'': ''99914b932bd37a50b983c5e7c90ae93b''},
@@ -120,11 +120,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?_secret=2396a766-8de5-4951-b2b6-8b81fc946294&output_format=python&_username=automation&action=get_ruleset&request_format=python
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_secret=2396a766-8de5-4951-b2b6-8b81fc946294&output_format=python&_username=automation&action=get_ruleset&request_format=python
   response:
     body:
       string: '{''result'': {''ruleset'': {}, ''configuration_hash'': ''99914b932bd37a50b983c5e7c90ae93b''},

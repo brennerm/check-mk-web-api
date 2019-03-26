@@ -9,11 +9,11 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://35.237.210.125/checkmd2/check_mk/webapi.py?_username=automation&action=get_site&output_format=python&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=get_site&output_format=python&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
   response:
     body:
       string: '{''result'': {''site_id'': u''checkmd2'', ''site_config'': {''disabled'':

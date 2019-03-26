@@ -5,11 +5,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?view_name=alertstats&_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/view.py?view_name=alertstats&_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
   response:
     body:
       string: '<!DOCTYPE HTML>
@@ -228,11 +228,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&view_name=alertstats
+    uri: http://localhost/checkmd2/check_mk/view.py?_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&view_name=alertstats
   response:
     body:
       string: '<!DOCTYPE HTML>
@@ -451,11 +451,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&output_format=json&view_name=alertstats
+    uri: http://localhost/checkmd2/check_mk/view.py?_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&output_format=json&view_name=alertstats
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"alert_stats_crit\"\
@@ -487,11 +487,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&view_name=alertstats&output_format=json
+    uri: http://localhost/checkmd2/check_mk/view.py?_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&view_name=alertstats&output_format=json
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"alert_stats_crit\"\
@@ -523,11 +523,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?view_name=alertstats&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&output_format=json
+    uri: http://localhost/checkmd2/check_mk/view.py?view_name=alertstats&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation&output_format=json
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"alert_stats_crit\"\
@@ -559,11 +559,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&view_name=alertstats&_username=automation
+    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&view_name=alertstats&_username=automation
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"alert_stats_crit\"\
@@ -595,11 +595,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?output_format=json&_username=automation&view_name=alertstats&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&_username=automation&view_name=alertstats&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"alert_stats_crit\"\
@@ -631,11 +631,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?output_format=json&view_name=alertstats&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation
+    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&view_name=alertstats&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_username=automation
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"alert_stats_crit\"\
@@ -668,11 +668,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?output_format=json&view_name=alertstats&_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&view_name=alertstats&_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"alert_stats_crit\"\
