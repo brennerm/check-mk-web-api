@@ -16,3 +16,6 @@ class TestNamesToTitle:
 
     def test_web_api_contactgroups_to_title_function(self):
         assert file_name_to_title_name('web_api_contactgroups') == 'Web Api Contactgroups: web_api_contactgroups.md'
+
+    def test_no_none_value_dict_to_title_function(self):
+        assert file_name_to_title_name('no_none_value_dict') == 'No None Value Dict: no_none_value_dict.md'
