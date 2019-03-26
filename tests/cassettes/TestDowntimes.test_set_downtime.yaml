@@ -42,11 +42,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?host=localhost&output_format=json&_do_confirm=yes&_down_comment=THISISWORKING&_do_actions=yes&view_name=hoststatus&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_down_minutes=120&_transid=-1&_username=automation
+    uri: http://localhost/checkmd2/check_mk/view.py?host=localhost&output_format=json&_do_confirm=yes&_down_comment=THISISWORKING&_do_actions=yes&view_name=hoststatus&_secret=not_a_secret&_down_minutes=120&_transid=-1&_username=automation
   response:
     body:
       string: "[\n [\n  \"sitealias\", \n  \"host\", \n  \"host_parents\", \n  \"\
@@ -101,11 +101,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?_do_confirm=yes&_down_minutes=120&output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&view_name=hoststatus&_down_comment=THISISWORKING&_username=automation&_do_actions=yes&_transid=-1&host=localhost
+    uri: http://localhost/checkmd2/check_mk/view.py?_do_confirm=yes&_down_minutes=120&output_format=json&_secret=not_a_secret&view_name=hoststatus&_down_comment=THISISWORKING&_username=automation&_do_actions=yes&_transid=-1&host=localhost
   response:
     body:
       string: "[\n [\n  \"sitealias\", \n  \"host\", \n  \"host_parents\", \n  \"\
@@ -160,11 +160,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?_down_comment=THISISWORKING&_transid=-1&_do_confirm=yes&view_name=hoststatus&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_down_minutes=120&output_format=json&_username=automation&host=localhost&_do_actions=yes
+    uri: http://localhost/checkmd2/check_mk/view.py?_down_comment=THISISWORKING&_transid=-1&_do_confirm=yes&view_name=hoststatus&_secret=not_a_secret&_down_minutes=120&output_format=json&_username=automation&host=localhost&_do_actions=yes
   response:
     body:
       string: "[\n [\n  \"sitealias\", \n  \"host\", \n  \"host_parents\", \n  \"\
@@ -219,11 +219,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_down_minutes=120&output_format=json&_transid=-1&_do_actions=yes&view_name=hoststatus&_do_confirm=yes&_username=automation&_down_comment=THISISWORKING&host=localhost
+    uri: http://localhost/checkmd2/check_mk/view.py?_secret=not_a_secret&_down_minutes=120&output_format=json&_transid=-1&_do_actions=yes&view_name=hoststatus&_do_confirm=yes&_username=automation&_down_comment=THISISWORKING&host=localhost
   response:
     body:
       string: "[\n [\n  \"sitealias\", \n  \"host\", \n  \"host_parents\", \n  \"\
@@ -278,11 +278,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?_username=automation&view_name=hoststatus&_down_comment=THISISWORKING&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&_do_actions=yes&_do_confirm=yes&_down_minutes=120&host=localhost&_transid=-1&output_format=json
+    uri: http://localhost/checkmd2/check_mk/view.py?_username=automation&view_name=hoststatus&_down_comment=THISISWORKING&_secret=not_a_secret&_do_actions=yes&_do_confirm=yes&_down_minutes=120&host=localhost&_transid=-1&output_format=json
   response:
     body:
       string: "[\n [\n  \"sitealias\", \n  \"host\", \n  \"host_parents\", \n  \"\
@@ -337,11 +337,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?_username=automation&_do_actions=yes&host=localhost&_down_comment=THISISWORKING&_do_confirm=yes&_transid=-1&output_format=json&_down_minutes=120&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&view_name=hoststatus
+    uri: http://localhost/checkmd2/check_mk/view.py?_username=automation&_do_actions=yes&host=localhost&_down_comment=THISISWORKING&_do_confirm=yes&_transid=-1&output_format=json&_down_minutes=120&_secret=not_a_secret&view_name=hoststatus
   response:
     body:
       string: "[\n [\n  \"sitealias\", \n  \"host\", \n  \"host_parents\", \n  \"\
@@ -396,11 +396,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?output_format=json&view_name=hoststatus&_down_minutes=120&_username=automation&host=localhost&_do_confirm=yes&_down_comment=THISISWORKING&_transid=-1&_do_actions=yes&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&view_name=hoststatus&_down_minutes=120&_username=automation&host=localhost&_do_confirm=yes&_down_comment=THISISWORKING&_transid=-1&_do_actions=yes&_secret=not_a_secret
   response:
     body:
       string: "[\n [\n  \"sitealias\", \n  \"host\", \n  \"host_parents\", \n  \"\

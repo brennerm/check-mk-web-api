@@ -13,7 +13,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=get_site&output_format=python&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=get_site&output_format=python&_secret=not_a_secret
   response:
     body:
       string: '{''result'': {''site_id'': u''checkmd2'', ''site_config'': {''disabled'':
@@ -58,7 +58,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=set_site&output_format=json&request_format=python&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=set_site&output_format=json&request_format=python&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -96,7 +96,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=get_site&output_format=python&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=get_site&output_format=python&_secret=not_a_secret
   response:
     body:
       string: '{''result'': {''site_id'': u''checkmd2'', ''site_config'': {''disabled'':

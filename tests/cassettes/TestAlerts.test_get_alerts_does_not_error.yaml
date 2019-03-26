@@ -9,7 +9,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?view_name=alertstats&_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/view.py?view_name=alertstats&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '<!DOCTYPE HTML>
@@ -73,7 +73,7 @@ interactions:
         id="optiondial_refresh" title="Change the refresh rate" class="optiondial
         refresh val_0" onclick="view_dial_option(this, ''alertstats'', ''refresh'',
         [[30, ''30s''], [60, ''60s''], [90, ''90s''], [0, ''off'']])"><div>off</div></div></div><div
-        style="display:none;" class="contextlink" id="edit"><a href="edit_view.py?back=view.py%3F_secret%3D2396a766-8de5-4951-b2b6-8b81fc946294%26_username%3Dautomation%26view_name%3Dalertstats&amp;load_name=alertstats&amp;load_user="
+        style="display:none;" class="contextlink" id="edit"><a href="edit_view.py?back=view.py%3F_secret%3Dnot_a_secret%26_username%3Dautomation%26view_name%3Dalertstats&amp;load_name=alertstats&amp;load_user="
         onclick="count_context_button(this);"><img src="themes/facelift/images/icon_edit.png"
         class="icon inline" title='''' /><span>Edit View</span></a></div><div class="contextlink
         short" id="toggle" title="Show all buttons"><a href="#" onclick="unhide_context_buttons(this);">...</a></div><div
@@ -296,7 +296,7 @@ interactions:
         id="optiondial_refresh" title="Change the refresh rate" class="optiondial
         refresh val_0" onclick="view_dial_option(this, ''alertstats'', ''refresh'',
         [[30, ''30s''], [60, ''60s''], [90, ''90s''], [0, ''off'']])"><div>off</div></div></div><div
-        style="display:none;" class="contextlink" id="edit"><a href="edit_view.py?back=view.py%3F_secret%3D2396a766-8de5-4951-b2b6-8b81fc946294%26_username%3Dautomation%26view_name%3Dalertstats&amp;load_name=alertstats&amp;load_user="
+        style="display:none;" class="contextlink" id="edit"><a href="edit_view.py?back=view.py%3F_secret%3Dnot_a_secret%26_username%3Dautomation%26view_name%3Dalertstats&amp;load_name=alertstats&amp;load_user="
         onclick="count_context_button(this);"><img src="themes/facelift/images/icon_edit.png"
         class="icon inline" title='''' /><span>Edit View</span></a></div><div class="contextlink
         short" id="toggle" title="Show all buttons"><a href="#" onclick="unhide_context_buttons(this);">...</a></div><div
@@ -599,7 +599,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&_username=automation&view_name=alertstats&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&_username=automation&view_name=alertstats&_secret=not_a_secret
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"alert_stats_crit\"\
@@ -672,7 +672,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&view_name=alertstats&_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/view.py?output_format=json&view_name=alertstats&_username=automation&_secret=not_a_secret
   response:
     body:
       string: "[\n [\n  \"host\", \n  \"service_description\", \n  \"alert_stats_crit\"\

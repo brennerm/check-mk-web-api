@@ -1,0 +1,114 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - localhost
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_contactgroups&_username=automation&output_format=json&_secret=not_a_secret
+  response:
+    body:
+      string: '{"result": {"all": {"alias": "Everything"}, "user": {"alias": "Users"}},
+        "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '90'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 26 Mar 2019 18:30:02 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Set-Cookie:
+      - language=en; path=/; httponly
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"groupname": "user"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '29'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_contactgroup&_username=automation&output_format=json&_secret=not_a_secret
+  response:
+    body:
+      string: '{"result": null, "result_code": 0}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '34'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 26 Mar 2019 18:30:02 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Set-Cookie:
+      - language=en; path=/; httponly
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'request={"groupname": "user", "alias": "Users"}'
+    headers:
+      Connection:
+      - close
+      Content-Length:
+      - '47'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - localhost
+      User-Agent:
+      - Python-urllib/3.5
+    method: POST
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=edit_contactgroup&_username=automation&output_format=json&_secret=not_a_secret
+  response:
+    body:
+      string: '{"result": "Check_MK exception: Unknown group: user", "result_code":
+        1}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '71'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 26 Mar 2019 18:30:02 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Set-Cookie:
+      - language=en; path=/; httponly
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+version: 1

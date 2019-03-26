@@ -433,7 +433,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=get_all_folders&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=get_all_folders&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"": {}, "productive": {"snmp_community": "private"}}, "result_code":
@@ -472,7 +472,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=delete_folder&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=delete_folder&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -510,7 +510,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=edit_folder&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=edit_folder&_secret=not_a_secret
   response:
     body:
       string: '{"result": "Check_MK exception: Folder productive does not exist",

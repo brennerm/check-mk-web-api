@@ -13,7 +13,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=set_ruleset
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_secret=not_a_secret&request_format=python&action=get_ruleset&_username=automation&output_format=python
   response:
     body:
       string: '{"result": "Unhandled exception: Traceback (most recent call last):\n  File
@@ -103,7 +103,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=set_ruleset&output_format=json&_secret=not_a_secret&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&_secret=not_a_secret&output_format=json&request_format=python&action=set_ruleset
   response:
     body:
       string: '{"result": "Unhandled exception: Traceback (most recent call last):\n  File

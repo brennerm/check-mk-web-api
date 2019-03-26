@@ -13,7 +13,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=python&_secret=not_a_secret&action=get_ruleset
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_secret=not_a_secret&request_format=python&action=get_ruleset&_username=automation&output_format=python
   response:
     body:
       string: '{''result'': ''Unhandled exception: Traceback (most recent call last):\n  File

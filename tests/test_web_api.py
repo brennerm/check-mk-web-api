@@ -19,7 +19,6 @@ class TestWebApi():
         assert 'add_user' in self.all_methods_in_web_api
         assert 'bake_agents' in self.all_methods_in_web_api
         assert 'bake_agents' in self.all_methods_in_web_api
-        assert 'checking' in self.all_methods_in_web_api
         assert 'delete_all_contactgroups' in self.all_methods_in_web_api
         assert 'delete_all_hostgroups' in self.all_methods_in_web_api
         assert 'delete_all_hosts' in self.all_methods_in_web_api

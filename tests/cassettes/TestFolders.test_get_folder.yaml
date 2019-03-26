@@ -682,7 +682,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&output_format=json&action=get_all_folders&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&output_format=json&action=get_all_folders&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"": {}, "productive": {}}, "result_code": 0}'
@@ -720,7 +720,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&output_format=json&action=delete_folder&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&output_format=json&action=delete_folder&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -758,7 +758,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&output_format=json&action=add_folder&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&output_format=json&action=add_folder&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -796,7 +796,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?effective_attributes=0&_username=automation&output_format=json&action=get_folder&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?effective_attributes=0&_username=automation&output_format=json&action=get_folder&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"attributes": {}, "configuration_hash": "99914b932bd37a50b983c5e7c90ae93b"},
@@ -1244,7 +1244,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&action=get_folder&effective_attributes=0&_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&action=get_folder&effective_attributes=0&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"attributes": {}, "configuration_hash": "99914b932bd37a50b983c5e7c90ae93b"},
@@ -1279,7 +1279,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=get_all_folders&output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=get_all_folders&output_format=json&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"": {}, "productive": {}}, "result_code": 0}'
@@ -1317,7 +1317,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=delete_folder&output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=delete_folder&output_format=json&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -1355,7 +1355,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=add_folder&output_format=json&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&action=add_folder&output_format=json&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -1393,7 +1393,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&effective_attributes=0&output_format=json&action=get_folder&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?_username=automation&effective_attributes=0&output_format=json&action=get_folder&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"attributes": {}, "configuration_hash": "99914b932bd37a50b983c5e7c90ae93b"},
@@ -1428,7 +1428,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=get_all_folders&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=get_all_folders&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"": {}, "productive": {"snmp_community": "private"}}, "result_code":
@@ -1467,7 +1467,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=delete_folder&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=delete_folder&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -1505,7 +1505,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.5
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=add_folder&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_username=automation&action=add_folder&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
