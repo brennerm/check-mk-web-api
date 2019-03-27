@@ -118,7 +118,10 @@ CHECK_MK_URL=http://localhost/checkmd2/
 CHECK_MK_SECRET=not_a_secret
 ```
 ### Contributors: 
-Robert Meyer: robert-r-meyer
 
-Carissa Morrow: cmorrowTaos
+[Max Brennerm: brennerm](https://github.com/brennerm)
+
+[Robert Meyer: robert-r-meyer](https://github.com/robert-r-meyer)
+
+[Carissa Morrow: cmorrowTaos](https://github.com/cmorrowTaos)
 
