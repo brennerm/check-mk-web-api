@@ -12,11 +12,15 @@ jobs:
 
     working_directory: ~/repo
     environment:
-      PIPENV_IN_PROJECT: 1
-      # PIPENV_IGNORE_VIRTUALENVS: 1
+      PIPENV_IN_PROJECT: true
+      PIPENV_VENV_IN_PROJECT: true
 
     steps:
       - checkout
+      - - run:
+            command: |  # use pipenv to install dependencies
+              sudo pip install pipenv
+              pipenv install
 
       - run:
           name: Use Pipenv In current directory
