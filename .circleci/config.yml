@@ -26,10 +26,10 @@ jobs:
       - run:
           command: |
             sudo pip install pipenv
-            pipenv install
+            pipenv install --dev
       - run:
           command: |
-            pipenv run pytest tests --vcr-record=none 
+            pipenv run pytest tests --vcr-record=none
 
       - save_cache:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
