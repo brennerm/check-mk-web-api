@@ -5,11 +5,11 @@ interactions:
       Connection:
       - close
       Host:
-      - 35.237.210.125
+      - localhost
       User-Agent:
       - Python-urllib/3.5
     method: GET
-    uri: http://35.237.210.125/checkmd2/check_mk/view.py?view_name=downtime_history&output_format=json&_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294
+    uri: http://localhost/checkmd2/check_mk/view.py?view_name=downtime_history&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: "[\n [\n  \"log_icon\", \n  \"log_time\", \n  \"host\", \n  \"service_description\"\
