@@ -5,35 +5,30 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/circleci-demo-python-django
     docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.1
+      - image: circleci/python:3.6.4 # every job must define an image for the docker executor and subsequent jobs may define a different image.
+        environment:
+          PIPENV_VENV_IN_PROJECT: true
 
-    working_directory: ~/repo
-    environment:
-      PIPENV_IN_PROJECT: true
-      # PIPENV_IGNORE_VIRTUALENVS: 1
-
+    # ...
     steps:
-      - checkout:
-          - run: sudo chown -R circleci:circleci /usr/local/bin
-          - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
-          - restore_cache:  # ensure this step occurs *before* installing dependencies
-              key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-          - run:
-              command: |
-                sudo pip install pipenv
-                pipenv install --dev
-          - save_cache:
-              key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-              paths:
-                - ".venv"
-                - "/usr/local/bin"
-                - "/usr/local/lib/python3.6/site-packages"
-          Note: Use the chown command to grant CircleCI access to dependency locations.
-
-
+      - checkout
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+      - restore_cache:  # ensure this step occurs *before* installing dependencies
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+      - run:
+          command: |
+            sudo pip install pipenv
+            pipenv install
+      - save_cache:
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          paths:
+            - ".venv"
+            - "/usr/local/bin"
+            - "/usr/local/lib/python3.6/site-packages"
+            -
       - run:
           name: Tests
           command: |
