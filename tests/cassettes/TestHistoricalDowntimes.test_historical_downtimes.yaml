@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - 35.237.210.125
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://35.237.210.125/checkmd2/check_mk/view.py?_username=automation&_secret=2396a766-8de5-4951-b2b6-8b81fc946294&output_format=json&view_name=downtime_history
+  response:
+    body:
+      string: "[\n [\n  \"log_icon\", \n  \"log_time\", \n  \"host\", \n  \"service_description\"\
+        , \n  \"log_state_type\", \n  \"log_plugin_output\"\n ], \n [\n  \"\", \n\
+        \  \"44 h\", \n  \"localhost\", \n  \"Check_MK Discovery\", \n  \"STOPPED\"\
+        , \n  \" Service has exited from a period of scheduled downtime\"\n ], \n\
+        \ [\n  \"\", \n  \"46 h\", \n  \"localhost\", \n  \"Check_MK Discovery\",\
+        \ \n  \"STARTED\", \n  \" Service has entered a period of scheduled downtime\"\
+        \n ], \n [\n  \"\", \n  \"20 h\", \n  \"localhost\", \n  \"\", \n  \"STOPPED\"\
+        , \n  \" Host has exited from a period of scheduled downtime\"\n ], \n [\n\
+        \  \"\", \n  \"22 h\", \n  \"localhost\", \n  \"\", \n  \"STARTED\", \n  \"\
+        \ Host has entered a period of scheduled downtime\"\n ]\n]"
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '633'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 27 Mar 2019 15:30:15 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Set-Cookie:
+      - language=en; path=/; httponly
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+version: 1
