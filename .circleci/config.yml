@@ -17,20 +17,23 @@ jobs:
 
     steps:
       - checkout
-        - run: sudo chown -R circleci:circleci /usr/local/bin
-        - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
-        - restore_cache:  # ensure this step occurs *before* installing dependencies
-            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-        - run:
-            command: |
-              sudo pip install pipenv
-              pipenv install
-        - save_cache:
-            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-            paths:
-              - ".venv"
-              - "/usr/local/bin"
-              - "/usr/local/lib/python3.6/site-packages"
+      - run: sudo chown -R circleci:circleci /usr/local/bin
+      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+
+      - restore_cache:  # ensure this step occurs *before* installing dependencies
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+
+      - run:
+          command: |
+            sudo pip install pipenv
+            pipenv install
+
+      - save_cache:
+          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          paths:
+            - ".venv"
+            - "/usr/local/bin"
+            - "/usr/local/lib/python3.6/site-packages"
 
 #      - - run:
 #            command: |  # use pipenv to install dependencies
@@ -41,17 +44,6 @@ jobs:
           name: Use Pipenv In current directory
           command: echo "hello"
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Pipenv.lock" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "Pipenv.lock" }}
 
       # run tests!
       # this example uses Django's built-in test-runner
