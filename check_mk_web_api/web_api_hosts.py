@@ -147,7 +147,7 @@ class WebApiHosts(WebApiBase):
         result = self.make_request('discover_services', data=data, query_params=query_params)
 
         counters = {}
-        for k, regex in WebApi.__DISCOVERY_REGEX.items():
+        for k, regex in WebApiBase.__DISCOVERY_REGEX.items():
             counters[k] = regex.match(result).group(1)
 
         return counters
@@ -161,3 +161,6 @@ class WebApiHosts(WebApiBase):
         """
         for host in self.get_all_hosts():
             self.discover_services(host, mode)
+
+    def view_host_events(self):
+        return self.make_view_name_request("events")

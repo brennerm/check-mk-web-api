@@ -11,6 +11,7 @@ api = WebApi(
     os.environ['CHECK_MK_SECRET']
 )
 
+
 @pytest.mark.vcr()
 class TestHosts():
     def setup(self):
@@ -19,7 +20,6 @@ class TestHosts():
         for folder in api.get_all_folders():
             if folder != '':
                 api.delete_folder(folder)
-
 
     def test_add_host(self):
         api.add_host('host00')
@@ -64,7 +64,6 @@ class TestHosts():
         assert 'host00' in all_hosts
         assert 'host01' in all_hosts
 
-
     def test_get_hosts_by_folder(self):
         api.add_folder('test')
         api.add_host('host00', 'test')
@@ -75,7 +74,6 @@ class TestHosts():
         assert 'host00' in hosts
         assert 'host01' in hosts
 
-
     # @pytest.mark.skip('Skipping due to issues with determinstic nature')
     def test_delete_host(self):
         api.add_host('host00')
@@ -83,11 +81,13 @@ class TestHosts():
 
         api.delete_host('host00')
         assert len(api.get_all_hosts()) == 0
+
     #
     #
     def test_delete_nonexistent_host(self):
         with pytest.raises(CheckMkWebApiException):
             api.delete_host('host00')
+
     #
     #
     def test_delete_all_hosts(self):
@@ -97,3 +97,125 @@ class TestHosts():
 
         api.delete_all_hosts()
         assert len(api.get_all_hosts()) == 0
+
+    def test_view_host_events(self):
+        result = api.view_host_events()
+        expected_result = [['log_icon',
+                            'log_time',
+                            'log_type',
+                            'host',
+                            'service_description',
+                            'log_state_type',
+                            'log_plugin_output'],
+                           ['',
+                            '76 m',
+                            'SERVICE NOTIFICATION',
+                            'localhost',
+                            'Check_MK Discovery',
+                            'ACKNOWLEDGEMENT (CRITICAL)',
+                            'CRIT - no unmonitored services found, no vanished services found, [agent] '
+                            'Communication failed: [Errno 111] Connection refusedCRIT'],
+                           ['',
+                            '104 m',
+                            'SERVICE NOTIFICATION',
+                            'localhost',
+                            'PING',
+                            'DOWNTIMESTART (OK)',
+                            'OK - 127.0.0.1: rta 0.010ms, lost 0%'],
+                           ['',
+                            '104 m',
+                            'SERVICE DOWNTIME ALERT',
+                            'localhost',
+                            'PING',
+                            'STARTED',
+                            ' Service has entered a period of scheduled downtime'],
+                           ['',
+                            '104 m',
+                            'SERVICE NOTIFICATION',
+                            'localhost',
+                            'Check_MK Discovery',
+                            'DOWNTIMESTART (CRITICAL)',
+                            'CRIT - no unmonitored services found, no vanished services found, [agent] '
+                            'Communication failed: [Errno 111] Connection refusedCRIT'],
+                           ['',
+                            '104 m',
+                            'SERVICE DOWNTIME ALERT',
+                            'localhost',
+                            'Check_MK Discovery',
+                            'STARTED',
+                            ' Service has entered a period of scheduled downtime'],
+                           ['',
+                            '23 h',
+                            'HOST NOTIFICATION',
+                            'localhost',
+                            '',
+                            'DOWNTIMEEND (UP)',
+                            'OK - 127.0.0.1: rta 0.005ms, lost 0%'],
+                           ['',
+                            '23 h',
+                            'HOST DOWNTIME ALERT',
+                            'localhost',
+                            '',
+                            'STOPPED',
+                            ' Host has exited from a period of scheduled downtime'],
+                           ['',
+                            '25 h',
+                            'HOST NOTIFICATION',
+                            'localhost',
+                            '',
+                            'DOWNTIMESTART (UP)',
+                            'OK - 127.0.0.1: rta 0.010ms, lost 0%'],
+                           ['',
+                            '25 h',
+                            'HOST DOWNTIME ALERT',
+                            'localhost',
+                            '',
+                            'STARTED',
+                            ' Host has entered a period of scheduled downtime'],
+                           ['',
+                            '46 h',
+                            'SERVICE NOTIFICATION',
+                            'localhost',
+                            'Check_MK Discovery',
+                            'DOWNTIMEEND (CRITICAL)',
+                            'CRIT - no unmonitored services found, no vanished services found, [agent] '
+                            'Communication failed: [Errno 111] Connection refusedCRIT'],
+                           ['',
+                            '46 h',
+                            'SERVICE DOWNTIME ALERT',
+                            'localhost',
+                            'Check_MK Discovery',
+                            'STOPPED',
+                            ' Service has exited from a period of scheduled downtime'],
+                           ['',
+                            '2019-03-25 17:11:25',
+                            'SERVICE NOTIFICATION',
+                            'localhost',
+                            'Check_MK Discovery',
+                            'DOWNTIMESTART (CRITICAL)',
+                            'CRIT - no unmonitored services found, no vanished services found, [agent] '
+                            'Communication failed: [Errno 111] Connection refusedCRIT'],
+                           ['',
+                            '2019-03-25 17:11:25',
+                            'SERVICE DOWNTIME ALERT',
+                            'localhost',
+                            'Check_MK Discovery',
+                            'STARTED',
+                            ' Service has entered a period of scheduled downtime'],
+                           ['',
+                            '2019-03-25 16:44:17',
+                            'SERVICE NOTIFICATION',
+                            'localhost',
+                            'Check_MK Discovery',
+                            'CRITICAL',
+                            'CRIT - no unmonitored services found, no vanished services found, [agent] '
+                            'Communication failed: [Errno 111] Connection refusedCRIT'],
+                           ['',
+                            '2019-03-25 16:44:17',
+                            'SERVICE ALERT',
+                            'localhost',
+                            'Check_MK Discovery',
+                            'HARD',
+                            'CRIT - no unmonitored services found, no vanished services found, [agent] '
+                            'Communication failed: [Errno 111] Connection refusedCRIT']]
+        assert result == expected_result
