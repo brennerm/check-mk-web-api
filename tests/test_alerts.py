@@ -44,3 +44,16 @@ class TestAlerts():
            ['localhost', 'PING', '0', '0', '0', '0']]
 
         assert result == expected_result
+
+    def test_get_alert_handler_executions(self):
+        result = api.alert_handler_executions()
+        expected_result = [['log_icon',
+            'log_time',
+            'log_command',
+            'log_type',
+            'host',
+            'service_description',
+            'log_state',
+            'log_plugin_output']]
+
+        assert result == expected_result

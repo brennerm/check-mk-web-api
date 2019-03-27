@@ -24,3 +24,7 @@ class WebApiAlerts(WebApiBase):
         """View Alert Stats"""
 
         return self.make_view_name_request("alertstats")
+
+    def alert_handler_executions(self):
+
+        return self.make_view_name_request('alerthandlers')
