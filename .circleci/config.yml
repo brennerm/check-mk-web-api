@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - checkout
-      - - run: sudo chown -R circleci:circleci /usr/local/bin
+        - run: sudo chown -R circleci:circleci /usr/local/bin
         - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
         - restore_cache:  # ensure this step occurs *before* installing dependencies
             key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
@@ -31,7 +31,7 @@ jobs:
               - ".venv"
               - "/usr/local/bin"
               - "/usr/local/lib/python3.6/site-packages"
-              
+
 #      - - run:
 #            command: |  # use pipenv to install dependencies
 #              sudo pip install pipenv
