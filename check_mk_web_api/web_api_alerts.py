@@ -18,3 +18,9 @@ class WebApiAlerts(WebApiBase):
             'service': serviceName,
         }
         return self.make_request(base)
+
+    def view_alert_stats(self):
+
+        """View Alert Stats"""
+
+        return self.make_view_name_request("alertstats")
