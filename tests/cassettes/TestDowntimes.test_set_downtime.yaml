@@ -449,4 +449,62 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - localhost
+      User-Agent:
+      - Python-urllib/3.5
+    method: GET
+    uri: http://localhost/checkmd2/check_mk/view.py?_secret=not_a_secret&output_format=json&_do_actions=yes&_down_comment=THISISWORKING&_do_confirm=yes&_down_minutes=120&view_name=hoststatus&host=localhost&_username=automation&_transid=-1
+  response:
+    body:
+      string: "[\n [\n  \"sitealias\", \n  \"host\", \n  \"host_parents\", \n  \"\
+        host_childs\", \n  \"host_addresses\", \n  \"alias\", \n  \"host_icons\",\
+        \ \n  \"host_state\", \n  \"host_plugin_output\", \n  \"host_pnpgraph\", \n\
+        \  \"host_perf_data\", \n  \"host_in_downtime\", \n  \"num_services\", \n\
+        \  \"num_services_ok\", \n  \"num_services_warn\", \n  \"num_services_crit\"\
+        , \n  \"num_services_unknown\", \n  \"num_services_pending\", \n  \"host_attempt\"\
+        , \n  \"host_state_age\", \n  \"host_check_age\", \n  \"host_next_check\"\
+        , \n  \"host_check_latency\", \n  \"host_check_duration\", \n  \"host_notifper\"\
+        , \n  \"host_in_notifper\", \n  \"host_notification_number\", \n  \"host_last_notification\"\
+        , \n  \"host_next_notification\", \n  \"host_notification_postponement_reason\"\
+        , \n  \"host_check_interval\", \n  \"host_contact_groups\", \n  \"host_contacts\"\
+        , \n  \"host_group_memberlist\", \n  \"host_servicelevel\", \n  \"host_check_command\"\
+        , \n  \"host_custom_vars\", \n  \"host_custom_notes\"\n ], \n [\n  \"alias_green\"\
+        , \n  \"localhost\", \n  \"\", \n  \"\", \n  \"127.0.0.1\", \n  \"localhost\"\
+        , \n  \"themes/facelift/images/icon_menu themes/facelift/images/icon_pnp\"\
+        , \n  \"UP\", \n  \"OK - 127.0.0.1: rta 0.008ms, lost 0%\", \n  \"render_pnp_graphs('checkmd2_localhost__HOST__graph',\
+        \ 'checkmd2', 'localhost', '_HOST_', '1', '/checkmd2/check_mk/', '../pnp4nagios/',\
+        \ false, 'Add this graph to...', null, null, 'facelift')\", \n  \"rta=0.008ms;200.000;500.000;0;\
+        \ pl=0%;80;100;; rtmax=0.028ms;;;; rtmin=0.002ms;;;;\", \n  \"no\", \n  \"\
+        2\", \n  \"1\", \n  \"0\", \n  \"1\", \n  \"0\", \n  \"0\", \n  \"1/1\", \n\
+        \  \"2019-03-25 16:44:16\", \n  \"22.9 s\", \n  \"in 38.1 s\", \n  \"153 ms\"\
+        , \n  \"2.71 ms\", \n  \"24X7\", \n  \"yes\", \n  \"0\", \n  \"-\", \n  \"\
+        -\", \n  \"None\", \n  \"60 s / 60 s\", \n  \"check-mk-notify, all\", \n \
+        \ \"check-mk-notify\", \n  \"check_mk\", \n  \"\", \n  \"check-mk-host-ping!-w\
+        \ 200.00,80.00% -c 500.00,100.00%\", \n  \"\", \n  \"\"\n ]\n]"
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '1736'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 27 Mar 2019 19:06:43 GMT
+      Server:
+      - Apache/2.4.25 (Debian)
+      Set-Cookie:
+      - language=en; path=/; httponly
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
 version: 1

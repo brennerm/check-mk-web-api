@@ -60,3 +60,19 @@ class TestDowntimes():
              'check-mk-host-ping!-w 200.00,80.00% -c 500.00,100.00%', '', '']
         ]
         assert result == expected_result
+
+    def test_get_failed_notifications(self):
+
+        result = api.get_failed_notifications()
+        expected_result = [['log_icon',
+            'log_time',
+            'log_contact_name',
+            'log_command',
+            'log_type',
+            'host',
+            'service_description',
+            'log_state',
+            'log_plugin_output',
+            'log_comment']]
+
+        assert result == expected_result

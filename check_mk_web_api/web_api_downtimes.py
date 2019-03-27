@@ -45,3 +45,7 @@ class WebApiDowntimes(WebApiBase):
         """View All Comments """
 
         return self.make_view_name_request("comments")
+
+    def get_failed_notifications(self):
+
+        return self.make_view_name_request('failed_notifications')
