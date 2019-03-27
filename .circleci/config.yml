@@ -12,46 +12,39 @@ jobs:
 
     working_directory: ~/repo
     environment:
-      PIPENV_IN_PROJECT: 1
+      PIPENV_IN_PROJECT: true
       # PIPENV_IGNORE_VIRTUALENVS: 1
 
     steps:
       - checkout
+        - run: sudo chown -R circleci:circleci /usr/local/bin
+        - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+        - restore_cache:  # ensure this step occurs *before* installing dependencies
+            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+        - run:
+            command: |
+              sudo pip install pipenv
+              pipenv install --dev
+        - save_cache:
+            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+            paths:
+              - ".venv"
+              - "/usr/local/bin"
+              - "/usr/local/lib/python3.6/site-packages"
+        Note: Use the chown command to grant CircleCI access to dependency locations.
+
 
       - run:
-          name: Use Pipenv In current directory
-          command: pip install pipenv
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Pipenv.lock" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run:
-          name: install dependencies
+          name: Tests
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pipenv install --dev
-
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "Pipenv.lock" }}
+            pipenv run pytest tests --vcr-record=none
 
       # run tests!
       # this example uses Django's built-in test-runner
       # other common Python testing frameworks include pytest and nose
       # https://pytest.org
       # https://nose.readthedocs.io
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            pytest tests --vcr-record=none
-
+      - 
       - store_artifacts:
           path: test-reports
           destination: test-reports
