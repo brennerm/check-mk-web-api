@@ -31,7 +31,7 @@ class TestAlerts():
         result = api.ack_alerts(hostname, comment, servicename)
         assert api.ack_alerts(hostname, comment, servicename)
 
-    def test_get_alert_stats(self):
+    def test_view_alert_stats(self):
         result = api.view_alert_stats()
         expected_result = [['host',
             'service_description',
