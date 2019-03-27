@@ -14,6 +14,9 @@ jobs:
     environment:
       PIPENV_IN_PROJECT: true
       PIPENV_VENV_IN_PROJECT: true
+      CHECK_MK_URL: http://localhost/checkmd2/
+      CHECK_MK_USER: automation
+      CHECK_MK_SECRET: not_a_secret
 
     steps:
       - checkout
