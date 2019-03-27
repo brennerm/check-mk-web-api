@@ -164,3 +164,6 @@ class WebApiHosts(WebApiBase):
 
     def view_host_events(self):
         return self.make_view_name_request("events")
+
+    def view_host_notifications(self):
+        return self.make_view_name_request('notifications')
