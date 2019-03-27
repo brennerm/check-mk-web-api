@@ -45,7 +45,7 @@ class TestHistoricalDowntimes():
             ],
             [
                 "",
-                "20 h",
+                "21 h",
                 "localhost",
                 "",
                 "STOPPED",
@@ -53,7 +53,7 @@ class TestHistoricalDowntimes():
             ],
             [
                 "",
-                "22 h",
+                "23 h",
                 "localhost",
                 "",
                 "STARTED",
