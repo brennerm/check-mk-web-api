@@ -13,7 +13,7 @@ jobs:
     working_directory: ~/repo
     environment:
       PIPENV_IN_PROJECT: 1
-      PIPENV_IGNORE_VIRTUALENVS: 1
+      # PIPENV_IGNORE_VIRTUALENVS: 1
 
     steps:
       - checkout
