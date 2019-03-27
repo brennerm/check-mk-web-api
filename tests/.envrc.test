@@ -1,0 +1,3 @@
+export CHECK_MK_URL=http://localhost/checkmd2/
+export CHECK_MK_USER=automation
+export CHECK_MK_SECRET=not_a_secret

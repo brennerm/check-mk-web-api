@@ -103,6 +103,21 @@ In order to run tests execute
 ```bash
 pytest --vcr-record=none
 ``` 
+
+### Test credentials
+Tests are expected to be run using the ENV vars.
+These vars are required due to the way that VCR records cassetts.
+Without the use of these ENV vars, test will fail due to mismatched url params.
+
+ENV var file for testing can be found at `<root>/.envrc.test`
+
+[.envrc.test](./tests/.envrc.test)
+
+```
+CHECK_MK_USER=automation
+CHECK_MK_URL=http://localhost/checkmd2/
+CHECK_MK_SECRET=not_a_secret
+```
 ### Contributors: 
 Robert Meyer: robert-r-meyer
 
