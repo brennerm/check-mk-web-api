@@ -17,21 +17,21 @@ jobs:
 
     steps:
       - checkout
-        - run: sudo chown -R circleci:circleci /usr/local/bin
-        - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
-        - restore_cache:  # ensure this step occurs *before* installing dependencies
-            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-        - run:
-            command: |
-              sudo pip install pipenv
-              pipenv install --dev
-        - save_cache:
-            key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-            paths:
-              - ".venv"
-              - "/usr/local/bin"
-              - "/usr/local/lib/python3.6/site-packages"
-        Note: Use the chown command to grant CircleCI access to dependency locations.
+          - run: sudo chown -R circleci:circleci /usr/local/bin
+          - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
+          - restore_cache:  # ensure this step occurs *before* installing dependencies
+              key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          - run:
+              command: |
+                sudo pip install pipenv
+                pipenv install --dev
+          - save_cache:
+              key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+              paths:
+                - ".venv"
+                - "/usr/local/bin"
+                - "/usr/local/lib/python3.6/site-packages"
+          Note: Use the chown command to grant CircleCI access to dependency locations.
 
 
       - run:
@@ -44,7 +44,7 @@ jobs:
       # other common Python testing frameworks include pytest and nose
       # https://pytest.org
       # https://nose.readthedocs.io
-      - 
+      -
       - store_artifacts:
           path: test-reports
           destination: test-reports
