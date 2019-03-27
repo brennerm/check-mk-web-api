@@ -35,3 +35,13 @@ class WebApiDowntimes(WebApiBase):
         }
 
         return self.make_view_request(url_params)
+
+    def view_historical_downtimes(self):
+        """Get Historical Downtimes"""
+
+        return self.make_view_name_request('downtime_history')
+
+    def view_comments(self):
+        """View All Comments """
+
+        return self.make_view_name_request("comments")
