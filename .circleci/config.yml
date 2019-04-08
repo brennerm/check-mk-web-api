@@ -30,9 +30,17 @@ jobs:
           command: |
             sudo pip install pipenv
             pipenv install --dev
-      - run:
+
+      - run: 
           command: |
-            pipenv run pytest tests --vcr-record=none
+            mkdir test-reports
+            pipenv run pytest --junitxml=test-reports/junit.xml --vcr-record=none
+
+      - store_test_results:
+         path: test-reports
+
+      - store_artifacts:
+         path: test-reports
 
       - save_cache:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
@@ -40,28 +48,3 @@ jobs:
             - ".venv"
             - "/usr/local/bin"
             - "/usr/local/lib/python3.6/site-packages"
-
-#      - - run:
-#            command: |  # use pipenv to install dependencies
-#              sudo pip install pipenv
-#              pipenv install
-
-      - run:
-          name: Use Pipenv In current directory
-          command: echo "hello"
-
-
-      # run tests!
-      # this example uses Django's built-in test-runner
-      # other common Python testing frameworks include pytest and nose
-      # https://pytest.org
-      # https://nose.readthedocs.io
-#      - run:
-#          name: run tests
-#          command: |
-#            . venv/bin/activate
-#            pytest tests --vcr-record=none
-#
-#      - store_artifacts:
-#          path: test-reports
-#          destination: test-reports
