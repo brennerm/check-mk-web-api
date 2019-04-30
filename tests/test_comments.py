@@ -2,6 +2,7 @@ import os
 import pytest
 
 from check_mk_web_api.web_api import WebApi
+from tests import my_workingvcr
 
 api = WebApi(
     os.environ['CHECK_MK_URL'],
@@ -10,9 +11,10 @@ api = WebApi(
 )
 
 
-@pytest.mark.vcr()
+# @pytest.mark.vcr()
 class TestComments():
 
+    @my_workingvcr
     def test_view_comments(self):
         result = api.view_comments()
         expected_result = [

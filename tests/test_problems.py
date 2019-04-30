@@ -3,6 +3,7 @@ import os
 import pytest
 
 from check_mk_web_api.web_api import WebApi
+from tests import my_workingvcr
 
 # from check_mk_web_api.exception import CheckMkWebApiException
 
@@ -13,9 +14,10 @@ api = WebApi(
 )
 
 
-@pytest.mark.vcr()
+# @pytest.mark.vcr()
 class TestProblems():
 
+    @my_workingvcr
     def test_get_svc_problems(self):
         assert api.get_svc_problems
 

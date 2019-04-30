@@ -3,6 +3,7 @@ import os
 import pytest
 
 from check_mk_web_api.web_api import WebApi
+from tests import my_workingvcr
 
 # from check_mk_web_api.exception import CheckMkWebApiException
 
@@ -13,12 +14,14 @@ api = WebApi(
 )
 
 
-@pytest.mark.vcr()
+# @pytest.mark.vcr()
 class TestDowntimes():
 
+    @my_workingvcr
     def test_no_error_on_all_downtimes(self):
         assert api.get_all_downtimes()
 
+    @my_workingvcr
     def test_get_all_downtimes(self):
         expected_result = [
             ['host', 'service_description', 'downtime_origin', 'downtime_author', 'downtime_entry_time',
@@ -33,6 +36,7 @@ class TestDowntimes():
         result = api.get_all_downtimes()
         assert result == expected_result
 
+    @my_workingvcr
     def test_set_downtime(self):
         hostname = "localhost"
         message = "downtime host for testing"
@@ -61,18 +65,18 @@ class TestDowntimes():
         ]
         assert result == expected_result
 
+    @my_workingvcr
     def test_get_failed_notifications(self):
-
         result = api.get_failed_notifications()
         expected_result = [['log_icon',
-            'log_time',
-            'log_contact_name',
-            'log_command',
-            'log_type',
-            'host',
-            'service_description',
-            'log_state',
-            'log_plugin_output',
-            'log_comment']]
+                            'log_time',
+                            'log_contact_name',
+                            'log_command',
+                            'log_type',
+                            'host',
+                            'service_description',
+                            'log_state',
+                            'log_plugin_output',
+                            'log_comment']]
 
         assert result == expected_result
