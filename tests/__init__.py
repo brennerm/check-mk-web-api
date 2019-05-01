@@ -2,14 +2,16 @@ import vcr
 from functools import wraps
 import re
 
+
 # caputures the server url and replaces IP or name with localhost-testing to help with cassette errors
 def scrub_string(string, replacement=''):
     def before_record_response(response):
-        regexp = '^https?://[^/]+/'
+        regexp = '^https?://[^/]+/+[^/]+/+[^/]+/'
         replaced_uri = re.sub(regexp, 'http://localhost-testing/', response.uri)
         response.uri = replaced_uri
 
         return response
+
     return before_record_response
 
 
@@ -34,7 +36,6 @@ def my_workingvcr(f):
         print(path_name)
         with my_vcr.use_cassette('cassettes/' + path_name + '.yml',
                                  filter_query_parameters=['_secret', '_username']):
-
             return f(*args, **kwds)
 
     return wrapper
