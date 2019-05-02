@@ -66,7 +66,7 @@ class WebApiServiceGroup(WebApiBase):
             self.delete_servicegroup(group)
 
     def get_all_services(self):
-        return self.make_view_request("allservices")
+        return self.make_view_name_request('allservices')
 
     def get_pending_services(self):
-        return self.make_view_request("pendingsvc")
+        return self.make_view_name_request("pendingsvc")
