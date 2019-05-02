@@ -9,169 +9,36 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_secret=not_a_secret&request_format=python&action=get_ruleset&_username=automation&output_format=python
+    uri: http://localhost/mysite/check_mk/webapi.py?output_format=python&request_format=python&action=get_ruleset&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{''result'': ''Unhandled exception: Traceback (most recent call last):\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/htdocs/webapi.py", line 251, in page_api\n    action_response
-        = api_actions[action]["handler"](request_object)\n  File "/omd/sites/checkmd2/share/check_mk/web/plugins/webapi/webapi.py",
+        "/omd/sites/mysite/share/check_mk/web/htdocs/webapi.py", line 251, in page_api\n    action_response
+        = api_actions[action]["handler"](request_object)\n  File "/omd/sites/mysite/share/check_mk/web/plugins/webapi/webapi.py",
         line 604, in _get\n    ruleset_dict = self._get_ruleset_configuration(ruleset_name)\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/plugins/webapi/webapi.py", line 586,
+        "/omd/sites/mysite/share/check_mk/web/plugins/webapi/webapi.py", line 586,
         in _get_ruleset_configuration\n    ruleset = collection.get(ruleset_name)\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/htdocs/watolib.py", line 7813, in
-        get\n    return self._rulesets[name]\nKeyError: \''nonexistent\''\n'', ''result_code'':
-        1}'
+        "/omd/sites/mysite/share/check_mk/web/htdocs/watolib.py", line 7826, in get\n    return
+        self._rulesets[name]\nKeyError: \''nonexistent\''\n'', ''result_code'': 1}'
     headers:
+      Access-Control-Allow-Origin:
+      - '*'
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '712'
+      - '704'
       Content-Type:
       - text/plain; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:32:10 GMT
+      - Wed, 01 May 2019 21:21:08 GMT
       Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie,Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={''ruleset_name'': ''nonexistent''}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '39'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=python&_secret=not_a_secret&request_format=python
-  response:
-    body:
-      string: '{''result'': ''Unhandled exception: Traceback (most recent call last):\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/htdocs/webapi.py", line 251, in page_api\n    action_response
-        = api_actions[action]["handler"](request_object)\n  File "/omd/sites/checkmd2/share/check_mk/web/plugins/webapi/webapi.py",
-        line 604, in _get\n    ruleset_dict = self._get_ruleset_configuration(ruleset_name)\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/plugins/webapi/webapi.py", line 586,
-        in _get_ruleset_configuration\n    ruleset = collection.get(ruleset_name)\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/htdocs/watolib.py", line 7813, in
-        get\n    return self._rulesets[name]\nKeyError: \''nonexistent\''\n'', ''result_code'':
-        1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '712'
-      Content-Type:
-      - text/plain; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:34:13 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie,Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={''ruleset_name'': ''nonexistent''}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '39'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_ruleset&output_format=python&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{''result'': ''Unhandled exception: Traceback (most recent call last):\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/htdocs/webapi.py", line 251, in page_api\n    action_response
-        = api_actions[action]["handler"](request_object)\n  File "/omd/sites/checkmd2/share/check_mk/web/plugins/webapi/webapi.py",
-        line 604, in _get\n    ruleset_dict = self._get_ruleset_configuration(ruleset_name)\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/plugins/webapi/webapi.py", line 586,
-        in _get_ruleset_configuration\n    ruleset = collection.get(ruleset_name)\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/htdocs/watolib.py", line 7813, in
-        get\n    return self._rulesets[name]\nKeyError: \''nonexistent\''\n'', ''result_code'':
-        1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '712'
-      Content-Type:
-      - text/plain; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:37:32 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie,Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={''ruleset_name'': ''nonexistent''}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '39'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_secret=not_a_secret&request_format=python
-  response:
-    body:
-      string: '{''result'': ''Unhandled exception: Traceback (most recent call last):\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/htdocs/webapi.py", line 251, in page_api\n    action_response
-        = api_actions[action]["handler"](request_object)\n  File "/omd/sites/checkmd2/share/check_mk/web/plugins/webapi/webapi.py",
-        line 604, in _get\n    ruleset_dict = self._get_ruleset_configuration(ruleset_name)\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/plugins/webapi/webapi.py", line 586,
-        in _get_ruleset_configuration\n    ruleset = collection.get(ruleset_name)\n  File
-        "/omd/sites/checkmd2/share/check_mk/web/htdocs/watolib.py", line 7813, in
-        get\n    return self._rulesets[name]\nKeyError: \''nonexistent\''\n'', ''result_code'':
-        1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '712'
-      Content-Type:
-      - text/plain; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 16:56:56 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie,Accept-Encoding
     status:

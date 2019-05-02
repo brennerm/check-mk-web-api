@@ -1,327 +1,5 @@
 interactions:
 - request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
-  response:
-    body:
-      string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
-        1552943043, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "automation":
-        {"force_authuser_webservice": false, "locked": false, "roles": ["admin", "user"],
-        "alias": "automation", "force_authuser": false, "ui_theme": null, "contactgroups":
-        [], "disable_notifications": {}, "automation_secret": "@HEBECXCDWXXISGBAAWQ",
-        "start_url": null, "enforce_pw_change": false, "num_failed_logins": 0, "serial":
-        1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/", "pager": "", "email": "",
-        "last_pw_change": 1553201998, "fallback_contact": false}, "user00": {"connector":
-        "htpasswd", "contactgroups": [], "locked": false, "roles": ["user"], "alias":
-        "User 0", "enforce_pw_change": false, "last_pw_change": 1553268742, "serial":
-        1, "password": "$1$506827$CdB3T3uBDGfBshNw65wo//", "num_failed_logins": 0}},
-        "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '972'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:32:23 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"users": ["user00"]}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '29'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_users
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:32:23 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"users": {"user00": {"pager": "49123456789", "password": "p4ssw0rd",
-      "alias": "User 00"}}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '99'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:32:24 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
-  response:
-    body:
-      string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
-        1552943043, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "automation":
-        {"force_authuser_webservice": false, "locked": false, "roles": ["admin", "user"],
-        "alias": "automation", "force_authuser": false, "ui_theme": null, "contactgroups":
-        [], "disable_notifications": {}, "automation_secret": "@HEBECXCDWXXISGBAAWQ",
-        "start_url": null, "enforce_pw_change": false, "num_failed_logins": 0, "serial":
-        1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/", "pager": "", "email": "",
-        "last_pw_change": 1553201998, "fallback_contact": false}, "user00": {"contactgroups":
-        [], "enforce_pw_change": false, "serial": 1, "password": "$1$115545$hW9mLtLxiv02bnzv1Ylro/",
-        "pager": "49123456789", "locked": false, "roles": ["user"], "last_pw_change":
-        1553268744, "connector": "htpasswd", "alias": "User 00", "num_failed_logins":
-        0}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '997'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:32:24 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"users": {"user00": {"unset_attributes": ["pager"], "set_attributes":
-      {}}}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '84'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=edit_users
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:32:24 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
-  response:
-    body:
-      string: '{"result": {"automation": {"force_authuser_webservice": false, "locked":
-        false, "roles": ["admin", "user"], "contactgroups": [], "force_authuser":
-        false, "ui_theme": null, "alias": "automation", "disable_notifications": {},
-        "automation_secret": "@HEBECXCDWXXISGBAAWQ", "start_url": null, "enforce_pw_change":
-        false, "num_failed_logins": 0, "serial": 1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/",
-        "pager": "", "email": "", "last_pw_change": 1553201998, "fallback_contact":
-        false}, "cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
-        1552943043, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "user00":
-        {"connector": "htpasswd", "contactgroups": [], "locked": false, "roles": ["user"],
-        "alias": "User 00", "enforce_pw_change": false, "last_pw_change": 1553268744,
-        "serial": 1, "password": "$1$115545$hW9mLtLxiv02bnzv1Ylro/", "num_failed_logins":
-        0}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '973'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:32:24 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
-        1552943043, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "automation":
-        {"force_authuser_webservice": false, "locked": false, "roles": ["admin", "user"],
-        "alias": "automation", "force_authuser": false, "ui_theme": null, "contactgroups":
-        [], "disable_notifications": {}, "automation_secret": "@HEBECXCDWXXISGBAAWQ",
-        "start_url": null, "enforce_pw_change": false, "num_failed_logins": 0, "serial":
-        1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/", "pager": "", "email": "",
-        "last_pw_change": 1553201998, "fallback_contact": false}, "user00": {"connector":
-        "htpasswd", "contactgroups": [], "locked": false, "roles": ["user"], "alias":
-        "User 0", "enforce_pw_change": false, "last_pw_change": 1553269072, "serial":
-        1, "password": "$1$498610$4kVH4fiWszvMPfWtB.fAu1", "num_failed_logins": 0}},
-        "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '972'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:37:53 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"users": ["user00"]}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '29'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_users&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:37:53 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
     body: 'request={"users": {"user00": {"alias": "User 00", "password": "p4ssw0rd",
       "pager": "49123456789"}}}'
     headers:
@@ -332,15 +10,17 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&output_format=json&_secret=not_a_secret&_username=automation
+    uri: http://localhost/mysite/check_mk/webapi.py?action=add_users&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
     headers:
+      Access-Control-Allow-Origin:
+      - '*'
       Cache-Control:
       - no-cache
       Connection:
@@ -350,9 +30,9 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:37:54 GMT
+      - Thu, 02 May 2019 13:41:14 GMT
       Server:
-      - Apache/2.4.25 (Debian)
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie
     status:
@@ -364,538 +44,42 @@ interactions:
       Connection:
       - close
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": {"cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
-        1552943043, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "automation":
-        {"force_authuser_webservice": false, "locked": false, "roles": ["admin", "user"],
-        "alias": "automation", "force_authuser": false, "ui_theme": null, "contactgroups":
-        [], "disable_notifications": {}, "automation_secret": "@HEBECXCDWXXISGBAAWQ",
-        "start_url": null, "enforce_pw_change": false, "num_failed_logins": 0, "serial":
-        1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/", "pager": "", "email": "",
-        "last_pw_change": 1553201998, "fallback_contact": false}, "user00": {"contactgroups":
-        [], "enforce_pw_change": false, "serial": 1, "password": "$1$069861$ph9x..NuNpqziPMTsGA5z/",
-        "pager": "49123456789", "locked": false, "roles": ["user"], "last_pw_change":
-        1553269074, "connector": "htpasswd", "alias": "User 00", "num_failed_logins":
-        0}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '997'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:37:54 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"users": {"user00": {"unset_attributes": ["pager"], "set_attributes":
-      {}}}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '84'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=edit_users&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:37:54 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&output_format=json&_secret=not_a_secret&_username=automation
+    uri: http://localhost/mysite/check_mk/webapi.py?action=get_all_users&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"automation": {"force_authuser_webservice": false, "locked":
-        false, "roles": ["admin", "user"], "contactgroups": [], "force_authuser":
-        false, "ui_theme": null, "alias": "automation", "disable_notifications": {},
-        "automation_secret": "@HEBECXCDWXXISGBAAWQ", "start_url": null, "enforce_pw_change":
-        false, "num_failed_logins": 0, "serial": 1, "password": "$1$112894$4FTBQ/X6TjZiNyS4aB.vu/",
-        "pager": "", "email": "", "last_pw_change": 1553201998, "fallback_contact":
-        false}, "cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
-        1552943043, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$793265$KwZy1W0BN91OHTDS4zZMI/", "num_failed_logins": 0}, "user00":
-        {"connector": "htpasswd", "contactgroups": [], "locked": false, "roles": ["user"],
-        "alias": "User 00", "enforce_pw_change": false, "last_pw_change": 1553269074,
-        "serial": 1, "password": "$1$069861$ph9x..NuNpqziPMTsGA5z/", "num_failed_logins":
-        0}}, "result_code": 0}'
+        false, "language": null, "roles": ["admin"], "contactgroups": [], "force_authuser":
+        false, "notifications_enabled": false, "ui_theme": null, "alias": "Check_MK
+        Automation", "disable_notifications": {}, "automation_secret": "ecc19bbf-1577-4019-a4fb-fbac1402bcaa",
+        "start_url": null, "enforce_pw_change": false, "num_failed_logins": 0, "serial":
+        2, "password": "$1$100337$gqdXK6mBd/renad626TJA/", "pager": "", "email": "",
+        "last_pw_change": 1556574123, "fallback_contact": false}, "cmkadmin": {"locked":
+        false, "roles": ["admin"], "last_pw_change": 1556574123, "alias": "cmkadmin",
+        "enforce_pw_change": false, "serial": 0, "password": "$1$047384$PzaXSsk7km69Qor37yJkr.",
+        "num_failed_logins": 0}, "user00": {"contactgroups": [], "enforce_pw_change":
+        false, "serial": 1, "password": "$1$953344$NhksNCLlcx6SPtEaMLfm40", "pager":
+        "49123456789", "locked": false, "roles": ["user"], "last_pw_change": 1556804474,
+        "connector": "htpasswd", "alias": "User 00", "num_failed_logins": 0}}, "result_code":
+        0}'
     headers:
+      Access-Control-Allow-Origin:
+      - '*'
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '973'
+      - '1066'
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:37:54 GMT
+      - Thu, 02 May 2019 13:41:15 GMT
       Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
-  response:
-    body:
-      string: '{"result": {"user00": {"connector": "htpasswd", "contactgroups": [],
-        "locked": false, "roles": ["user"], "alias": "User 0", "enforce_pw_change":
-        false, "last_pw_change": 1553535309, "serial": 1, "password": "$1$028476$u.ZJtGVQbnBEcvBI/Qtkb.",
-        "num_failed_logins": 0}, "cmkadmin": {"locked": false, "roles": ["admin"],
-        "last_pw_change": 1553530321, "alias": "cmkadmin", "enforce_pw_change": false,
-        "serial": 0, "password": "$1$578428$DjakWHBZ20OPL1JjEQSbi/", "num_failed_logins":
-        0}, "automation": {"locked": false, "language": "en", "roles": ["admin"],
-        "contactgroups": [], "num_failed_logins": 0, "notifications_enabled": false,
-        "alias": "Check_MK Automation - used for calling web services", "automation_secret":
-        "not_a_secret", "last_pw_change": 1553530321, "enforce_pw_change":
-        false, "serial": 0, "password": "$1$237833$xB0zPWWwQFv8GNQWadiI61", "pager":
-        "", "email": ""}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '919'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 17:35:10 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"users": ["user00"]}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '29'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_users
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 17:35:10 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"users": {"user00": {"password": "p4ssw0rd", "alias": "User 00",
-      "pager": "49123456789"}}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '99'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_users
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 17:35:10 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
-  response:
-    body:
-      string: '{"result": {"automation": {"locked": false, "language": "en", "roles":
-        ["admin"], "contactgroups": [], "num_failed_logins": 0, "notifications_enabled":
-        false, "alias": "Check_MK Automation - used for calling web services", "automation_secret":
-        "not_a_secret", "last_pw_change": 1553530321, "enforce_pw_change":
-        false, "serial": 0, "password": "$1$237833$xB0zPWWwQFv8GNQWadiI61", "pager":
-        "", "email": ""}, "cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
-        1553530321, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$578428$DjakWHBZ20OPL1JjEQSbi/", "num_failed_logins": 0}, "user00":
-        {"contactgroups": [], "enforce_pw_change": false, "serial": 1, "password":
-        "$1$671331$QWrgnLX9/0RDizbQ8i6Tg1", "pager": "49123456789", "locked": false,
-        "roles": ["user"], "last_pw_change": 1553535310, "connector": "htpasswd",
-        "alias": "User 00", "num_failed_logins": 0}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '944'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 17:35:10 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"users": {"user00": {"unset_attributes": ["pager"], "set_attributes":
-      {}}}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '84'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=edit_users
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 17:35:11 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_users
-  response:
-    body:
-      string: '{"result": {"user00": {"connector": "htpasswd", "contactgroups": [],
-        "locked": false, "roles": ["user"], "alias": "User 00", "enforce_pw_change":
-        false, "last_pw_change": 1553535310, "serial": 1, "password": "$1$671331$QWrgnLX9/0RDizbQ8i6Tg1",
-        "num_failed_logins": 0}, "cmkadmin": {"locked": false, "roles": ["admin"],
-        "last_pw_change": 1553530321, "alias": "cmkadmin", "enforce_pw_change": false,
-        "serial": 0, "password": "$1$578428$DjakWHBZ20OPL1JjEQSbi/", "num_failed_logins":
-        0}, "automation": {"locked": false, "roles": ["admin"], "language": "en",
-        "contactgroups": [], "num_failed_logins": 0, "notifications_enabled": false,
-        "alias": "Check_MK Automation - used for calling web services", "automation_secret":
-        "not_a_secret", "last_pw_change": 1553530321, "enforce_pw_change":
-        false, "serial": 0, "password": "$1$237833$xB0zPWWwQFv8GNQWadiI61", "pager":
-        "", "email": ""}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '920'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 17:35:11 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&_secret=not_a_secret&output_format=json
-  response:
-    body:
-      string: '{"result": {"user00": {"connector": "htpasswd", "contactgroups": [],
-        "locked": false, "roles": ["user"], "alias": "User 0", "enforce_pw_change":
-        false, "last_pw_change": 1553535326, "serial": 1, "password": "$1$068509$Ox85/BfI/fgUt9hkeRyRp.",
-        "num_failed_logins": 0}, "cmkadmin": {"locked": false, "roles": ["admin"],
-        "last_pw_change": 1553530321, "alias": "cmkadmin", "enforce_pw_change": false,
-        "serial": 0, "password": "$1$578428$DjakWHBZ20OPL1JjEQSbi/", "num_failed_logins":
-        0}, "automation": {"locked": false, "language": "en", "roles": ["admin"],
-        "contactgroups": [], "num_failed_logins": 0, "notifications_enabled": false,
-        "alias": "Check_MK Automation - used for calling web services", "automation_secret":
-        "not_a_secret", "last_pw_change": 1553530321, "enforce_pw_change":
-        false, "serial": 0, "password": "$1$237833$xB0zPWWwQFv8GNQWadiI61", "pager":
-        "", "email": ""}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '919'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 17:35:27 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"users": ["user00"]}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '29'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_users&_secret=not_a_secret&output_format=json
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 17:35:27 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"users": {"user00": {"pager": "49123456789", "alias": "User 00",
-      "password": "p4ssw0rd"}}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '99'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_users&_secret=not_a_secret&output_format=json
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 17:35:27 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&_secret=not_a_secret&output_format=json
-  response:
-    body:
-      string: '{"result": {"automation": {"locked": false, "language": "en", "roles":
-        ["admin"], "contactgroups": [], "num_failed_logins": 0, "notifications_enabled":
-        false, "alias": "Check_MK Automation - used for calling web services", "automation_secret":
-        "not_a_secret", "last_pw_change": 1553530321, "enforce_pw_change":
-        false, "serial": 0, "password": "$1$237833$xB0zPWWwQFv8GNQWadiI61", "pager":
-        "", "email": ""}, "cmkadmin": {"locked": false, "roles": ["admin"], "last_pw_change":
-        1553530321, "alias": "cmkadmin", "enforce_pw_change": false, "serial": 0,
-        "password": "$1$578428$DjakWHBZ20OPL1JjEQSbi/", "num_failed_logins": 0}, "user00":
-        {"contactgroups": [], "enforce_pw_change": false, "serial": 1, "password":
-        "$1$779475$xogB59bSNdomLr7zatPch0", "pager": "49123456789", "locked": false,
-        "roles": ["user"], "last_pw_change": 1553535327, "connector": "htpasswd",
-        "alias": "User 00", "num_failed_logins": 0}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '944'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 17:35:28 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie
     status:
@@ -912,15 +96,17 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=edit_users&_secret=not_a_secret&output_format=json
+    uri: http://localhost/mysite/check_mk/webapi.py?action=edit_users&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
     headers:
+      Access-Control-Allow-Origin:
+      - '*'
       Cache-Control:
       - no-cache
       Connection:
@@ -930,11 +116,9 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Mon, 25 Mar 2019 17:35:28 GMT
+      - Thu, 02 May 2019 13:41:15 GMT
       Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie
     status:
@@ -946,40 +130,42 @@ interactions:
       Connection:
       - close
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_users&_secret=not_a_secret&output_format=json
+    uri: http://localhost/mysite/check_mk/webapi.py?action=get_all_users&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"user00": {"connector": "htpasswd", "contactgroups": [],
         "locked": false, "roles": ["user"], "alias": "User 00", "enforce_pw_change":
-        false, "last_pw_change": 1553535327, "serial": 1, "password": "$1$779475$xogB59bSNdomLr7zatPch0",
+        false, "last_pw_change": 1556804474, "serial": 1, "password": "$1$953344$NhksNCLlcx6SPtEaMLfm40",
         "num_failed_logins": 0}, "cmkadmin": {"locked": false, "roles": ["admin"],
-        "last_pw_change": 1553530321, "alias": "cmkadmin", "enforce_pw_change": false,
-        "serial": 0, "password": "$1$578428$DjakWHBZ20OPL1JjEQSbi/", "num_failed_logins":
-        0}, "automation": {"locked": false, "roles": ["admin"], "language": "en",
-        "contactgroups": [], "num_failed_logins": 0, "notifications_enabled": false,
-        "alias": "Check_MK Automation - used for calling web services", "automation_secret":
-        "not_a_secret", "last_pw_change": 1553530321, "enforce_pw_change":
-        false, "serial": 0, "password": "$1$237833$xB0zPWWwQFv8GNQWadiI61", "pager":
-        "", "email": ""}}, "result_code": 0}'
+        "last_pw_change": 1556574123, "alias": "cmkadmin", "enforce_pw_change": false,
+        "serial": 0, "password": "$1$047384$PzaXSsk7km69Qor37yJkr.", "num_failed_logins":
+        0}, "automation": {"force_authuser_webservice": false, "locked": false, "language":
+        null, "roles": ["admin"], "alias": "Check_MK Automation", "force_authuser":
+        false, "notifications_enabled": false, "ui_theme": null, "contactgroups":
+        [], "disable_notifications": {}, "automation_secret": "ecc19bbf-1577-4019-a4fb-fbac1402bcaa",
+        "start_url": null, "enforce_pw_change": false, "num_failed_logins": 0, "serial":
+        2, "password": "$1$100337$gqdXK6mBd/renad626TJA/", "pager": "", "email": "",
+        "last_pw_change": 1556574123, "fallback_contact": false}}, "result_code":
+        0}'
     headers:
+      Access-Control-Allow-Origin:
+      - '*'
       Cache-Control:
       - no-cache
       Connection:
       - close
       Content-Length:
-      - '920'
+      - '1042'
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Mon, 25 Mar 2019 17:35:28 GMT
+      - Thu, 02 May 2019 13:41:15 GMT
       Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie
     status:

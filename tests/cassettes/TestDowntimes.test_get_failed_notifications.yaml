@@ -5,11 +5,11 @@ interactions:
       Connection:
       - close
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: GET
-    uri: http://localhost/checkmd2/check_mk/view.py?_secret=not_a_secret&view_name=failed_notifications&output_format=json&_username=automation
+    uri: http://localhost/mysite/check_mk/view.py?view_name=failed_notifications&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: "[\n [\n  \"log_icon\", \n  \"log_time\", \n  \"log_contact_name\",\
@@ -25,11 +25,9 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 27 Mar 2019 19:06:44 GMT
+      - Wed, 01 May 2019 21:05:09 GMT
       Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie
     status:
