@@ -11,7 +11,7 @@ api = WebApi(
     os.environ['CHECK_MK_SECRET']
 )
 
-# @pytest.mark.vcr()
+
 class TestContactGroups() :
     def setup(self):
 

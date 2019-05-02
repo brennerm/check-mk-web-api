@@ -1,7 +1,6 @@
 import os
 import pytest
 from tests import filter_uri
-
 from check_mk_web_api.web_api import WebApi
 
 api = WebApi(
@@ -11,7 +10,6 @@ api = WebApi(
 )
 
 
-# @pytest.mark.vcr()
 class TestHistoricalDowntimes():
 
     @filter_uri

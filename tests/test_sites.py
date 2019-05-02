@@ -1,7 +1,5 @@
 import os
-from tests import filter_uri
 import pytest
-
 from check_mk_web_api.web_api import WebApi
 
 api = WebApi(
@@ -10,7 +8,7 @@ api = WebApi(
     os.environ['CHECK_MK_SECRET']
 )
 
-# @pytest.mark.vcr()
+
 class TestSites():
 
     @pytest.mark.skip(reason="bug in Check_Mk")
@@ -31,7 +29,6 @@ class TestSites():
     def test_login_site(self):
         api.add_user('user00', 'User 00', 'p4ssw0rd')
         api.login_site('cmk', 'user00', 'p4ssw0rd')
-
 
     @pytest.mark.skip(reason="bug in Check_Mk")
     def test_logout_site(self):

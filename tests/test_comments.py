@@ -11,7 +11,6 @@ api = WebApi(
 )
 
 
-# @pytest.mark.vcr()
 class TestComments():
 
     @filter_uri

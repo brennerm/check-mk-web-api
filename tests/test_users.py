@@ -1,7 +1,6 @@
 import os
 from tests import filter_uri
 import pytest
-
 from check_mk_web_api.exception import CheckMkWebApiException
 from check_mk_web_api.web_api import WebApi
 
@@ -12,10 +11,8 @@ api = WebApi(
 )
 
 
-# @pytest.mark.vcr()
 class TestUsers():
     def setup(self):
-
         for user_id in api.get_all_users():
             if user_id != 'cmkadmin' and user_id != os.environ['CHECK_MK_USER']:
                 api.delete_user(user_id)

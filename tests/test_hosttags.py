@@ -10,6 +10,7 @@ api = WebApi(
     os.environ['CHECK_MK_SECRET']
 )
 
+
 class TestHosttags():
 
     @filter_uri

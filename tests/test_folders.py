@@ -1,10 +1,6 @@
 import os
 from tests import filter_uri
 import pytest
-
-# from check_mk_web_api.web_api_base import WebApiBase
-# from check_mk_web_api.web_api_hosts import WebApiHosts
-# from check_mk_web_api.web_api_folders import WebApiFolders
 from check_mk_web_api.exception import CheckMkWebApiException
 from check_mk_web_api.web_api import WebApi
 
@@ -15,7 +11,6 @@ api = WebApi(
 )
 
 
-# @pytest.mark.vcr()
 class TestFolders():
     def setup(self):
         for folder in api.get_all_folders():

@@ -1,10 +1,8 @@
 import os
 from tests import filter_uri
 import pytest
-
 from check_mk_web_api.web_api import WebApi
 
-# from check_mk_web_api.exception import CheckMkWebApiException
 
 api = WebApi(
     os.environ['CHECK_MK_URL'],
@@ -13,7 +11,6 @@ api = WebApi(
 )
 
 
-# @pytest.mark.vcr()
 class TestDowntimes():
 
     @filter_uri

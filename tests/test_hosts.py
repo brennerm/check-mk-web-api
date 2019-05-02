@@ -1,8 +1,6 @@
 import os
 from tests import filter_uri
 import pytest
-
-
 from check_mk_web_api.exception import CheckMkWebApiException
 from check_mk_web_api.web_api import WebApi
 
@@ -13,7 +11,6 @@ api = WebApi(
 )
 
 
-#@pytest.mark.vcr()
 class TestHosts():
     def setup(self):
         api.delete_all_hosts()
@@ -92,13 +89,11 @@ class TestHosts():
         api.delete_host('host00')
         assert len(api.get_all_hosts()) == 0
 
-    #
     @filter_uri
     def test_delete_nonexistent_host(self):
         with pytest.raises(CheckMkWebApiException):
             api.delete_host('host00')
 
-    #
     @filter_uri
     def test_delete_all_hosts(self):
         api.add_host('host00')

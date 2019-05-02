@@ -1,8 +1,6 @@
 import os
-
 import pytest
 from tests import filter_uri
-
 from check_mk_web_api.exception import CheckMkWebApiException
 from check_mk_web_api.web_api import WebApi
 
@@ -13,7 +11,6 @@ api = WebApi(
 )
 
 
-# @pytest.mark.vcr()
 class TestServiceGroup:
     def setup(self):
         api.delete_all_servicegroups()
