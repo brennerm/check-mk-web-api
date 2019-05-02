@@ -1,9 +1,8 @@
 import os
-
+from tests import filter_uri
 import pytest
 
 from check_mk_web_api.web_api import WebApi
-from tests import my_workingvcr
 
 api = WebApi(
     os.environ['CHECK_MK_URL'],
@@ -13,10 +12,12 @@ api = WebApi(
 
 # @pytest.mark.vcr()
 class TestSites():
-    @my_workingvcr
+
+    @pytest.mark.skip(reason="bug in Check_Mk")
     def test_get_site(self):
         assert api.get_site('checkmd2')
 
+    @pytest.mark.skip(reason="bug in Check_Mk")
     def test_set_site(self):
 
         site_alias = 'alias_green'
@@ -27,13 +28,13 @@ class TestSites():
         assert api.get_site('checkmd2')['site_config']['alias'] == site_alias
 
     @pytest.mark.skip(reason="bug in Check_Mk")
-    def test_login_site():
+    def test_login_site(self):
         api.add_user('user00', 'User 00', 'p4ssw0rd')
         api.login_site('cmk', 'user00', 'p4ssw0rd')
 
 
     @pytest.mark.skip(reason="bug in Check_Mk")
-    def test_logout_site():
+    def test_logout_site(self):
         api.add_user('user00', 'User 00', 'p4ssw0rd')
         api.login_site('cmk', 'user00', 'p4ssw0rd')
         api.logout_site('cmk')

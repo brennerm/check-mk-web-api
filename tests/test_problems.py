@@ -1,5 +1,5 @@
 import os
-from tests import my_workingvcr
+from tests import filter_uri
 import pytest
 
 from check_mk_web_api.web_api import WebApi
@@ -13,10 +13,9 @@ api = WebApi(
 )
 
 
-# @pytest.mark.vcr()
 class TestProblems():
 
-    @my_workingvcr
+    @filter_uri
     def test_get_svc_problems(self):
         assert api.get_svc_problems()
 
