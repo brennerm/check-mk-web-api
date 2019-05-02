@@ -1,5 +1,5 @@
 import os
-
+from tests import my_workingvcr
 import pytest
 
 # from check_mk_web_api.web_api_base import WebApiBase
@@ -7,7 +7,6 @@ import pytest
 # from check_mk_web_api.web_api_folders import WebApiFolders
 from check_mk_web_api.exception import CheckMkWebApiException
 from check_mk_web_api.web_api import WebApi
-from tests import my_workingvcr
 
 api = WebApi(
     os.environ['CHECK_MK_URL'],
