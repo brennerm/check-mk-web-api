@@ -30,7 +30,7 @@ my_vcr = vcr.VCR(
 # your http code here
 
 
-def my_workingvcr(f):
+def filter_uri(f):
     @wraps(f)
     def wrapper(*args, **kwds):
         print("Calling decorated function")
@@ -42,3 +42,5 @@ def my_workingvcr(f):
         with my_vcr.use_cassette('cassettes/' + path_name + '.yaml'):
             return f(*args, **kwds)
     return wrapper
+
+
