@@ -1,3 +1,4 @@
+import pytest
 import re
 
 
@@ -16,3 +17,11 @@ def scrub_string(string, replacement=""):
         return response
 
     return before_record_response
+
+
+@pytest.fixture(scope='module')
+def vcr_config():
+    return {
+        # Replace the Authorization request header with "DUMMY" in cassettes
+        'before_record': scrub_string("_secret", "_username"),
+    }
