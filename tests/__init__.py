@@ -10,7 +10,7 @@ def scrub_string(string, replacement=""):
         regexp_username = "_username=[a-zA-Z]+"
         regexp_secret = "_secret=.*$"
 
-        replaced_uri = re.sub(regexp_http, "http://localhost/", response.uri)
+        replaced_uri = re.sub(regexp_http, "http://127.0.0.1/", response.uri)
         replaced_uri = re.sub(regexp_username, "_username=automation", replaced_uri)
         replaced_uri = re.sub(regexp_secret, "_secret=not_a_secret", replaced_uri)
         response.uri = replaced_uri
