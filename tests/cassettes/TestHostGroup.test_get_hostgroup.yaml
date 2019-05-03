@@ -1,5 +1,39 @@
 interactions:
 - request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - 35.243.163.201
+      User-Agent:
+      - Python-urllib/3.6
+    method: GET
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_hostgroups&output_format=json&_username=automation&_secret=not_a_secret
+  response:
+    body:
+      string: '{"result": {}, "result_code": 0}'
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '32'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 03 May 2019 15:43:36 GMT
+      Server:
+      - Apache/2.4.34 (Ubuntu)
+      Vary:
+      - Cookie
+    status:
+      code: 200
+      message: OK
+- request:
     body: 'request={"groupname": "vm", "alias": "VM"}'
     headers:
       Connection:
@@ -13,7 +47,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.6
     method: POST
-    uri: http://localhost/mysite/check_mk/webapi.py?action=add_hostgroup&output_format=json&_username=automation&_secret=not_a_secret
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_hostgroup&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
@@ -29,7 +63,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 01 May 2019 21:10:38 GMT
+      - Fri, 03 May 2019 15:43:36 GMT
       Server:
       - Apache/2.4.34 (Ubuntu)
       Vary:
@@ -47,7 +81,7 @@ interactions:
       User-Agent:
       - Python-urllib/3.6
     method: GET
-    uri: http://localhost/mysite/check_mk/webapi.py?action=get_all_hostgroups&output_format=json&_username=automation&_secret=not_a_secret
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_hostgroups&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"vm": {"alias": "VM"}}, "result_code": 0}'
@@ -63,7 +97,7 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 01 May 2019 21:10:38 GMT
+      - Fri, 03 May 2019 15:43:36 GMT
       Server:
       - Apache/2.4.34 (Ubuntu)
       Vary:
