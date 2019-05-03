@@ -1,5 +1,4 @@
 import os
-from tests import filter_uri
 import pytest
 
 from check_mk_web_api.web_api import WebApi
@@ -10,10 +9,9 @@ api = WebApi(
     os.environ['CHECK_MK_SECRET']
 )
 
-
+@pytest.mark.vcr
 class TestHosttags():
 
-    @filter_uri
     def test_get_hosttags(self):
         assert api.get_hosttags()
 

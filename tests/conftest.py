@@ -2,7 +2,7 @@ import pytest
 import re
 
 
-# caputures the server url and replaces IP or name with localhost-testing to help with cassette errors
+# captures the server url and replaces IP or name with localhost-testing to help with cassette errors
 def scrub_string(string, replacement=""):
     def before_record_response(response):
         regexp_http = "^https?://[^/]+/+[^/]+/+[^/]+/"

@@ -8,7 +8,7 @@ api = WebApi(
     os.environ['CHECK_MK_SECRET']
 )
 
-
+@pytest.mark.vcr
 class TestSites():
 
     @pytest.mark.skip(reason="bug in Check_Mk")

@@ -1,5 +1,4 @@
 import os
-from tests import filter_uri
 import pytest
 
 from check_mk_web_api.web_api_alerts import WebApiAlerts
@@ -10,21 +9,19 @@ api = WebApiAlerts(
     os.environ['CHECK_MK_SECRET']
 )
 
-
+@pytest.mark.vcr
 class TestAlerts():
 
     def test_get_alerts_does_not_error(self):
         assert api.get_alerts()
 
     @pytest.mark.skip('incomplete code')
-    @filter_uri
     def test_get_alerts_contains_information(self):
         alert_results = api.get_alerts()
         assert len(alert_results) == 4
         assert alert_results[1] == ['localhost', 'Check_MK Discovery', '1', '0', '0', '1']
 
     @pytest.mark.skip('currently throwing unknown api action error')
-    @filter_uri
     def test_ack_alert(self):
         hostname = "hostname"
         comment = "acknowledge"
@@ -32,7 +29,6 @@ class TestAlerts():
         assert api.ack_alerts(hostname, comment, servicename)
 
     @pytest.mark.skip('incomplete code')
-    @filter_uri
     def test_get_alert_stats(self):
         result = api.view_alert_stats()
         expected_result = [[
@@ -48,7 +44,6 @@ class TestAlerts():
 
         assert result == expected_result
 
-    @filter_uri
     def test_get_alert_handler_executions(self):
         result = api.alert_handler_executions()
         expected_result = [[
