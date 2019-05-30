@@ -108,3 +108,7 @@ doc/_build
 # FlooBits integrations
 .floo
 .floo*
+
+
+# Remove Test Directories
+test-reports

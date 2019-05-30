@@ -5,16 +5,18 @@ interactions:
       Connection:
       - close
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&effective_attributes=0
+    uri: http://localhost/checkmd2/check_mk/webapi.py?effective_attributes=0&action=get_all_hosts&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
         ""}}, "result_code": 0}'
     headers:
+      Access-Control-Allow-Origin:
+      - '*'
       Cache-Control:
       - no-cache
       Connection:
@@ -24,9 +26,9 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:31:42 GMT
+      - Fri, 03 May 2019 15:43:38 GMT
       Server:
-      - Apache/2.4.25 (Debian)
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie
     status:
@@ -42,15 +44,17 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_host
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
     headers:
+      Access-Control-Allow-Origin:
+      - '*'
       Cache-Control:
       - no-cache
       Connection:
@@ -60,9 +64,9 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:31:42 GMT
+      - Fri, 03 May 2019 15:43:38 GMT
       Server:
-      - Apache/2.4.25 (Debian)
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie
     status:
@@ -74,15 +78,17 @@ interactions:
       Connection:
       - close
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_folders
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": {"": {}}, "result_code": 0}'
     headers:
+      Access-Control-Allow-Origin:
+      - '*'
       Cache-Control:
       - no-cache
       Connection:
@@ -92,357 +98,9 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:31:43 GMT
+      - Fri, 03 May 2019 15:43:39 GMT
       Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"attributes": {}, "hostname": "host00", "folder": "/"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_host
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:31:43 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"attributes": {}, "hostname": "host00", "folder": "/"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_host
-  response:
-    body:
-      string: '{"result": "Check_MK exception: Host host00 already exists in the folder
-        ", "result_code": 1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '93'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:31:44 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_hosts
-  response:
-    body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '94'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:33:45 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_host
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:33:45 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_folders
-  response:
-    body:
-      string: '{"result": {"": {}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:33:46 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00", "attributes": {}, "folder": "/"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_host
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:33:47 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00", "attributes": {}, "folder": "/"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_host
-  response:
-    body:
-      string: '{"result": "Check_MK exception: Host host00 already exists in the folder
-        ", "result_code": 1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '93'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:33:47 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_hosts&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '94'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:37:03 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:37:04 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": {"": {}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Fri, 22 Mar 2019 15:37:05 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie
     status:
@@ -458,15 +116,17 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_host&output_format=json&_secret=not_a_secret&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_host&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": null, "result_code": 0}'
     headers:
+      Access-Control-Allow-Origin:
+      - '*'
       Cache-Control:
       - no-cache
       Connection:
@@ -476,9 +136,9 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:37:05 GMT
+      - Fri, 03 May 2019 15:43:39 GMT
       Server:
-      - Apache/2.4.25 (Debian)
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie
     status:
@@ -494,16 +154,18 @@ interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Host:
-      - localhost
+      - 35.243.163.201
       User-Agent:
-      - Python-urllib/3.5
+      - Python-urllib/3.6
     method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_host&output_format=json&_secret=not_a_secret&_username=automation
+    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_host&output_format=json&_username=automation&_secret=not_a_secret
   response:
     body:
       string: '{"result": "Check_MK exception: Host host00 already exists in the folder
         ", "result_code": 1}'
     headers:
+      Access-Control-Allow-Origin:
+      - '*'
       Cache-Control:
       - no-cache
       Connection:
@@ -513,561 +175,9 @@ interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Fri, 22 Mar 2019 15:37:05 GMT
+      - Fri, 03 May 2019 15:43:39 GMT
       Server:
-      - Apache/2.4.25 (Debian)
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_hosts&output_format=json&effective_attributes=0&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '94'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 16:54:45 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=delete_host&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 16:54:45 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=get_all_folders&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": {"": {}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 16:54:46 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00", "folder": "/", "attributes": {}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_host&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 16:54:47 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00", "folder": "/", "attributes": {}}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?action=add_host&output_format=json&_secret=not_a_secret&_username=automation
-  response:
-    body:
-      string: '{"result": "Check_MK exception: Host host00 already exists in the folder
-        ", "result_code": 1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '93'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Mon, 25 Mar 2019 16:54:47 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&effective_attributes=0&_secret=not_a_secret&action=get_all_hosts&_username=automation
-  response:
-    body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '94'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 27 Mar 2019 17:59:46 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=delete_host&_username=automation
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 27 Mar 2019 17:59:46 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=get_all_folders&_username=automation
-  response:
-    body:
-      string: '{"result": {"": {}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 27 Mar 2019 17:59:47 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"attributes": {}, "hostname": "host00", "folder": "/"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_host&_username=automation
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 27 Mar 2019 17:59:48 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"attributes": {}, "hostname": "host00", "folder": "/"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?output_format=json&_secret=not_a_secret&action=add_host&_username=automation
-  response:
-    body:
-      string: '{"result": "Check_MK exception: Host host00 already exists in the folder
-        ", "result_code": 1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '93'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 27 Mar 2019 17:59:48 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?effective_attributes=0&_secret=not_a_secret&output_format=json&_username=automation&action=get_all_hosts
-  response:
-    body:
-      string: '{"result": {"host00": {"attributes": {}, "hostname": "host00", "path":
-        ""}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '94'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 27 Mar 2019 18:33:24 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"hostname": "host00"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '30'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_secret=not_a_secret&output_format=json&_username=automation&action=delete_host
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 27 Mar 2019 18:33:24 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Connection:
-      - close
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: GET
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_secret=not_a_secret&output_format=json&_username=automation&action=get_all_folders
-  response:
-    body:
-      string: '{"result": {"": {}}, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '38'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 27 Mar 2019 18:33:25 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"attributes": {}, "hostname": "host00", "folder": "/"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_secret=not_a_secret&output_format=json&_username=automation&action=add_host
-  response:
-    body:
-      string: '{"result": null, "result_code": 0}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '34'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 27 Mar 2019 18:33:25 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
-      Vary:
-      - Cookie
-    status:
-      code: 200
-      message: OK
-- request:
-    body: 'request={"attributes": {}, "hostname": "host00", "folder": "/"}'
-    headers:
-      Connection:
-      - close
-      Content-Length:
-      - '63'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Host:
-      - localhost
-      User-Agent:
-      - Python-urllib/3.5
-    method: POST
-    uri: http://localhost/checkmd2/check_mk/webapi.py?_secret=not_a_secret&output_format=json&_username=automation&action=add_host
-  response:
-    body:
-      string: '{"result": "Check_MK exception: Host host00 already exists in the folder
-        ", "result_code": 1}'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - close
-      Content-Length:
-      - '93'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Date:
-      - Wed, 27 Mar 2019 18:33:26 GMT
-      Server:
-      - Apache/2.4.25 (Debian)
-      Set-Cookie:
-      - language=en; path=/; httponly
+      - Apache/2.4.34 (Ubuntu)
       Vary:
       - Cookie
     status:
