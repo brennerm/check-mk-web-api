@@ -1,6 +1,6 @@
 import os
 import pytest
-
+from tests import filter_uri
 from check_mk_web_api.web_api import WebApi
 
 api = WebApi(
@@ -10,13 +10,14 @@ api = WebApi(
 )
 
 
-@pytest.mark.vcr()
 class TestHistoricalDowntimes():
 
+    @filter_uri
     def test_view_historical_downtimes(self):
         result = api.view_historical_downtimes()
         assert result
 
+    @filter_uri
     def test_historical_downtimes(self):
         result = api.view_historical_downtimes()
         expected_result = [[
@@ -25,40 +26,8 @@ class TestHistoricalDowntimes():
                 "host",
                 "service_description",
                 "log_state_type",
-                "log_plugin_output"
-            ],
-            [
-                "",
-                "44 h",
-                "localhost",
-                "Check_MK Discovery",
-                "STOPPED",
-                " Service has exited from a period of scheduled downtime"
-            ],
-            [
-                "",
-                "46 h",
-                "localhost",
-                "Check_MK Discovery",
-                "STARTED",
-                " Service has entered a period of scheduled downtime"
-            ],
-            [
-                "",
-                "21 h",
-                "localhost",
-                "",
-                "STOPPED",
-                " Host has exited from a period of scheduled downtime"
-            ],
-            [
-                "",
-                "23 h",
-                "localhost",
-                "",
-                "STARTED",
-                " Host has entered a period of scheduled downtime"
-            ]
+                "log_plugin_output"],
+
         ]
 
         assert result == expected_result

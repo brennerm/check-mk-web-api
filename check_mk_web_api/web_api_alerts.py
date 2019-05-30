@@ -20,11 +20,9 @@ class WebApiAlerts(WebApiBase):
         return self.make_request(base)
 
     def view_alert_stats(self):
-
         """View Alert Stats"""
 
         return self.make_view_name_request("alertstats")
 
     def alert_handler_executions(self):
-
         return self.make_view_name_request('alerthandlers')

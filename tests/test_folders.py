@@ -1,10 +1,6 @@
 import os
-
+from tests import filter_uri
 import pytest
-
-# from check_mk_web_api.web_api_base import WebApiBase
-# from check_mk_web_api.web_api_hosts import WebApiHosts
-# from check_mk_web_api.web_api_folders import WebApiFolders
 from check_mk_web_api.exception import CheckMkWebApiException
 from check_mk_web_api.web_api import WebApi
 
@@ -15,21 +11,23 @@ api = WebApi(
 )
 
 
-@pytest.mark.vcr()
 class TestFolders():
     def setup(self):
         for folder in api.get_all_folders():
             if folder != '':
                 api.delete_folder(folder)
 
+    @filter_uri
     def test_get_folder(self):
         api.add_folder('productive')
         assert api.get_folder('productive')
 
+    @filter_uri
     def test_get_nonexistent_folder(self):
         with pytest.raises(CheckMkWebApiException):
             assert api.get_folder('productive')
 
+    @filter_uri
     def test_get_hosts_by_folder(self):
         api.add_folder('test')
         api.add_host('host00', 'test')
@@ -40,6 +38,7 @@ class TestFolders():
         assert 'host00' in hosts
         assert 'host01' in hosts
 
+    @filter_uri
     def test_get_all_folders(self):
         api.add_folder('productive')
         api.add_folder('testing')
@@ -48,10 +47,12 @@ class TestFolders():
         assert 'productive' in folders
         assert 'testing' in folders
 
+    @filter_uri
     def test_add_folder(self):
         api.add_folder('productive')
         assert 'productive' in api.get_all_folders()
 
+    @filter_uri
     def test_edit_folder(self):
         api.add_folder('productive', snmp_community='public')
         assert api.get_folder('productive')['attributes']['snmp_community'] == 'public'
@@ -59,10 +60,12 @@ class TestFolders():
         api.edit_folder('productive', snmp_community='private')
         assert api.get_folder('productive')['attributes']['snmp_community'] == 'private'
 
+    @filter_uri
     def test_edit_nonexistent_folder(self):
         with pytest.raises(CheckMkWebApiException):
             assert api.edit_folder('productive')
 
+    @filter_uri
     def test_delete_folder(self):
         api.add_folder('productive')
         assert 'productive' in api.get_all_folders()
@@ -70,6 +73,7 @@ class TestFolders():
         api.delete_folder('productive')
         assert 'productive' not in api.get_all_folders()
 
+    @filter_uri
     def test_delete_nonexistent_folder(self):
         with pytest.raises(CheckMkWebApiException):
             api.delete_folder('productive')
