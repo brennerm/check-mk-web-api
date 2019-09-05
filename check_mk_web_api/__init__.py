@@ -44,10 +44,10 @@ class WebApi:
     """
 
     __DISCOVERY_REGEX = {
-        'added': re.compile(r'.*Added (\d+),.*'),
-        'removed': re.compile(r'.*Removed (\d+),.*'),
-        'kept': re.compile(r'.*Kept (\d+),.*'),
-        'new_count': re.compile(r'.*New Count (\d+)$')
+        'added': [re.compile(r'.*Added (\d+),.*')],
+        'removed': [re.compile(r'.*([Rr])emoved (\d+),.*')],
+        'kept': [re.compile(r'.*([Kk])ept (\d+),.*')],
+        'new_count': [re.compile(r'.*New Count (\d+)$'), re.compile(r'.*(\d+) new.*')]  # output changed in 1.6 so we have to try multiple patterns
     }
 
     class DiscoverMode(enum.Enum):
@@ -304,8 +304,12 @@ class WebApi:
         result = self.make_request('discover_services', data=data, query_params=query_params)
 
         counters = {}
-        for k, regex in WebApi.__DISCOVERY_REGEX.items():
-            counters[k] = regex.match(result).group(1)
+        for k, patterns in WebApi.__DISCOVERY_REGEX.items():
+            for pattern in patterns:
+                try:
+                    counters[k] = pattern.match(result).group(1)
+                except AttributeError:
+                    continue
 
         return counters
 
