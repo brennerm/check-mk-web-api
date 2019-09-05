@@ -407,6 +407,22 @@ def test_get_hosttags():
     assert api.get_hosttags()
 
 
+def test_set_hosttags():
+    current_tags = api.get_hosttags()
+    current_tags["tag_groups"].append({
+        "id": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+        "title": "Test",
+        "tags": [
+            {
+                "aux_tags": [],
+                "id": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+                "title": "Test & test"
+            }
+        ]
+    })
+    api.set_hosttags(current_tags)
+
+
 def test_get_ruleset():
     assert api.get_ruleset('checkgroup_parameters:hw_fans_perc')
 
