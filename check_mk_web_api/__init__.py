@@ -3,6 +3,7 @@ import json
 import os.path
 import re
 import ast
+import urllib.parse
 
 from six.moves import urllib
 
@@ -96,6 +97,8 @@ class WebApi:
             request_string = 'request=' + json.dumps(data)
         elif request_format == 'python':
             request_string = 'request=' + str(data)
+
+        request_string = urllib.parse.quote(request_string, safe="{[]}\"=, :")
 
         return request_string.encode()
 
