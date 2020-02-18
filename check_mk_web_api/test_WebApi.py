@@ -117,7 +117,12 @@ def test_delete_all_hosts():
 
 def test_discover_services():
     api.add_host('localhost')
-    api.discover_services('localhost')
+    result = api.discover_services('localhost')
+
+    assert int(result['added']) >= 0
+    assert int(result['removed']) >= 0
+    assert int(result['kept']) >= 0
+    assert int(result['new_count']) >= 0
 
 
 def test_discover_services_for_nonexistent_host():
