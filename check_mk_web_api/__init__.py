@@ -46,8 +46,8 @@ class WebApi:
 
     __DISCOVERY_REGEX = {
         'added': [re.compile(r'.*Added (\d+),.*')],
-        'removed': [re.compile(r'.*([Rr])emoved (\d+),.*')],
-        'kept': [re.compile(r'.*([Kk])ept (\d+),.*')],
+        'removed': [re.compile(r'.*[Rr]emoved (\d+),.*')],
+        'kept': [re.compile(r'.*[Kk]ept (\d+),.*')],
         'new_count': [re.compile(r'.*New Count (\d+)$'), re.compile(r'.*(\d+) new.*')]  # output changed in 1.6 so we have to try multiple patterns
     }
 
