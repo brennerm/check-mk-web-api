@@ -3,7 +3,6 @@ import json
 import os.path
 import re
 import ast
-import urllib.parse
 
 from six.moves import urllib
 
