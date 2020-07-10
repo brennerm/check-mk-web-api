@@ -126,7 +126,12 @@ class WebApi:
         action (str): Action request, e.g. add_host
         query_params (dict): dict of path parameters
         data (dict): dict that will be sent as request body
-
+        # Basic Auth
+        password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
+        password_mgr.add_password(None, self.web_api_base, self.username, self.secret)
+        handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
+        opener = urllib.request.build_opener(handler)
+        urllib.request.install_opener(opener)
         # Raises
         CheckMkWebApiResponseException: Raised when the HTTP status code != 200
         CheckMkWebApiException: Raised when the action's result_code != 0
