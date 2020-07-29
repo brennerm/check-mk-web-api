@@ -232,6 +232,20 @@ class WebApi:
 
         return self.make_request('delete_host', data=data)
 
+    def delete_hosts(self, hostnames):
+        """
+        Deletes multiple hosts from the Check_MK inventory
+
+        # Arguments
+        hostnames (list): Name of hosts to delete
+        """
+        data = NoNoneValueDict({
+            'hostnames': hostnames
+        })
+
+        return self.make_request('delete_hosts', data=data)
+
+
     def delete_all_hosts(self):
         """
         Deletes all hosts from the Check_MK inventory
