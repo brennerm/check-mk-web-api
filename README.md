@@ -46,6 +46,11 @@ Note there is no leading '/' on the folder name.
 >>> api.delete_host('webserver00.com')
 ```
 
+#### Delete Hosts
+```
+>>> api.delete_hosts(['webserver00.com', 'webserver01.com' ])
+```
+
 #### Get Host
 ```
 >>> api.get_host('webserver00.com')
