@@ -114,6 +114,14 @@ def test_delete_all_hosts():
     api.delete_all_hosts()
     assert len(api.get_all_hosts()) == 0
 
+def test_delete_hosts():
+    api.add_host('host00')
+    api.add_host('host01')
+    api.add_host('host02')
+    assert len(api.get_all_hosts()) == 3
+
+    api.delete_hosts(['host00', 'host01'])
+    assert len(api.get_all_hosts()) == 1
 
 def test_discover_services():
     api.add_host('localhost')
