@@ -746,6 +746,50 @@ class WebApi:
 
         return self.make_request('set_hosttags', data=data)
 
+    def add_aux_tag(self, identifier, title, topic=None):
+        """
+        Adds an auxiliary host tag
+   
+        # Arguments
+        identifier (str): unique identifier of the tag to add
+        title (str): title of the tag to add
+        topic (str): topic of the tag to add
+        """
+        hosttags = self.get_hosttags()
+
+        hosttags.update(
+            aux_tags=hosttags.get('aux_tags', []) + [{
+                'id': identifier,
+                'title': title,
+                'topic': topic
+            }]
+        )
+
+        self.set_hosttags(hosttags)
+
+    def add_tag_group(self, identifier, title, tags, topic=None):
+        """
+        Adds a tag group
+   
+        # Arguments
+        identifier (str): unique identifier of the tag to add
+        title (str): title of the tag to add
+        tags (list): tag choices to add, e.g. [{"id": "high", "title": "High Availability", "aux_tags": []}, ...]
+        topic (str): topic of the tag to add
+        """
+        hosttags = self.get_hosttags()
+
+        hosttags.update(
+            tag_groups=hosttags.get('tag_groups', []) + [{
+                'id': identifier,
+                'title': title,
+                'topic': topic,
+                'tags': tags or []
+            }]
+        )
+
+        self.set_hosttags(hosttags)
+
     def get_site(self, site_id):
         """
         Gets a site

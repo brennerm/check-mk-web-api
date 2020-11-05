@@ -114,6 +114,7 @@ def test_delete_all_hosts():
     api.delete_all_hosts()
     assert len(api.get_all_hosts()) == 0
 
+
 def test_delete_hosts():
     api.add_host('host00')
     api.add_host('host01')
@@ -122,6 +123,7 @@ def test_delete_hosts():
 
     api.delete_hosts(['host00', 'host01'])
     assert len(api.get_all_hosts()) == 1
+
 
 def test_discover_services():
     api.add_host('localhost')
@@ -233,10 +235,12 @@ def test_add_folder():
 
 def test_edit_folder():
     api.add_folder('productive', snmp_community='public')
-    assert api.get_folder('productive')['attributes']['snmp_community'] == 'public'
+    assert api.get_folder('productive')[
+        'attributes']['snmp_community'] == 'public'
 
     api.edit_folder('productive', snmp_community='private')
-    assert api.get_folder('productive')['attributes']['snmp_community'] == 'private'
+    assert api.get_folder('productive')[
+        'attributes']['snmp_community'] == 'private'
 
 
 def test_edit_nonexistent_folder():
@@ -436,6 +440,50 @@ def test_set_hosttags():
     api.set_hosttags(current_tags)
 
 
+def test_add_aux_tag():
+    current_tags = api.get_hosttags()['aux_tags']
+    api.add_aux_tag(''.join(random.choice(string.ascii_lowercase)
+                            for i in range(10)), "Web Server", "Service Type")
+    new_tags = api.get_hosttags()['aux_tags']
+    assert (len(new_tags) - len(current_tags)) == 1
+
+
+def test_add_duplicate_aux_tag():
+    identifier = ''.join(random.choice(string.ascii_lowercase)
+                         for i in range(10))
+    api.add_aux_tag(identifier, "Web Server", "Service Type")
+    with pytest.raises(CheckMkWebApiException):
+        api.add_aux_tag(identifier, "Web Server", "Service Type")
+
+
+def test_add_tag_group():
+    current_groups = api.get_hosttags()['tag_groups']
+    api.add_tag_group(''.join(random.choice(string.ascii_lowercase) for i in range(10)), "Web Server", [{
+        "aux_tags": [],
+        "id": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+        "title": "Test & test"
+    }])
+    new_groups = api.get_hosttags()['tag_groups']
+    assert (len(new_groups) - len(current_groups)) == 1
+
+
+def test_add_duplicate_tag_group():
+    identifier = ''.join(random.choice(string.ascii_lowercase)
+                         for i in range(10))
+
+    api.add_tag_group(identifier, "Web Server", [{
+        "aux_tags": [],
+        "id": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+        "title": "Test & test"
+    }])
+    with pytest.raises(CheckMkWebApiException):
+        api.add_tag_group(identifier, "Web Server", [{
+            "aux_tags": [],
+            "id": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+            "title": "Test & test"
+        }])
+
+
 def test_get_ruleset():
     assert api.get_ruleset('checkgroup_parameters:hw_fans_perc')
 
@@ -459,7 +507,8 @@ def test_get_site():
 
 
 def test_set_site():
-    random_alias = 'alias_' + ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+    random_alias = 'alias_' + \
+        ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
     config = api.get_site('cmk')['site_config']
     config['alias'] = random_alias
 
