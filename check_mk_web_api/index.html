@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>WebAPI - Check_MK Web API</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "WebAPI";
+    var mkdocs_page_input_path = "check_mk_web_api.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Check_MK Web API</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Documentation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">WebAPI</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../exceptions/">Exceptions</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Check_MK Web API</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API Documentation &raquo;</li>
+        
+      
+    
+    <li>WebAPI</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/brennerm/check-mk-web-api/edit/master/docs/check_mk_web_api.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="check_mk_web_api.WebApi">WebApi</h1>
+
+<pre><code class="language-python">WebApi(self, check_mk_url, username, secret)
+</code></pre>
+<p>Abstraction for Check_Mk Web API</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>check_mk_url (str)</strong>: URL to Check_Mk web application, multiple formats are supported</li>
+<li><strong>username (str)</strong>: Name of user to connect as. Make sure this is an automation user.</li>
+<li><strong>secret (str)</strong>: Secret for automation user. This is different from the password!</li>
+</ul>
+<p><strong>Examples</strong></p>
+<pre><code class="language-python">WebApi('http://checkmk.company.com/monitor/check_mk/webapi.py', 'automation', 'secret')
+</code></pre>
+<pre><code class="language-python">WebApi('http://checkmk.company.com/monitor/check_mk', 'automation', 'secret')
+</code></pre>
+<pre><code class="language-python">WebApi('http://checkmk.company.com/monitor', 'automation', 'secret')
+</code></pre>
+<h2 id="check_mk_web_api.WebApi.DiscoverMode">DiscoverMode</h2>
+
+<pre><code class="language-python">WebApi.DiscoverMode(self, /, *args, **kwargs)
+</code></pre>
+<p><strong>Members</strong></p>
+<ul>
+<li><code>NEW</code>: Only discover new services</li>
+<li><code>REMOVE</code>: Remove exceeding services</li>
+<li><code>FIXALL</code>: Remove exceeding services and discover new services (Tabula Rasa)</li>
+<li><code>REFRESH</code>: Start from scratch</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.ActivateMode">ActivateMode</h2>
+
+<pre><code class="language-python">WebApi.ActivateMode(self, /, *args, **kwargs)
+</code></pre>
+<p><strong>Members</strong></p>
+<ul>
+<li><code>DIRTY</code>: Update sites with changes</li>
+<li><code>ALL</code>: Update all slave sites</li>
+<li><code>SPECIFIC</code>: Only update specified sites</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.make_request">make_request</h2>
+
+<pre><code class="language-python">WebApi.make_request(self, action, query_params=None, data=None)
+</code></pre>
+<p>Make arbitrary request to Check_Mk Web API</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>action (str)</strong>: Action request, e.g. add_host</li>
+<li><strong>query_params (dict)</strong>: dict of path parameters</li>
+<li><strong>data (dict)</strong>: dict that will be sent as request body</li>
+</ul>
+<p><strong>Raises</strong></p>
+<ul>
+<li><code>CheckMkWebApiResponseException</code>: Raised when the HTTP status code != 200</li>
+<li><code>CheckMkWebApiException</code>: Raised when the action's result_code != 0</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.add_host">add_host</h2>
+
+<pre><code class="language-python">WebApi.add_host(self, hostname, folder='/', ipaddress=None, alias=None, tags=None, **custom_attrs)
+</code></pre>
+<p>Adds a nonexistent host to the Check_MK inventory</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>hostname (str)</strong>: Name of host to add</li>
+<li><strong>folder (str)</strong>: Name of folder to add the host to</li>
+<li><strong>ipaddress (str)</strong>: IP address of host</li>
+<li><strong>alias (str)</strong>: Alias for host</li>
+<li><strong>tags (dict)</strong>: Dictionary of tags, prefix tag_ can be omitted</li>
+<li><strong>custom_attrs (dict)</strong>: dict that will get merged with generated attributes, mainly for compatibility reasons</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.edit_host">edit_host</h2>
+
+<pre><code class="language-python">WebApi.edit_host(self, hostname, unset_attributes=None, **custom_attrs)
+</code></pre>
+<p>Edits the properties of an existing host</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>hostname (str)</strong>: Name of host to edit</li>
+<li><strong>unset_attributes (list)</strong>: List of attributes to unset</li>
+<li><strong>custom_attrs (dict)</strong>: dict that will get merged with generated attributes, mainly for compatibility reasons</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_host">delete_host</h2>
+
+<pre><code class="language-python">WebApi.delete_host(self, hostname)
+</code></pre>
+<p>Deletes a host from the Check_MK inventory</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>hostname (str)</strong>: Name of host to delete</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_hosts">delete_hosts</h2>
+
+<pre><code class="language-python">WebApi.delete_hosts(self, hostnames)
+</code></pre>
+<p>Deletes multiple hosts from the Check_MK inventory</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>hostnames (list)</strong>: Name of hosts to delete</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_all_hosts">delete_all_hosts</h2>
+
+<pre><code class="language-python">WebApi.delete_all_hosts(self)
+</code></pre>
+<p>Deletes all hosts from the Check_MK inventory</p>
+<h2 id="check_mk_web_api.WebApi.get_host">get_host</h2>
+
+<pre><code class="language-python">WebApi.get_host(self, hostname, effective_attributes=False)
+</code></pre>
+<p>Gets one host</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>hostname (str)</strong>: Name of host to get</li>
+<li><strong>effective_attributes (bool)</strong>: If True attributes with default values will be returned</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_all_hosts">get_all_hosts</h2>
+
+<pre><code class="language-python">WebApi.get_all_hosts(self, effective_attributes=False)
+</code></pre>
+<p>Gets all hosts</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>effective_attributes (bool)</strong>: If True attributes with default values will be returned</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_hosts_by_folder">get_hosts_by_folder</h2>
+
+<pre><code class="language-python">WebApi.get_hosts_by_folder(self, folder, effective_attributes=False)
+</code></pre>
+<p>Gets hosts in folder</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>folder (str)</strong>: folder to get hosts for</li>
+<li><strong>effective_attributes (bool)</strong>: If True attributes with default values will be returned</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.discover_services">discover_services</h2>
+
+<pre><code class="language-python">WebApi.discover_services(self, hostname, mode=&lt;DiscoverMode.NEW: 'new'&gt;)
+</code></pre>
+<p>Discovers the services of a specific host</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>hostname (str)</strong>: Name of host to discover services for</li>
+<li><strong>mode (DiscoverMode)</strong>: see <code>WebApi.DiscoverMode</code></li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.discover_services_for_all_hosts">discover_services_for_all_hosts</h2>
+
+<pre><code class="language-python">WebApi.discover_services_for_all_hosts(self, mode=&lt;DiscoverMode.NEW: 'new'&gt;)
+</code></pre>
+<p>Discovers the services of all hosts</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>mode (DiscoverMode)</strong>: see <code>WebApi.DiscoverMode</code></li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.bulk_discovery_all_hosts">bulk_discovery_all_hosts</h2>
+
+<pre><code class="language-python">WebApi.bulk_discovery_all_hosts(self, mode=&lt;DiscoverMode.NEW: 'new'&gt;, use_cache=True, do_scan=True, bulk_size=10, ignore_single_check_errors=True)
+</code></pre>
+<p>Bulk discovers the services of all hosts</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>mode (DiscoverMode)</strong>: see <code>WebApi.DiscoverMode</code></li>
+<li><strong>use_cache (bool)</strong>: use cache for discovery</li>
+<li><strong>do_scan (bool)</strong>: do scan</li>
+<li><strong>bulk_size (int)</strong>: number of hosts to handle at once</li>
+<li><strong>ignore_single_check_errors (bool)</strong>: Ignore errors in single check plugins</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.bulk_discovery_start">bulk_discovery_start</h2>
+
+<pre><code class="language-python">WebApi.bulk_discovery_start(self, hostnames, mode=&lt;DiscoverMode.NEW: 'new'&gt;, use_cache=True, do_scan=True, bulk_size=10, ignore_single_check_errors=True)
+</code></pre>
+<p>Start bulk discovery for multiple hosts</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>mode (DiscoverMode)</strong>: see <code>WebApi.DiscoverMode</code></li>
+<li><strong>use_cache (bool)</strong>: use cache for discovery</li>
+<li><strong>do_scan (bool)</strong>: do scan</li>
+<li><strong>bulk_size (int)</strong>: number of hosts to handle at once</li>
+<li><strong>ignore_single_check_errors (bool)</strong>: Ignore errors in single check plugins</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.bulk_discovery_status">bulk_discovery_status</h2>
+
+<pre><code class="language-python">WebApi.bulk_discovery_status(self)
+</code></pre>
+<p>Get status of bulk discovery</p>
+<h2 id="check_mk_web_api.WebApi.get_user">get_user</h2>
+
+<pre><code class="language-python">WebApi.get_user(self, user_id)
+</code></pre>
+<p>Gets a single user</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>user_id (str)</strong>: ID of user to get</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_all_users">get_all_users</h2>
+
+<pre><code class="language-python">WebApi.get_all_users(self)
+</code></pre>
+<p>Gets all users and their attributes</p>
+<h2 id="check_mk_web_api.WebApi.add_user">add_user</h2>
+
+<pre><code class="language-python">WebApi.add_user(self, user_id, username, password, **custom_attrs)
+</code></pre>
+<p>Adds a new user</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>user_id (str)</strong>: user ID that will be used to log in</li>
+<li><strong>username (str)</strong>: name of the user to create</li>
+<li><strong>password (str)</strong>: password that will be used to log in</li>
+<li><strong>custom_attrs (dict)</strong>: attributes that can be set for a user, look at output from <code>WebApi.get_all_users</code></li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.add_automation_user">add_automation_user</h2>
+
+<pre><code class="language-python">WebApi.add_automation_user(self, user_id, username, secret, **custom_attrs)
+</code></pre>
+<p>Adds a new automation user</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>user_id (str)</strong>: user ID that will be used to log in</li>
+<li><strong>username (str)</strong>: name of the user to create</li>
+<li><strong>secret (str)</strong>: secret that will be used to log in</li>
+<li><strong>custom_attrs (dict)</strong>: attributes that can be set for a user, look at output from <code>WebApi.get_all_users</code></li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.edit_user">edit_user</h2>
+
+<pre><code class="language-python">WebApi.edit_user(self, user_id, attributes, unset_attributes=None)
+</code></pre>
+<p>Edits an existing user</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>user_id (str)</strong>: ID of user to edit</li>
+<li><strong>attributes (dict)</strong>: attributes to set for given host</li>
+<li><strong>unset_attributes (list)</strong>: list of attribute keys to unset</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_user">delete_user</h2>
+
+<pre><code class="language-python">WebApi.delete_user(self, user_id)
+</code></pre>
+<p>Deletes a user</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>user_id (str)</strong>: ID of user to delete</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_folder">get_folder</h2>
+
+<pre><code class="language-python">WebApi.get_folder(self, folder, effective_attributes=False)
+</code></pre>
+<p>Gets one folder</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>folder (str)</strong>: name of folder to get</li>
+<li><strong>effective_attributes (bool)</strong>: If True attributes with default values will be returned</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_all_folders">get_all_folders</h2>
+
+<pre><code class="language-python">WebApi.get_all_folders(self)
+</code></pre>
+<p>Gets all folders</p>
+<h2 id="check_mk_web_api.WebApi.add_folder">add_folder</h2>
+
+<pre><code class="language-python">WebApi.add_folder(self, folder, **attributes)
+</code></pre>
+<p>Adds a new folder</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>folder (str)</strong>: name of folder to add</li>
+<li><strong>attributes (dict)</strong>: attributes to set for the folder, look at output from <code>WebApi.get_folder</code></li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.edit_folder">edit_folder</h2>
+
+<pre><code class="language-python">WebApi.edit_folder(self, folder, **attributes)
+</code></pre>
+<p>Edits an existing folder</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>folder (str)</strong>: name of folder to edit</li>
+<li><strong>attributes (dict)</strong>: attributes to set for the folder, look at output from <code>WebApi.get_folder</code></li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_folder">delete_folder</h2>
+
+<pre><code class="language-python">WebApi.delete_folder(self, folder)
+</code></pre>
+<p>Deletes an existing folder</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>folder (str)</strong>: name of folder to delete</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_contactgroup">get_contactgroup</h2>
+
+<pre><code class="language-python">WebApi.get_contactgroup(self, group)
+</code></pre>
+<p>Gets one contact group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of contact group to get</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_all_contactgroups">get_all_contactgroups</h2>
+
+<pre><code class="language-python">WebApi.get_all_contactgroups(self)
+</code></pre>
+<p>Gets all contact groups</p>
+<h2 id="check_mk_web_api.WebApi.add_contactgroup">add_contactgroup</h2>
+
+<pre><code class="language-python">WebApi.add_contactgroup(self, group, alias)
+</code></pre>
+<p>Adds a contact group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of group to add</li>
+<li><strong>alias (str)</strong>: alias for group</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.edit_contactgroup">edit_contactgroup</h2>
+
+<pre><code class="language-python">WebApi.edit_contactgroup(self, group, alias)
+</code></pre>
+<p>Edits a contact group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of group to edit</li>
+<li><strong>alias (str)</strong>: new alias for group</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_contactgroup">delete_contactgroup</h2>
+
+<pre><code class="language-python">WebApi.delete_contactgroup(self, group)
+</code></pre>
+<p>Deletes a contact group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of group to delete</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_all_contactgroups">delete_all_contactgroups</h2>
+
+<pre><code class="language-python">WebApi.delete_all_contactgroups(self)
+</code></pre>
+<p>Deletes all contact groups</p>
+<h2 id="check_mk_web_api.WebApi.get_hostgroup">get_hostgroup</h2>
+
+<pre><code class="language-python">WebApi.get_hostgroup(self, group)
+</code></pre>
+<p>Gets one host group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of host group to get</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_all_hostgroups">get_all_hostgroups</h2>
+
+<pre><code class="language-python">WebApi.get_all_hostgroups(self)
+</code></pre>
+<p>Gets all host groups</p>
+<h2 id="check_mk_web_api.WebApi.add_hostgroup">add_hostgroup</h2>
+
+<pre><code class="language-python">WebApi.add_hostgroup(self, group, alias)
+</code></pre>
+<p>Adds a host group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of group to add</li>
+<li><strong>alias (str)</strong>: alias for group</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.edit_hostgroup">edit_hostgroup</h2>
+
+<pre><code class="language-python">WebApi.edit_hostgroup(self, group, alias)
+</code></pre>
+<p>Edits a host group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of group to edit</li>
+<li><strong>alias (str)</strong>: new alias for group</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_hostgroup">delete_hostgroup</h2>
+
+<pre><code class="language-python">WebApi.delete_hostgroup(self, group)
+</code></pre>
+<p>Deletes a host group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of group to delete</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_all_hostgroups">delete_all_hostgroups</h2>
+
+<pre><code class="language-python">WebApi.delete_all_hostgroups(self)
+</code></pre>
+<p>Deletes all host groups</p>
+<h2 id="check_mk_web_api.WebApi.get_all_servicegroups">get_all_servicegroups</h2>
+
+<pre><code class="language-python">WebApi.get_all_servicegroups(self)
+</code></pre>
+<p>Gets all service groups</p>
+<h2 id="check_mk_web_api.WebApi.add_servicegroup">add_servicegroup</h2>
+
+<pre><code class="language-python">WebApi.add_servicegroup(self, group, alias)
+</code></pre>
+<p>Adds a service group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of group to add</li>
+<li><strong>alias (str)</strong>: alias for group</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.edit_servicegroup">edit_servicegroup</h2>
+
+<pre><code class="language-python">WebApi.edit_servicegroup(self, group, alias)
+</code></pre>
+<p>Edits a service group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of group to edit</li>
+<li><strong>alias (str)</strong>: new alias for group</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_servicegroup">delete_servicegroup</h2>
+
+<pre><code class="language-python">WebApi.delete_servicegroup(self, group)
+</code></pre>
+<p>Deletes a service group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>group (str)</strong>: name of group to delete</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_all_servicegroups">delete_all_servicegroups</h2>
+
+<pre><code class="language-python">WebApi.delete_all_servicegroups(self)
+</code></pre>
+<p>Deletes all service groups</p>
+<h2 id="check_mk_web_api.WebApi.get_ruleset">get_ruleset</h2>
+
+<pre><code class="language-python">WebApi.get_ruleset(self, ruleset)
+</code></pre>
+<p>Gets one rule set</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>ruleset (str)</strong>: name of rule set to get</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_rulesets">get_rulesets</h2>
+
+<pre><code class="language-python">WebApi.get_rulesets(self)
+</code></pre>
+<p>Gets all rule sets</p>
+<h2 id="check_mk_web_api.WebApi.set_ruleset">set_ruleset</h2>
+
+<pre><code class="language-python">WebApi.set_ruleset(self, ruleset, ruleset_config)
+</code></pre>
+<p>Edits one rule set</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>ruleset (str)</strong>: name of rule set to edit</li>
+<li><strong>ruleset_config (dict)</strong>: config that will be set, have a look at return value of <code>WebApi.get_ruleset</code></li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_hosttags">get_hosttags</h2>
+
+<pre><code class="language-python">WebApi.get_hosttags(self)
+</code></pre>
+<p>Gets all host tags</p>
+<h2 id="check_mk_web_api.WebApi.set_hosttags">set_hosttags</h2>
+
+<pre><code class="language-python">WebApi.set_hosttags(self, hosttags)
+</code></pre>
+<p>Sets host tags</p>
+<p>As implemented by Check_MK, it is only possible to write the whole Host Tag Settings within an API-Call
+You can use the <code>WebApi.get_hosttags</code> to get the current Tags, modify them and write the dict back via set_hosttags<br />
+To ensure that no Tags are modified in the meantime you can use the configuration_hash key.</p>
+<p>e.g. 'configuration_hash': u'f31ea758a59473d15f378b692110996c'</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>hosttags (dict) with 2 mandatory keys:  { 'aux_tags' : [], 'tag_groups' </strong>: [] }</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.add_aux_tag">add_aux_tag</h2>
+
+<pre><code class="language-python">WebApi.add_aux_tag(self, identifier, title, topic=None)
+</code></pre>
+<p>Adds an auxiliary host tag</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>identifier (str)</strong>: unique identifier of the tag to add</li>
+<li><strong>title (str)</strong>: title of the tag to add</li>
+<li><strong>topic (str)</strong>: topic of the tag to add</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.add_tag_group">add_tag_group</h2>
+
+<pre><code class="language-python">WebApi.add_tag_group(self, identifier, title, tags, topic=None)
+</code></pre>
+<p>Adds a tag group</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>identifier (str)</strong>: unique identifier of the tag to add</li>
+<li><strong>title (str)</strong>: title of the tag to add</li>
+<li><strong>tags (list): tag choices to add, e.g. [{"id": "high", "title": "High Availability", "aux_tags"</strong>: []}, ...]</li>
+<li><strong>topic (str)</strong>: topic of the tag to add</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.get_site">get_site</h2>
+
+<pre><code class="language-python">WebApi.get_site(self, site_id)
+</code></pre>
+<p>Gets a site</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>site_id (str)</strong>: ID of site to get</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.set_site">set_site</h2>
+
+<pre><code class="language-python">WebApi.set_site(self, site_id, site_config)
+</code></pre>
+<p>Edits the connection to a site</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>site_id (str)</strong>: ID of site to edit</li>
+<li><strong>site_config</strong>: config that will be set, have a look at return value of <code>WebApi.get_site</code></li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.delete_site">delete_site</h2>
+
+<pre><code class="language-python">WebApi.delete_site(self, site_id)
+</code></pre>
+<p>Deletes a connection to a site</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>site_id (str)</strong>: ID of site to delete the connection to</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.login_site">login_site</h2>
+
+<pre><code class="language-python">WebApi.login_site(self, site_id, user, password)
+</code></pre>
+<p>Logs in to site</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>site_id (str)</strong>: ID of site to log in to</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.logout_site">logout_site</h2>
+
+<pre><code class="language-python">WebApi.logout_site(self, site_id)
+</code></pre>
+<p>Logs out of site</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>site_id (str)</strong>: ID of site to log out of</li>
+</ul>
+<h2 id="check_mk_web_api.WebApi.bake_agents">bake_agents</h2>
+
+<pre><code class="language-python">WebApi.bake_agents(self)
+</code></pre>
+<p>Bakes all agents</p>
+<p>Enterprise Edition only!</p>
+<h2 id="check_mk_web_api.WebApi.activate_changes">activate_changes</h2>
+
+<pre><code class="language-python">WebApi.activate_changes(self, mode=&lt;ActivateMode.DIRTY: 'dirty'&gt;, sites=None, allow_foreign_changes=False)
+</code></pre>
+<p>Activates all changes previously done</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><strong>mode (ActivateMode)</strong>: see <code>WebApi.ActivateMode</code></li>
+<li><strong>sites (list)</strong>: List of sites to activates changes on</li>
+<li><strong>allow_foreign_changes (bool)</strong>: If True changes of other users will be applied as well</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../exceptions/" class="btn btn-neutral float-right" title="Exceptions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/brennerm/check-mk-web-api/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../exceptions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
