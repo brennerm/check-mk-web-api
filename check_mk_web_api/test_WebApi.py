@@ -1,6 +1,7 @@
 import os
 import random
 import string
+import time
 
 import pytest
 
@@ -528,12 +529,15 @@ def test_logout_site():
     api.login_site('cmk', 'user00', 'p4ssw0rd')
     api.logout_site('cmk')
 
-@pytest.mark.skip(reason="test_bulk_discovery_all_hosts")
 def test_bulk_discovery_start():
+    while api.bulk_discovery_status()['is_active'] == True:
+        time.sleep(5)
     api.add_host('host00')
     api.bulk_discovery_start(['host00'], mode=WebApi.DiscoverMode.NEW)
 
 def test_bulk_discovery_all_hosts():
+    while api.bulk_discovery_status()['is_active'] == True:
+        time.sleep(5)
     api.add_host('host00')
     api.add_host('host01')
     api.add_host('host02')
