@@ -1,0 +1,60 @@
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  compile_code:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python_version:
+          - 2.7
+          - 3.6
+          - 3.7
+          - 3.8
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python_version }}
+      - name: compile code
+        run: python -m py_compile check_mk_web_api/*.py
+
+  run_e2e:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        checkmk_version:
+          - 1.5
+          - 1.6
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.6'
+      - name: start and preconfigure checkmk
+        run: |
+          docker run -d --rm -p 127.0.0.1:8080:5000 --name check-mk checkmk/check-mk-raw:${{ matrix.checkmk_version }}.0-latest
+          set +e                                                                                                                                                                                                                   
+
+          max_retry=300                                                                                                                                                                                                          
+          counter=0                                                                                             
+          until docker exec -u cmk check-mk bash -c "echo automation-secret > /omd/sites/cmk/var/check_mk/web/automation/automation.secret" > /dev/null
+          do
+             sleep 1
+             [[ counter -eq $max_retry ]] && echo "failed to set password after $counter tries...giving up" && exit 1
+             echo "#$counter: failed to set password. trying again..."
+             ((counter++))
+          done
+          echo Successfully set automation user password
+          
+      - name: execute E2E tests
+        run: |
+          CHECK_MK_URL=http://localhost:8080/cmk/check_mk CHECK_MK_USER=automation CHECK_MK_SECRET=automation-secret CHECK_MK_VERSION="${{ matrix.checkmk_version }}" python setup.py test
