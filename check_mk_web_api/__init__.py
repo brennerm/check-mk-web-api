@@ -339,6 +339,28 @@ class WebApi:
         for host in self.get_all_hosts():
             self.discover_services(host, mode)
 
+    def bulk_discovery_all_hosts(self, mode=DiscoverMode.NEW, use_cache=True, do_scan=True, bulk_size=10,
+                                 ignore_single_check_errors=True):
+        hostnames = []
+        for host in self.get_all_hosts():
+            hostnames.append(host)
+        self.bulk_discovery_start(hostnames, mode, use_cache, do_scan, bulk_size, ignore_single_check_errors)
+
+    def bulk_discovery_start(self, hostnames, mode=DiscoverMode.NEW, use_cache=True, do_scan=True, bulk_size=10,
+                             ignore_single_check_errors=True):
+        data = NoNoneValueDict({
+            'hostnames': hostnames,
+            'mode': mode.value,
+            "use_cache": use_cache,
+            "do_scan": do_scan,
+            "bulk_size": bulk_size,
+            "ignore_single_check_errors": ignore_single_check_errors
+        })
+        self.make_request('bulk_discovery_start', data=data, query_params=None)
+
+    def bulk_discovery_status(self):
+        return self.make_request('bulk_discovery_status', data=None, query_params=None)
+
     def get_user(self, user_id):
         """
         Gets a single user

@@ -527,3 +527,23 @@ def test_logout_site():
     api.add_user('user00', 'User 00', 'p4ssw0rd')
     api.login_site('cmk', 'user00', 'p4ssw0rd')
     api.logout_site('cmk')
+
+@pytest.mark.skip(reason="test_bulk_discovery_all_hosts")
+def test_bulk_discovery_start():
+    api.add_host('host00')
+    api.bulk_discovery_start(['host00'], mode=WebApi.DiscoverMode.NEW)
+
+def test_bulk_discovery_all_hosts():
+    api.add_host('host00')
+    api.add_host('host01')
+    api.add_host('host02')
+    api.add_host('host03')
+    api.bulk_discovery_all_hosts(bulk_size=3)
+
+def test_bulk_discovery_status():
+    bulk_status = api.bulk_discovery_status()
+    assert 'job' in bulk_status
+    assert 'is_active' in bulk_status
+    assert 'output' in bulk_status['job']
+    assert 'state' in bulk_status['job']
+    assert 'result_msg' in bulk_status['job']
