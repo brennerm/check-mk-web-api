@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.6'
+      - name: install doc requirements
+        run: pip install -r requirements-doc.txt
+      - name: build docs
+        working-directory: doc
+        run: pydocmd build
+      - name: publish docs
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: gh-pages
+          folder: doc/_build/site
