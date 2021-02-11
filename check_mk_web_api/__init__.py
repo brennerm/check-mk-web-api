@@ -848,6 +848,12 @@ class WebApi:
 
         return self.make_request('get_site', data=data, query_params={'output_format': 'python'})
 
+    def get_all_sites(self):
+        """
+        Gets all sites
+        """
+        return self.make_request('get_all_sites', query_params={'output_format': 'python'})
+
     def set_site(self, site_id, site_config):
         """
         Edits the connection to a site

@@ -506,6 +506,11 @@ def test_get_rulesets():
 def test_get_site():
     assert api.get_site('cmk')
 
+def test_get_all_sites():
+    if 'CHECK_MK_VERSION' in os.environ and os.environ['CHECK_MK_VERSION'] == "1.5":
+        pytest.skip("only supported since version 1.6")
+
+    assert api.get_all_sites()
 
 def test_set_site():
     random_alias = 'alias_' + \
@@ -532,21 +537,25 @@ def test_logout_site():
 def test_bulk_discovery_start():
     if 'CHECK_MK_VERSION' in os.environ and os.environ['CHECK_MK_VERSION'] == "1.5":
         pytest.skip("only supported since version 1.6")
-    while api.bulk_discovery_status()['is_active'] == True:
-        time.sleep(5)
+
     api.add_host('host00')
     api.bulk_discovery_start(['host00'], mode=WebApi.DiscoverMode.NEW)
+
+    while api.bulk_discovery_status()['is_active'] == True:
+        time.sleep(5)
 
 def test_bulk_discovery_all_hosts():
     if 'CHECK_MK_VERSION' in os.environ and os.environ['CHECK_MK_VERSION'] == "1.5":
         pytest.skip("only supported since version 1.6")
-    while api.bulk_discovery_status()['is_active'] == True:
-        time.sleep(5)
+
     api.add_host('host00')
     api.add_host('host01')
     api.add_host('host02')
     api.add_host('host03')
     api.bulk_discovery_all_hosts(bulk_size=3)
+
+    while api.bulk_discovery_status()['is_active'] == True:
+        time.sleep(5)
 
 def test_bulk_discovery_status():
     if 'CHECK_MK_VERSION' in os.environ and os.environ['CHECK_MK_VERSION'] == "1.5":
