@@ -531,8 +531,7 @@ def test_logout_site():
 
 def test_bulk_discovery_start():
     if 'CHECK_MK_VERSION' in os.environ and os.environ['CHECK_MK_VERSION'] == "1.5":
-        # only supported since version 1.6
-        return
+        pytest.skip("only supported since version 1.6")
     while api.bulk_discovery_status()['is_active'] == True:
         time.sleep(5)
     api.add_host('host00')
@@ -540,8 +539,7 @@ def test_bulk_discovery_start():
 
 def test_bulk_discovery_all_hosts():
     if 'CHECK_MK_VERSION' in os.environ and os.environ['CHECK_MK_VERSION'] == "1.5":
-        # only supported since version 1.6
-        return
+        pytest.skip("only supported since version 1.6")
     while api.bulk_discovery_status()['is_active'] == True:
         time.sleep(5)
     api.add_host('host00')
@@ -552,8 +550,7 @@ def test_bulk_discovery_all_hosts():
 
 def test_bulk_discovery_status():
     if 'CHECK_MK_VERSION' in os.environ and os.environ['CHECK_MK_VERSION'] == "1.5":
-        # only supported since version 1.6
-        return
+        pytest.skip("only supported since version 1.6")
     bulk_status = api.bulk_discovery_status()
     assert 'job' in bulk_status
     assert 'is_active' in bulk_status
