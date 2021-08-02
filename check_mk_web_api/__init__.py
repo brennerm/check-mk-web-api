@@ -44,10 +44,10 @@ class WebApi:
     """
 
     __DISCOVERY_REGEX = {
-        'added': re.compile(r'.*Added (\d+),.*'),
-        'removed': re.compile(r'.*Removed (\d+),.*'),
-        'kept': re.compile(r'.*Kept (\d+),.*'),
-        'new_count': re.compile(r'.*New Count (\d+)$')
+        'added': [re.compile(r'.*Added (\d+),.*')],
+        'removed': [re.compile(r'.*[Rr]emoved (\d+),.*')],
+        'kept': [re.compile(r'.*[Kk]ept (\d+),.*')],
+        'new_count': [re.compile(r'.*New Count (\d+)$'), re.compile(r'.*(\d+) new.*')]  # output changed in 1.6 so we have to try multiple patterns
     }
 
     class DiscoverMode(enum.Enum):
@@ -96,6 +96,8 @@ class WebApi:
             request_string = 'request=' + json.dumps(data)
         elif request_format == 'python':
             request_string = 'request=' + str(data)
+
+        request_string = urllib.parse.quote(request_string, safe="{[]}\"=, :")
 
         return request_string.encode()
 
@@ -229,6 +231,20 @@ class WebApi:
 
         return self.make_request('delete_host', data=data)
 
+    def delete_hosts(self, hostnames):
+        """
+        Deletes multiple hosts from the Check_MK inventory
+
+        # Arguments
+        hostnames (list): Name of hosts to delete
+        """
+        data = NoNoneValueDict({
+            'hostnames': hostnames
+        })
+
+        return self.make_request('delete_hosts', data=data)
+
+
     def delete_all_hosts(self):
         """
         Deletes all hosts from the Check_MK inventory
@@ -304,8 +320,12 @@ class WebApi:
         result = self.make_request('discover_services', data=data, query_params=query_params)
 
         counters = {}
-        for k, regex in WebApi.__DISCOVERY_REGEX.items():
-            counters[k] = regex.match(result).group(1)
+        for k, patterns in WebApi.__DISCOVERY_REGEX.items():
+            for pattern in patterns:
+                try:
+                    counters[k] = pattern.match(result).group(1)
+                except AttributeError:
+                    continue
 
         return counters
 
@@ -318,6 +338,51 @@ class WebApi:
         """
         for host in self.get_all_hosts():
             self.discover_services(host, mode)
+
+    def bulk_discovery_all_hosts(self, mode=DiscoverMode.NEW, use_cache=True, do_scan=True, bulk_size=10,
+                                 ignore_single_check_errors=True):
+        """
+        Bulk discovers the services of all hosts
+
+        # Arguments
+        mode (DiscoverMode): see #WebApi.DiscoverMode
+        use_cache (bool): use cache for discovery
+        do_scan (bool): do scan
+        bulk_size (int): number of hosts to handle at once
+        ignore_single_check_errors (bool): Ignore errors in single check plugins
+        """
+        hostnames = []
+        for host in self.get_all_hosts():
+            hostnames.append(host)
+        self.bulk_discovery_start(hostnames, mode, use_cache, do_scan, bulk_size, ignore_single_check_errors)
+
+    def bulk_discovery_start(self, hostnames, mode=DiscoverMode.NEW, use_cache=True, do_scan=True, bulk_size=10,
+                             ignore_single_check_errors=True):
+        """
+        Start bulk discovery for multiple hosts
+
+        # Arguments
+        mode (DiscoverMode): see #WebApi.DiscoverMode
+        use_cache (bool): use cache for discovery
+        do_scan (bool): do scan
+        bulk_size (int): number of hosts to handle at once
+        ignore_single_check_errors (bool): Ignore errors in single check plugins
+        """
+        data = NoNoneValueDict({
+            'hostnames': hostnames,
+            'mode': mode.value,
+            "use_cache": use_cache,
+            "do_scan": do_scan,
+            "bulk_size": bulk_size,
+            "ignore_single_check_errors": ignore_single_check_errors
+        })
+        self.make_request('bulk_discovery_start', data=data, query_params=None)
+
+    def bulk_discovery_status(self):
+        """
+        Get status of bulk discovery
+        """
+        return self.make_request('bulk_discovery_status', data=None, query_params=None)
 
     def get_user(self, user_id):
         """
@@ -725,6 +790,50 @@ class WebApi:
         data = NoNoneValueDict(hosttags)
 
         return self.make_request('set_hosttags', data=data)
+
+    def add_aux_tag(self, identifier, title, topic=None):
+        """
+        Adds an auxiliary host tag
+   
+        # Arguments
+        identifier (str): unique identifier of the tag to add
+        title (str): title of the tag to add
+        topic (str): topic of the tag to add
+        """
+        hosttags = self.get_hosttags()
+
+        hosttags.update(
+            aux_tags=hosttags.get('aux_tags', []) + [{
+                'id': identifier,
+                'title': title,
+                'topic': topic
+            }]
+        )
+
+        self.set_hosttags(hosttags)
+
+    def add_tag_group(self, identifier, title, tags, topic=None):
+        """
+        Adds a tag group
+   
+        # Arguments
+        identifier (str): unique identifier of the tag to add
+        title (str): title of the tag to add
+        tags (list): tag choices to add, e.g. [{"id": "high", "title": "High Availability", "aux_tags": []}, ...]
+        topic (str): topic of the tag to add
+        """
+        hosttags = self.get_hosttags()
+
+        hosttags.update(
+            tag_groups=hosttags.get('tag_groups', []) + [{
+                'id': identifier,
+                'title': title,
+                'topic': topic,
+                'tags': tags or []
+            }]
+        )
+
+        self.set_hosttags(hosttags)
 
     def get_site(self, site_id):
         """

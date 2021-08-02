@@ -1,6 +1,7 @@
 import os
 import random
 import string
+import time
 
 import pytest
 
@@ -115,9 +116,24 @@ def test_delete_all_hosts():
     assert len(api.get_all_hosts()) == 0
 
 
+def test_delete_hosts():
+    api.add_host('host00')
+    api.add_host('host01')
+    api.add_host('host02')
+    assert len(api.get_all_hosts()) == 3
+
+    api.delete_hosts(['host00', 'host01'])
+    assert len(api.get_all_hosts()) == 1
+
+
 def test_discover_services():
     api.add_host('localhost')
-    api.discover_services('localhost')
+    result = api.discover_services('localhost')
+
+    assert int(result['added']) >= 0
+    assert int(result['removed']) >= 0
+    assert int(result['kept']) >= 0
+    assert int(result['new_count']) >= 0
 
 
 def test_discover_services_for_nonexistent_host():
@@ -220,10 +236,12 @@ def test_add_folder():
 
 def test_edit_folder():
     api.add_folder('productive', snmp_community='public')
-    assert api.get_folder('productive')['attributes']['snmp_community'] == 'public'
+    assert api.get_folder('productive')[
+        'attributes']['snmp_community'] == 'public'
 
     api.edit_folder('productive', snmp_community='private')
-    assert api.get_folder('productive')['attributes']['snmp_community'] == 'private'
+    assert api.get_folder('productive')[
+        'attributes']['snmp_community'] == 'private'
 
 
 def test_edit_nonexistent_folder():
@@ -407,6 +425,66 @@ def test_get_hosttags():
     assert api.get_hosttags()
 
 
+def test_set_hosttags():
+    current_tags = api.get_hosttags()
+    current_tags["tag_groups"].append({
+        "id": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+        "title": "Test",
+        "tags": [
+            {
+                "aux_tags": [],
+                "id": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+                "title": "Test & test"
+            }
+        ]
+    })
+    api.set_hosttags(current_tags)
+
+
+def test_add_aux_tag():
+    current_tags = api.get_hosttags()['aux_tags']
+    api.add_aux_tag(''.join(random.choice(string.ascii_lowercase)
+                            for i in range(10)), "Web Server", "Service Type")
+    new_tags = api.get_hosttags()['aux_tags']
+    assert (len(new_tags) - len(current_tags)) == 1
+
+
+def test_add_duplicate_aux_tag():
+    identifier = ''.join(random.choice(string.ascii_lowercase)
+                         for i in range(10))
+    api.add_aux_tag(identifier, "Web Server", "Service Type")
+    with pytest.raises(CheckMkWebApiException):
+        api.add_aux_tag(identifier, "Web Server", "Service Type")
+
+
+def test_add_tag_group():
+    current_groups = api.get_hosttags()['tag_groups']
+    api.add_tag_group(''.join(random.choice(string.ascii_lowercase) for i in range(10)), "Web Server", [{
+        "aux_tags": [],
+        "id": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+        "title": "Test & test"
+    }])
+    new_groups = api.get_hosttags()['tag_groups']
+    assert (len(new_groups) - len(current_groups)) == 1
+
+
+def test_add_duplicate_tag_group():
+    identifier = ''.join(random.choice(string.ascii_lowercase)
+                         for i in range(10))
+
+    api.add_tag_group(identifier, "Web Server", [{
+        "aux_tags": [],
+        "id": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+        "title": "Test & test"
+    }])
+    with pytest.raises(CheckMkWebApiException):
+        api.add_tag_group(identifier, "Web Server", [{
+            "aux_tags": [],
+            "id": ''.join(random.choice(string.ascii_lowercase) for i in range(10)),
+            "title": "Test & test"
+        }])
+
+
 def test_get_ruleset():
     assert api.get_ruleset('checkgroup_parameters:hw_fans_perc')
 
@@ -430,7 +508,8 @@ def test_get_site():
 
 
 def test_set_site():
-    random_alias = 'alias_' + ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+    random_alias = 'alias_' + \
+        ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
     config = api.get_site('cmk')['site_config']
     config['alias'] = random_alias
 
@@ -449,3 +528,32 @@ def test_logout_site():
     api.add_user('user00', 'User 00', 'p4ssw0rd')
     api.login_site('cmk', 'user00', 'p4ssw0rd')
     api.logout_site('cmk')
+
+def test_bulk_discovery_start():
+    if 'CHECK_MK_VERSION' in os.environ and os.environ['CHECK_MK_VERSION'] == "1.5":
+        pytest.skip("only supported since version 1.6")
+    while api.bulk_discovery_status()['is_active'] == True:
+        time.sleep(5)
+    api.add_host('host00')
+    api.bulk_discovery_start(['host00'], mode=WebApi.DiscoverMode.NEW)
+
+def test_bulk_discovery_all_hosts():
+    if 'CHECK_MK_VERSION' in os.environ and os.environ['CHECK_MK_VERSION'] == "1.5":
+        pytest.skip("only supported since version 1.6")
+    while api.bulk_discovery_status()['is_active'] == True:
+        time.sleep(5)
+    api.add_host('host00')
+    api.add_host('host01')
+    api.add_host('host02')
+    api.add_host('host03')
+    api.bulk_discovery_all_hosts(bulk_size=3)
+
+def test_bulk_discovery_status():
+    if 'CHECK_MK_VERSION' in os.environ and os.environ['CHECK_MK_VERSION'] == "1.5":
+        pytest.skip("only supported since version 1.6")
+    bulk_status = api.bulk_discovery_status()
+    assert 'job' in bulk_status
+    assert 'is_active' in bulk_status
+    assert 'output' in bulk_status['job']
+    assert 'state' in bulk_status['job']
+    assert 'result_msg' in bulk_status['job']

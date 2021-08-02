@@ -1,4 +1,7 @@
 # check-mk-web-api [![Build Status](https://travis-ci.org/brennerm/check-mk-web-api.svg?branch=master)](https://travis-ci.org/brennerm/check-mk-web-api)
+## supported Checkmk versions
+- 1.6.0
+- 1.5.0
 
 ## Installation
 - From source code
@@ -41,6 +44,11 @@ Note there is no leading '/' on the folder name.
 #### Delete Host
 ```
 >>> api.delete_host('webserver00.com')
+```
+
+#### Delete Hosts
+```
+>>> api.delete_hosts(['webserver00.com', 'webserver01.com' ])
 ```
 
 #### Get Host
