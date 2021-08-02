@@ -149,7 +149,7 @@ class WebApi:
 
         body = response.read().decode()
 
-        if body.startswith('Authentication error:'):
+        if re.match('(^Authentication error:|^Permission denied: Invalid automation secret)', body):
             raise CheckMkWebApiAuthenticationException(body)
 
         if 'output_format' in query_params and query_params['output_format'] == 'python':
